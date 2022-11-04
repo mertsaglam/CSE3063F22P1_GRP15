@@ -1,5 +1,5 @@
 # CSE3063F22P1_GRP15
-1-150119800 Tayyip Erkam Fidan
+1-150119800 Tayyip Erkam Fdan
 2- 150119713 Ubeydullah Tuna
 3- 150119508 Mert Sağlam
 4- 150119811 Abdulah Puskar
