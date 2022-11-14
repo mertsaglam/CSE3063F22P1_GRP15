@@ -13,5 +13,11 @@ private String advisorSurname;
         this.advisorName = advisorName;
         this.advisorSurname = advisorSurname;
     }
+    //Constructor for advisor with no parameters   
+    public Advisor() {
+        this.advisedStudents = new ArrayList<Student>();
+        this.advisorName = "";
+        this.advisorSurname = "";
+    }
 }
 
