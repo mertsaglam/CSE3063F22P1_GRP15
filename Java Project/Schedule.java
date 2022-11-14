@@ -28,7 +28,7 @@ import java.util.HashMap;
 //HashMap<String day,String[] startHour>
 
 public HashMap<String ,String[]> getCourseDayHour(){
-        return this.courseDayHour;
+        return courseDayHour;
     }
 
     //setter
