@@ -6,8 +6,8 @@ public abstract class Course {
 	protected String courseName;
 	protected int credit;
 	protected ArrayList<Course> prerequisites;
-	protected Schedule schedule;
 	protected Semester semester;
+	protected Lecturer lecturer;
 	protected ArrayList<Student> courseStudents;
 	
 	//Constructor with no parameters
@@ -17,17 +17,17 @@ public abstract class Course {
 		this.credit = 0;
 		this.prerequisites = new ArrayList<Course>();
 		this.schedule = new Schedule();
-		this.semester = new Semester();
+		this.lecturer = new Lecturer();
 		this.courseStudents = new ArrayList<Student>();
 	}
 	//Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
-	public Course(String courseCode, String courseName, int credit, ArrayList<Course> prerequisites, Schedule schedule, Semester semester, ArrayList<Student> courseStudents) {
+	public Course(String courseCode, String courseName, int credit, ArrayList<Course> prerequisites, Lecturer lecturer, Semester semester, ArrayList<Student> courseStudents) {
 		this.courseCode = courseCode;
 		this.courseName = courseName;
 		this.credit = credit;
 		this.prerequisites = prerequisites;
 		this.schedule = schedule;
-		this.semester = semester;
+		this.lecturer = lecturer;
 		this.courseStudents = courseStudents;
 	}
 	//Getters and setters for the properties
@@ -52,8 +52,8 @@ public abstract class Course {
 		return semester;
 	}
 	//Getter for schedule property
-	public Schedule getSchedule() {
-		return schedule;
+	public Lecturer getLecturer() {
+		return lecturer;
 	}
 	//Getter for course students property
 	public ArrayList<Student> getCourseStudents() {
