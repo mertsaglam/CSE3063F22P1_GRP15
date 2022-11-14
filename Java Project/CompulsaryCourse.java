@@ -12,4 +12,7 @@ public class CompulsaryCourse extends Course {
 		this.semester = semester;
 		this.courseSection = courseSection;
 	}
+
+	public CompulsaryCourse() {
+	}
 }
