@@ -16,6 +16,11 @@ public class Lecturer {
         this.schedule = schedule;
         this.givenCourses = givenCourses;
     }
+
+    public Lecturer() {
+
+    }
+
     //Getters and setters for the properties
     //Getter for given courses
     public ArrayList<Course> getGivenCourses() {

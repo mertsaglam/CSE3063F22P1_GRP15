@@ -13,5 +13,9 @@ private String advisorSurname;
         this.advisorName = advisorName;
         this.advisorSurname = advisorSurname;
     }
+
+    public Advisor() {
+
+    }
 }
 

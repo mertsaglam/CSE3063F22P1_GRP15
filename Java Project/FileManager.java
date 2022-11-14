@@ -3,7 +3,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -12,7 +11,7 @@ public class FileManager {
 	private JSONParser parser;
 
 	public FileManager() {
-		parser = new JSONParser();
+		 parser = new JSONParser();
 	}
 
 	public ArrayList<Student> readStudent(String path) {
@@ -22,7 +21,7 @@ public class FileManager {
 		try {
 			Object obj = parser.parse(new FileReader(path));
 
-			JSONObject jsonObject = (JSONObject) obj;
+			 JSONObject jsonObject = (JSONObject) obj;
 
 			String studentID = (String) jsonObject.get("studentID");
 
@@ -34,16 +33,20 @@ public class FileManager {
 
 			Advisor advisor = (Advisor) jsonObject.get("advisor");
 
-			String semester = (String) jsonObject.get("semester");
+			Semester semester = (Semester) jsonObject.get("semester");
 
-			String schedule = (String) jsonObject.get("schedule");
+			Schedule schedule = (Schedule) jsonObject.get("schedule");
 
-			students.add(new Student(studentID, studentName, studentSurname, transcript, semester, schedule, advisor));
+			String enrolledYear = (String) jsonObject.get("enrolledYear");
+
+			students.add(new Student(studentID, studentName, studentSurname, transcript, semester, schedule, advisor,enrolledYear));
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (Exception exception) {
+			exception.printStackTrace();
 		}
 
 		return students;
@@ -64,12 +67,14 @@ public class FileManager {
 
 			Integer credit = (Integer) jsonObject.get("credit");
 
-			courses.add(new Course());
+			courses.add(new CompulsaryCourse());
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (Exception exception) {
+			exception.printStackTrace();
 		}
 
 		return courses;
@@ -118,6 +123,8 @@ public class FileManager {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (Exception exception) {
+			exception.printStackTrace();
 		}
 
 		return advisors;
