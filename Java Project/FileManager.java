@@ -25,21 +25,21 @@ public class FileManager {
 
 			String studentID = (String) jsonObject.get("studentID");
 
-			String studentName = (String) jsonObject.get("name");
+			String studentName = (String) jsonObject.get("studentName");
 
 			String studentSurname = (String) jsonObject.get("surname");
 
-			Transcript transcript = (Transcript) jsonObject.get("transcript");
+			//Transcript transcript = (Transcript) jsonObject.get("transcript");
 
-			Advisor advisor = (Advisor) jsonObject.get("advisor");
+			//Advisor advisor = (Advisor) jsonObject.get("advisor");
 
-			Semester semester = (Semester) jsonObject.get("semester");
+			//Semester semester = (Semester) jsonObject.get("semester");
 
-			Schedule schedule = (Schedule) jsonObject.get("schedule");
+			//Schedule schedule = (Schedule) jsonObject.get("schedule");
 
 			String enrolledYear = (String) jsonObject.get("enrolledYear");
 
-			students.add(new Student(studentID, studentName, studentSurname, transcript, semester, schedule, advisor,enrolledYear));
+			students.add(new Student(studentID, studentName, studentSurname,enrolledYear));
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

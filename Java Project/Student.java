@@ -10,7 +10,7 @@ public class Student {
     private Advisor advisor;
     private String enrolledYear;
 
-    public Student(String studentID, String studentName, String studentSurname, Transcript transcript,
+    public Student( String studentName, String studentSurname, Transcript transcript,
                    Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
         this.studentID = createStudentID();
 
@@ -21,6 +21,14 @@ public class Student {
         this.schedule = schedule;
         this.advisor = advisor;
         this.enrolledYear = enrolledYear;
+    }
+
+    public Student(String studentID, String studentName, String studentSurname, String enrolledYear) {
+        this.studentID = createStudentID();
+        this.studentName = studentName;
+        this.studentSurname = studentSurname;
+        this.enrolledYear = enrolledYear;
+
     }
 
     public String getStudentID() {
@@ -95,5 +103,19 @@ public class Student {
         String studentID = department + this.enrolledYear + Double.toString(Math.random() * 1000);
         return studentID;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentID='" + studentID + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", studentSurname='" + studentSurname + '\'' +
+                ", transcript=" + transcript +
+                ", semester=" + semester +
+                ", schedule=" + schedule +
+                ", advisor=" + advisor +
+                ", enrolledYear='" + enrolledYear + '\'' +
+                '}';
     }
 }
