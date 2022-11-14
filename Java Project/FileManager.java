@@ -38,7 +38,7 @@ public class FileManager {
 			rawJSON = (JSONObject) jsonObject.get("advisor");
 			Advisor advisor = (Advisor) initializeAdvisor(rawJSON);
 
-			//Advisor advisor = (Advisor) jsonObject.get("advisor");
+			//Advisor advisor = (Advisor) jsonObject.get("advisor");{advisor}
 
 			//Semester semester = (Semester) jsonObject.get("semester");
 
@@ -203,7 +203,7 @@ public class FileManager {
 		Advisor advisor = jsonToClassAdvisor(jsonObject.get("advisor").toString());
 		String enrolledYear = jsonObject.get("enrolledyear").toString();
 
-		return new Student(studentName,studentSurname,transcript,takenCredit,takenCourses,notTakenCourses));
+		return new Student(studentName,studentSurname,transcript,takenCredit,takenCourses,notTakenCourses);
 
 	}
 	
@@ -214,7 +214,7 @@ public class FileManager {
 		Type courseListType = new TypeToken<ArrayList<Course>>(){}.getType();
 		ArrayList<Course> openedCourse = gson.fromJson(jsonObject.get("openedCourse").toString(),courseListType);
 
-		return new Semester(semesterName, openedCourse));
+		return new Semester(semesterName, openedCourse);
 
 	}
 	
@@ -223,7 +223,7 @@ public class FileManager {
 		Gson gson = new Gson();
 		HashMap courseDayHour = jsonToMap(jsonObject.get("courseDayHour").toString());
 
-		return new Schedule(courseDayHour));
+		return new Schedule(courseDayHour);
 
 	}
 	
@@ -234,9 +234,9 @@ public class FileManager {
 		String lecturerName = jsonObject.get("name").toString();
 		String lecturerSurname = jsonObject.get("surname").toString();
 		Schedule schedule = jsonToClassSchedule(jsonObject.get("schedule").toString());
-		ArrayList<Student> givenCourses = gson.fromJson(jsonObject.get("givenCourses").toString(),courseListType);
+		ArrayList<Course> givenCourses = gson.fromJson(jsonObject.get("givenCourses").toString(),courseListType);
 
-		return new Lecturer(lecturerName, lecturerSurname, schedule, givenCourses));
+		return new Lecturer(lecturerName, lecturerSurname, schedule, givenCourses);
 
 	}
 	
@@ -248,7 +248,7 @@ public class FileManager {
 		String advisorName = jsonObject.get("name").toString();
 		String advisorSurname = jsonObject.get("surname").toString();
 
-		return new Advisor(advisedStudents, advisorName, advisorSurname));
+		return new Advisor(advisedStudents, advisorName, advisorSurname);
 
 	}
 

@@ -17,4 +17,28 @@ public class ElectiveCourse extends Course {
 		this.quota = quota;
 		this.electiveType = electiveType;
 	}
+
+	public int getQuota() {
+		return quota;
+	}
+
+	public void setQuota(int quota) {
+		this.quota = quota;
+	}
+
+	public Schedule getSchedule() {
+		return schedule;
+	}
+
+	public void setSchedule(Schedule schedule) {
+		this.schedule = schedule;
+	}
+
+	public String getElectiveType() {
+		return electiveType;
+	}
+
+	public void setElectiveType(String electiveType) {
+		this.electiveType = electiveType;
+	}
 }

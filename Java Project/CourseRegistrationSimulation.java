@@ -1,19 +1,22 @@
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Random;
 import  java.util.concurrent.ThreadLocalRandom;
 
 public class CourseRegistrationSimulation {
     private ArrayList<Student> students;
-    private ArrayList<Course> courses;
+    private ArrayList<CompulsaryCourse> compulsaryCourses;
+    private ArrayList<ElectiveCourse> electiveCourses ;
     private  ArrayList<Lecturer> lecturers;
     private ArrayList<Advisor> advisors;
     private  Semester semester;
     private int creditLimit;
 
-    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<Course> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
+    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsaryCourse> compulsaryCourses, ArrayList<ElectiveCourse> electiveCourses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
         this.students = students;
-        this.courses = courses;
+        this.compulsaryCourses = compulsaryCourses;
+        this.electiveCourses = electiveCourses;
         this.lecturers = lecturers;
         this.advisors = advisors;
         this.semester = semester;
@@ -33,10 +36,7 @@ public class CourseRegistrationSimulation {
         System.out.println((Arrays.toString(this.students.toArray())));
 
     }
-    public void createCourses(){
-        FileManager fileManager = new FileManager();
-        this.courses = fileManager.readCourse("/Users/omerfarukbulut/Downloads/student1.json");
-    }
+    //CREATE COMPULSARY AND CREATE ELECTIVE COURSES
     public void createSemester(){
         FileManager fileManager = new FileManager();
         // not finalized
@@ -63,9 +63,50 @@ public class CourseRegistrationSimulation {
     }
 
     public void createEnrollementRequest(){
+        for(Student student: this.students){
+            ArrayList<CompulsaryCourse> randomCompulsaryCourses = getRandomCompulsaryCourses(this.compulsaryCourses);
+            ArrayList<ElectiveCourse> randomElectiveCourses = getRandomElectiveCourses(this.electiveCourses);
+            ArrayList<Schedule> schedules= new ArrayList<>();
+            for(ElectiveCourse electiveCourse: randomElectiveCourses){
+                schedules.add(electiveCourse.getSchedule());
+            }//CAN NOT HANDLE HOW TO REACH COURSE SECTION CLASS SCHEDULE POSTPONE TO LATER
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCompulsaryCourses,randomElectiveCourses,student,combineSchedule(schedules));
+
+        }
 
     }
-    public void printArraylist(ArrayList<Student> arr){
+    public Schedule combineSchedule(ArrayList<Schedule> schedules){
+        Schedule combinedSchedule = new Schedule();
+        HashMap<String, String[]> temp = new HashMap<String, String[]>();
+        for(Schedule schedule: schedules){
+            temp.putAll(schedule.getCourseDayHour());
+        }
+        combinedSchedule.setCourseDayHour(temp);
+        return combinedSchedule;
+    }
+    public ArrayList<CompulsaryCourse> getRandomCompulsaryCourses(ArrayList<CompulsaryCourse> list) {
+        Random rand = new Random(); // object of Random class.
+
+        //temprory list to hold selected items.
+        ArrayList<CompulsaryCourse> tempList = new ArrayList<>();
+        for (int i = 0; i < rand.nextInt(list.size()); i++) {
+            int randomIndex = rand.nextInt(list.size());
+            tempList.add(list.get(randomIndex));
+        }
+        return tempList;
+    }
+    public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {
+        Random rand = new Random(); // object of Random class.
+
+        //temprory list to hold selected items.
+        ArrayList<ElectiveCourse> tempList = new ArrayList<>();
+        for (int i = 0; i < rand.nextInt(list.size()); i++) {
+            int randomIndex = rand.nextInt(list.size());
+            tempList.add(list.get(randomIndex));
+        }
+        return tempList;
+    }
+        public void printArraylist(ArrayList<Student> arr){
         for (int i=0; i<arr.size(); i++) {
             // Assuming arr is an ArrayList object
             Object current = arr.get(i).toString();

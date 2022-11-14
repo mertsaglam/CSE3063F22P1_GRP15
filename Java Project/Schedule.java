@@ -7,9 +7,10 @@ import java.util.HashMap;
     //private HashMap<String day,String[] startHour> courseDayHour =  new HashMap <>();
      private HashMap<String,String[]> courseDayHour = new HashMap <String,String[]>();
 
+     public Schedule() {
+     }
 
-
-    public Schedule (HashMap<String,String[]> courseDayHour) {
+     public Schedule (HashMap<String,String[]> courseDayHour) {
        this.courseDayHour = courseDayHour;
 
 
