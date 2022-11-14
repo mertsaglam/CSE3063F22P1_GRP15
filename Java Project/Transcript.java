@@ -50,4 +50,51 @@ public class Transcript {
 
     }
 
+    public HashMap<Course, Float> getCourseGrades() {
+        return courseGrades;
+    }
+
+    public void setCourseGrades(HashMap<Course, Float> courseGrades) {
+        this.courseGrades = courseGrades;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public float getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(float gpa) {
+        this.gpa = gpa;
+    }
+
+    public int getTakenCredit() {
+        return takenCredit;
+    }
+
+    public void setTakenCredit(int takenCredit) {
+        this.takenCredit = takenCredit;
+    }
+
+    public ArrayList<Course> getTakenCourses() {
+        return takenCourses;
+    }
+
+    public void setTakenCourses(ArrayList<Course> takenCourses) {
+        this.takenCourses = takenCourses;
+    }
+
+    public ArrayList<Course> getNotTakenCourses() {
+        return notTakenCourses;
+    }
+
+    public void setNotTakenCourses(ArrayList<Course> notTakenCourses) {
+        this.notTakenCourses = notTakenCourses;
+    }
 }

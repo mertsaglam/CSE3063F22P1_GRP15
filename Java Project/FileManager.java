@@ -1,8 +1,14 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 
+
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -27,9 +33,9 @@ public class FileManager {
 
 			String studentName = (String) jsonObject.get("studentName");
 
-			String studentSurname = (String) jsonObject.get("surname");
-
-			//Transcript transcript = (Transcript) jsonObject.get("transcript");
+			String studentSurname = (String) jsonObject.get("Studentsurname");
+			JSONObject rawJSON = (JSONObject) jsonObject.get("transcript");
+			Transcript transcript = (Transcript) initializeTranscript(rawJSON);
 
 			//Advisor advisor = (Advisor) jsonObject.get("advisor");
 
@@ -50,6 +56,32 @@ public class FileManager {
 		}
 
 		return students;
+	}
+	public HashMap jsonToMap(String json) {
+		HashMap map = new Gson().fromJson(json, HashMap.class);
+		return map;
+	}
+	public Student jsonToClassStudent(String json) {
+		return new Gson().fromJson(json, Student.class);
+	}
+	public Course jsonToClassCourse(String json) {
+		return new Gson().fromJson(json, Course.class);
+	}
+
+
+	public Transcript initializeTranscript(JSONObject jsonObject){
+		Gson gson = new Gson();
+		HashMap courseGrade = jsonToMap(jsonObject.get("courseGrade").toString());
+		Student student = jsonToClassStudent(jsonObject.get("student").toString());
+		Float GPA = Float.parseFloat(jsonObject.get("GPA").toString());
+		Integer takenCredit = Integer.parseInt(jsonObject.get("takenCredit").toString());
+		Type courseListType = new TypeToken<ArrayList<Course>>(){}.getType();
+		ArrayList<Course> takenCourses = gson.fromJson(jsonObject.get("takenCourses").toString(),courseListType);
+		ArrayList<Course> notTakenCourses = gson.fromJson(jsonObject.get("notTakenCourses").toString(),courseListType);
+
+		return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
+
+
 	}
 
 	public ArrayList<Course> readCourse(String path) {
