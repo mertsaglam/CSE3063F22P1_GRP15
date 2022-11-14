@@ -22,7 +22,7 @@ public class FileManager {
 
 		ArrayList<Student> students = new ArrayList<Student>();
 
-		try {
+		try {//https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
 			Object obj = parser.parse(new FileReader(path));
 
 			 JSONObject jsonObject = (JSONObject) obj;
