@@ -5,8 +5,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.json.simple.JSONObject;
@@ -20,7 +18,7 @@ public class FileManager {
 		 parser = new JSONParser();
 	}
 
-	public ArrayList<Student> readStudent(String path) {
+	/*public ArrayList<Student> readStudent(String path) {
 
 		ArrayList<Student> students = new ArrayList<Student>();
 
@@ -56,7 +54,7 @@ public class FileManager {
 		}
 
 		return students;
-	}
+	}*/
 	public HashMap jsonToMap(String json) {
 		HashMap map = new Gson().fromJson(json, HashMap.class);
 		return map;
@@ -67,7 +65,35 @@ public class FileManager {
 	public Course jsonToClassCourse(String json) {
 		return new Gson().fromJson(json, Course.class);
 	}
+	public Transcript jsonToClassTranscript(String json) {
+		return new Gson().fromJson(json, Transcript.class);
+	}
+	public Semester jsonToClassSemester(String json) {
+		return new Gson().fromJson(json, Semester.class);
+	}
+	public Schedule jsonToClassSchedule(String json) {
+		return new Gson().fromJson(json, Schedule.class);
+	}
+	public Lecturer jsonToClassLecturer(String json) {
+		return new Gson().fromJson(json, Lecturer.class);
+	}
+	public Advisor jsonToClassAdvisor(String json) {
+		return new Gson().fromJson(json, Advisor.class);
+	}
 
+	public ArrayList<Student> readStudent(JSONObject jsonObject){
+		Gson gson = new Gson();
+		String studentName = jsonObject.get("name").toString();
+		String studentSurname = jsonObject.get("surname").toString();
+		Transcript transcript = jsonToClassTranscript(jsonObject.get("transcript").toString());
+		Semester semester = jsonToClassSemester(jsonObject.get("semester").toString());
+		Schedule schedule = jsonToClassSchedule(jsonObject.get("schedule").toString());
+		Advisor advisor = jsonToClassAdvisor(jsonObject.get("advisor").toString());
+		String enrolledYear = jsonObject.get("enrolledyear").toString();
+
+		return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
+
+	}
 
 	public Transcript initializeTranscript(JSONObject jsonObject){
 		Gson gson = new Gson();
@@ -88,52 +114,31 @@ public class FileManager {
 
 		ArrayList<Course> courses = new ArrayList<Course>();
 
-		try {
-			Object obj = parser.parse(new FileReader(path));
+		Gson gson = new Gson();
+		String courseCode = jsonObject.get("coursecode").toString();
+		String courseName = jsonObject.get("coursename").toString();
+		Integer credit = jsonToClassTranscript(jsonObject.get("credit").toString());
+		Type courseListType1 = new TypeToken<ArrayList<Course>>(){}.getType();
+		ArrayList<Course> prerequisites = gson.fromJson(jsonObject.get("prerequisites").toString(),courseListType1);
+		Semester semester = jsonToClassSemester(jsonObject.get("semester").toString());
+		Lecturer lecturer = jsonToClassLecturer(jsonObject.get("lecturer").toString());
+		Type courseListType2 = new TypeToken<ArrayList<Student>>(){}.getType();
+		ArrayList<Course> courseStudents = gson.fromJson(jsonObject.get("courseStudents").toString(),courseListType2);
 
-			JSONObject jsonObject = (JSONObject) obj;
-
-			String courseCode = (String) jsonObject.get("code");
-
-			String courseName = (String) jsonObject.get("name");
-
-			Integer credit = (Integer) jsonObject.get("credit");
-
-			courses.add(new CompulsaryCourse());
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception exception) {
-			exception.printStackTrace();
-		}
-
-		return courses;
+		return courses.add(new Course(courseCode, courseName, credit, prerequisites, semester, lecturer, courseStudents));
 	}
 
 	public ArrayList<Lecturer> readLecturer(String path) throws Exception {
 
 		ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>();
 
-		try {
-			Object obj = parser.parse(new FileReader(path));
+		String lecturerName = jsonObject.get("name").toString();
+		String lecturerSurname = jsonObject.get("surname").toString();
+		Schedule schedule = jsonToClassSchedule(jsonObject.get("schedule").toString());
+		Type courseListType = new TypeToken<ArrayList<Course>>(){}.getType();
+		ArrayList<Course> givenCourses = gson.fromJson(jsonObject.get("givenCourses").toString(),courseListType);
 
-			JSONObject jsonObject = (JSONObject) obj;
-
-			String lecturerName = (String) jsonObject.get("name");
-
-			String lecturerSurname = (String) jsonObject.get("surname");
-
-			lecturers.add(new Lecturer());
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return lecturers;
+		return lecturers.add(new Lecturer(lecturerName, lecturerSurname, schedule, givenCourses))
 	}
 
 	public ArrayList<Advisor> readAdvisor(String path) {
