@@ -9,8 +9,8 @@ import java.util.HashMap;
 
 
 
-    public Schedule (HashMap<String,String[]> data) {
-       this.courseDayHour = data;
+    public Schedule (HashMap<String,String[]> courseDayHour) {
+       this.courseDayHour = courseDayHour;
 
 
        //days and start hours
