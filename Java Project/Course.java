@@ -16,7 +16,6 @@ public abstract class Course {
 		this.courseName = "";
 		this.credit = 0;
 		this.prerequisites = new ArrayList<Course>();
-		this.schedule = new Schedule();
 		this.lecturer = new Lecturer();
 		this.courseStudents = new ArrayList<Student>();
 	}
@@ -26,7 +25,6 @@ public abstract class Course {
 		this.courseName = courseName;
 		this.credit = credit;
 		this.prerequisites = prerequisites;
-		this.schedule = schedule;
 		this.lecturer = lecturer;
 		this.courseStudents = courseStudents;
 	}

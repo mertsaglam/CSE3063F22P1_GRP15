@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class CompulsaryCourse extends Course {
 	private CourseSection courseSection;
+	private Schedule schedule;
 
 	public CompulsaryCourse(String courseCode, int credit, ArrayList<Course> prerequisites, Schedule schedule,
 			Semester semester, CourseSection courseSection) {
