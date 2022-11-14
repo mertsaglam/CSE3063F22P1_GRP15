@@ -38,7 +38,7 @@ public class FileManager {
 			rawJSON = (JSONObject) jsonObject.get("advisor");
 			Advisor advisor = (Advisor) initializeAdvisor(rawJSON);
 
-			//Advisor advisor = (Advisor) jsonObject.get("advisor");{advisor}
+			//Advisor advisor = (Advisor) jsonObject.get("advisor");
 
 			//Semester semester = (Semester) jsonObject.get("semester");
 
@@ -203,7 +203,8 @@ public class FileManager {
 		Advisor advisor = jsonToClassAdvisor(jsonObject.get("advisor").toString());
 		String enrolledYear = jsonObject.get("enrolledyear").toString();
 
-		return new Student(studentName,studentSurname,transcript,takenCredit,takenCourses,notTakenCourses);
+		return new Student(studentName,studentSurname,transcript,semester,schedule,advisor, enrolledYear);
+
 
 	}
 	
