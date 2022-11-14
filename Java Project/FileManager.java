@@ -82,6 +82,9 @@ public class FileManager {
 	}
 
 	public ArrayList<Student> readStudent(JSONObject jsonObject){
+		
+		ArrayList<Student> students = new ArrayList<Student>();
+		
 		Gson gson = new Gson();
 		String studentName = jsonObject.get("name").toString();
 		String studentSurname = jsonObject.get("surname").toString();
@@ -91,7 +94,7 @@ public class FileManager {
 		Advisor advisor = jsonToClassAdvisor(jsonObject.get("advisor").toString());
 		String enrolledYear = jsonObject.get("enrolledyear").toString();
 
-		return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
+		return students.add(new Student(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses));
 
 	}
 
