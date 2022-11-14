@@ -203,7 +203,7 @@ public class FileManager {
 		Advisor advisor = jsonToClassAdvisor(jsonObject.get("advisor").toString());
 		String enrolledYear = jsonObject.get("enrolledyear").toString();
 
-		return new Student(studentName,studentSurname,transcript,takenCredit,takenCourses,notTakenCourses));
+		return new Student(studentName,studentSurname,transcript,semester,schedule,advisor, enrolledYear));
 
 	}
 	
