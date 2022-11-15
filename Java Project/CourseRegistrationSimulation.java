@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
-import  java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CourseRegistrationSimulation {
     private ArrayList<Student> students;
     private ArrayList<CompulsaryCourse> compulsaryCourses;
-    private ArrayList<ElectiveCourse> electiveCourses ;
-    private  ArrayList<Lecturer> lecturers;
+    private ArrayList<ElectiveCourse> electiveCourses;
+    private ArrayList<Lecturer> lecturers;
     private ArrayList<Advisor> advisors;
-    private  Semester semester;
+    private Semester semester;
     private int creditLimit;
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsaryCourse> compulsaryCourses, ArrayList<ElectiveCourse> electiveCourses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
@@ -25,24 +25,37 @@ public class CourseRegistrationSimulation {
 
     public CourseRegistrationSimulation() {
     }
-    public void starSimulation(){}
-    public void readParameters(){
+
+    public void starSimulation() {
+        readParameters();
+        createStudents();
+        createAdvisor();
+        createLecturer();
+        createSemester();
+        createEnrollementRequest();
+
+    }
+
+    public void readParameters() {
         FileManager fileManager = new FileManager();
         // not finalized
     }
-    public void createStudents(){
+
+    public void createStudents() {
         FileManager fileManager = new FileManager();
         this.students = fileManager.readStudent("/Users/omerfarukbulut/Downloads/student1.json");
         System.out.println((Arrays.toString(this.students.toArray())));
 
     }
+
     //CREATE COMPULSARY AND CREATE ELECTIVE COURSES
-    public void createSemester(){
+    public void createSemester() {
         FileManager fileManager = new FileManager();
         // not finalized
 
     }
-    public void createLecturer(){
+
+    public void createLecturer() {
         FileManager fileManager = new FileManager();
         try {
             this.lecturers = fileManager.readLecturer("/Users/omerfarukbulut/Downloads/student1.json");
@@ -51,39 +64,46 @@ public class CourseRegistrationSimulation {
         }
 
     }
-    public void createAdvisor(){
+
+    public void createAdvisor() {
         FileManager fileManager = new FileManager();
         this.advisors = fileManager.readAdvisor("/Users/omerfarukbulut/Downloads/student1.json");
     }
 
-    public void matchStudentAdvisor(){
-        for (Student student: this.students){
-            student.setAdvisor(this.advisors.get(ThreadLocalRandom.current().nextInt(0,this.advisors.size()+1)));
+    public void matchStudentAdvisor() {
+        for (Student student : this.students) {
+            student.setAdvisor(this.advisors.get(ThreadLocalRandom.current().nextInt(0, this.advisors.size() + 1)));
         }
     }
 
-    public void createEnrollementRequest(){
-        for(Student student: this.students){
+    public void createEnrollementRequest() {
+        for (Student student : this.students) {
             ArrayList<CompulsaryCourse> randomCompulsaryCourses = getRandomCompulsaryCourses(this.compulsaryCourses);
             ArrayList<ElectiveCourse> randomElectiveCourses = getRandomElectiveCourses(this.electiveCourses);
-            ArrayList<Schedule> schedules= new ArrayList<>();
-            for(ElectiveCourse electiveCourse: randomElectiveCourses){
+            ArrayList<Schedule> schedules = new ArrayList<>();
+            for (ElectiveCourse electiveCourse : randomElectiveCourses) {
                 schedules.add(electiveCourse.getSchedule());
             }//CAN NOT HANDLE HOW TO REACH COURSE SECTION CLASS SCHEDULE POSTPONE TO LATER
-            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCompulsaryCourses,randomElectiveCourses,student,combineSchedule(schedules));
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCompulsaryCourses, randomElectiveCourses, student, combineSchedule(schedules));
 
         }
 
     }
-    public Schedule combineSchedule(ArrayList<Schedule> schedules){
+
+    public void checkSystemRequirements(EnrollmentRequest enrollmentRequest) {
+        RegistrationSystem registrationSystem = new RegistrationSystem();
+    }
+
+    public Schedule combineSchedule(ArrayList<Schedule> schedules) {
         Schedule combinedSchedule = new Schedule();
         HashMap<String, String[]> temp = new HashMap<String, String[]>();
-        for(Schedule schedule: schedules){
+        for (Schedule schedule : schedules) {
             temp.putAll(schedule.getCourseDayHour());
         }
         combinedSchedule.setCourseDayHour(temp);
         return combinedSchedule;
     }
+
     public ArrayList<CompulsaryCourse> getRandomCompulsaryCourses(ArrayList<CompulsaryCourse> list) {
         Random rand = new Random(); // object of Random class.
 
@@ -95,6 +115,7 @@ public class CourseRegistrationSimulation {
         }
         return tempList;
     }
+
     public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {
         Random rand = new Random(); // object of Random class.
 
@@ -106,8 +127,9 @@ public class CourseRegistrationSimulation {
         }
         return tempList;
     }
-        public void printArraylist(ArrayList<Student> arr){
-        for (int i=0; i<arr.size(); i++) {
+
+    public void printArraylist(ArrayList<Student> arr) {
+        for (int i = 0; i < arr.size(); i++) {
             // Assuming arr is an ArrayList object
             Object current = arr.get(i).toString();
             System.out.println(current);

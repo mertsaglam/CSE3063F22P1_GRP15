@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EnrollmentRequest {
-    
+
     private ArrayList<CompulsaryCourse> compulsaryCourses;
     private ArrayList<ElectiveCourse> electiveCourses;
     private Student student;
     private Schedule schedule;
+    private HashMap<String, String> result;
 
     public EnrollmentRequest(ArrayList<CompulsaryCourse> compulsaryCourses) {
         this.compulsaryCourses = compulsaryCourses;
@@ -19,6 +20,15 @@ public class EnrollmentRequest {
         this.student = student;
         this.schedule = schedule;
     }
+
+    public HashMap<String, String> getResult() {
+        return result;
+    }
+
+    public void setResult(HashMap<String, String> result) {
+        this.result = result;
+    }
+
 
     public ArrayList<CompulsaryCourse> getCompulsaryCourses() {
         return compulsaryCourses;
@@ -52,5 +62,8 @@ public class EnrollmentRequest {
         this.schedule = schedule;
     }
 
+    public void appendResult(HashMap<String, String> result) {
+        this.result.putAll(result);
+    }
 
 }
