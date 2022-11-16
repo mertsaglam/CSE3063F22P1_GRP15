@@ -22,7 +22,7 @@ public class RegistrationSystem {
         Student student = enrollmentRequest.getStudent();
 
         for (Course course : compulsaryCourses) {
-            if (!student.getTranscript().getTakenCourses().contains(course)) {
+            if (course.getPrerequisites().contains(course)) {
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put(course.getCourseCode(), "notSatisfiedPreRequisite");
                 enrollmentRequest.appendResult(result);

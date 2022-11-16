@@ -15,7 +15,7 @@ public class CourseRegistrationSimulation {
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<Course> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
         this.students = students;
-        this.courses =courses;
+        this.courses = courses;
         this.lecturers = lecturers;
         this.advisors = advisors;
         this.semester = semester;
@@ -33,12 +33,13 @@ public class CourseRegistrationSimulation {
         createSemester();
         createEnrollementRequest();
         checkSystemRequirements();
+        setTranscriptAfter();
 
     }
 
     public void readParameters() {
         FileManager fileManager = new FileManager();
-        // not finalized
+
     }
 
     public void createStudents() {
@@ -101,9 +102,6 @@ public class CourseRegistrationSimulation {
 
     }
 
-    public void setTranscriptAfter(EnrollmentRequest enrollmentRequest) {
-
-    }
 
     public Schedule combineSchedule(ArrayList<Schedule> schedules) {
         Schedule combinedSchedule = new Schedule();
@@ -125,6 +123,39 @@ public class CourseRegistrationSimulation {
             tempList.add(list.get(randomIndex));
         }
         return tempList;
+    }
+
+    public void setTranscriptAfter() {
+        for (EnrollmentRequest enrollmentRequest : this.enrollmentRequests) {
+            ArrayList<Course> courses = enrollmentRequest.getCourses();
+            Student student = enrollmentRequest.getStudent();
+            ArrayList<String> passedCourses = new ArrayList<String>();
+            Random random = new Random();
+            Transcript transcript = student.getTranscriptBefore();
+            for (Course course : courses) {
+                if (!enrollmentRequest.getResult().containsKey(course.getCourseCode())) {
+                    passedCourses.add(course.getCourseCode());
+                }
+            }
+            HashMap<String, Float> courseGrades = new HashMap<String, Float>();
+            for (String courseCode : passedCourses) {
+                courseGrades.put(courseCode, random.nextFloat(100));
+                transcript.addTakenCourse(getCoursebyCourseCode(courseCode));
+                transcript.removeCourse(getCoursebyCourseCode(courseCode));
+            }
+            int totalCredit = enrollmentRequest.getTotalCredit() + student.getTranscriptBefore().getTakenCredit();
+            Transcript transcript1 = new Transcript(courseGrades, student, random.nextFloat(4), totalCredit, transcript.getTakenCourses(), transcript.getNotTakenCourses());
+            student.setTranscriptAfter(transcript1);
+        }
+    }
+
+    public Course getCoursebyCourseCode(String courseCode) {
+        for (Course course : this.courses) {
+            if (course.getCourseCode().equals(courseCode))
+                return course;
+
+        }
+        return null;
     }
 /*
     public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {

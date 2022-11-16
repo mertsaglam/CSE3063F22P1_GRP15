@@ -60,30 +60,38 @@ public class EnrollmentRequest {
         this.creditLimit = creditLimit;
     }
 
-   /* public void checkDuplicate(HashMap hashMap){
-        Map<ArrayList<Schedule>, ArrayList<Object>> reverseMap = new HashMap<>();
-
-
-        for (Object schedules: hashMap.values()) {
-            if (!reverseMap.containsKey(entry.getValue())) {
-                reverseMap.put(entry.getValue(), new ArrayList<>());
-            }
-            ArrayList<Object> keys = reverseMap.get(entry.getValue());
-            keys.add(entry.getKey());
-            reverseMap.put(entry.getValue(), keys);
+    public int getTotalCredit() {
+        int credit = 0;
+        for (Course course : this.courses) {
+            credit += course.getCredit();
         }
+        return credit;
+    }
+
+    /* public void checkDuplicate(HashMap hashMap){
+         Map<ArrayList<Schedule>, ArrayList<Object>> reverseMap = new HashMap<>();
 
 
-    }*/
-   public HashMap<String, String> checkDuplicate(HashMap<String, Schedule> hashMap) {
-       HashMap<String, String> duplicate = new HashMap<>();
-       for (Map.Entry<String, Schedule> entry : hashMap.entrySet()) {
-           for (Map.Entry<String, Schedule> entry2 : hashMap.entrySet()) {
-               if (entry.getValue().equals(entry2.getValue()) && !entry.getKey().equals(entry2.getKey())) {
-                   duplicate.put(entry.getKey(), entry2.getKey());
-               }
-           }
-       }
-       return duplicate;
-   }
+         for (Object schedules: hashMap.values()) {
+             if (!reverseMap.containsKey(entry.getValue())) {
+                 reverseMap.put(entry.getValue(), new ArrayList<>());
+             }
+             ArrayList<Object> keys = reverseMap.get(entry.getValue());
+             keys.add(entry.getKey());
+             reverseMap.put(entry.getValue(), keys);
+         }
+
+
+     }*/
+    public HashMap<String, String> checkDuplicate(HashMap<String, Schedule> hashMap) {
+        HashMap<String, String> duplicate = new HashMap<>();
+        for (Map.Entry<String, Schedule> entry : hashMap.entrySet()) {
+            for (Map.Entry<String, Schedule> entry2 : hashMap.entrySet()) {
+                if (entry.getValue().equals(entry2.getValue()) && !entry.getKey().equals(entry2.getKey())) {
+                    duplicate.put(entry.getKey(), entry2.getKey());
+                }
+            }
+        }
+        return duplicate;
+    }
 }

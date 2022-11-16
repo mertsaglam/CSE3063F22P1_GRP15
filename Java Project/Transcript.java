@@ -50,6 +50,12 @@ public class Transcript {
         this.notTakenCourses = notTakenCourses;
 
     }
+    public void addTakenCourse(Course course){
+        this.takenCourses.add(course);
+    }
+    public void removeCourse(Course course){
+        this.notTakenCourses.remove(course);
+    }
 
     public HashMap<String, Float> getCourseGrades() {
         return courseGrades;

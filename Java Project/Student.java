@@ -4,19 +4,21 @@ public class Student {
     private String studentID;
     private String studentName;
     private String studentSurname;
-    private Transcript transcript;
+    private Transcript transcriptBefore;
+    private Transcript transcriptAfter;
     private Semester semester;
     private Schedule schedule;
     private Advisor advisor;
     private String enrolledYear;
 
-    public Student( String studentName, String studentSurname, Transcript transcript,
+    public Student( String studentName, String studentSurname, Transcript transcriptBefore,Transcript transcriptAfter,
                    Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
         this.studentID = createStudentID();
 
         this.studentName = studentName;
         this.studentSurname = studentSurname;
-        this.transcript = transcript;
+        this.transcriptBefore = transcriptBefore;
+        this.transcriptAfter = transcriptAfter;
         this.semester = semester;
         this.schedule = schedule;
         this.advisor = advisor;
@@ -55,12 +57,20 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public Transcript getTranscript() {
-        return this.transcript;
+    public Transcript getTranscriptBefore() {
+        return transcriptBefore;
     }
 
-    public void setTranscript(Transcript transcript) {
-        this.transcript = transcript;
+    public void setTranscriptBefore(Transcript transcriptBefore) {
+        this.transcriptBefore = transcriptBefore;
+    }
+
+    public Transcript getTranscriptAfter() {
+        return transcriptAfter;
+    }
+
+    public void setTranscriptAfter(Transcript transcriptAfter) {
+        this.transcriptAfter = transcriptAfter;
     }
 
     public Semester getSemester() {
@@ -111,7 +121,8 @@ public class Student {
                 "studentID='" + studentID + '\'' +
                 ", studentName='" + studentName + '\'' +
                 ", studentSurname='" + studentSurname + '\'' +
-                ", transcript=" + transcript +
+                ", transcriptBefore=" + transcriptBefore +
+                ", transcriptAfter=" + transcriptAfter +
                 ", semester=" + semester +
                 ", schedule=" + schedule +
                 ", advisor=" + advisor +
