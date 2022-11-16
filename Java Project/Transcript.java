@@ -5,7 +5,7 @@ public class Transcript {
     // courseGrades is haspMap of course object and grades in integer
     private HashMap<String, Float> courseGrades;
     // Student object
-    private Student student;
+    private  Student student;
     // Gpa is a float
     private float gpa;
     // takenCredit is an integer
@@ -22,6 +22,13 @@ public class Transcript {
     public Transcript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit, ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
         this.courseGrades = courseGrades;
         this.student = student;
+        this.gpa = gpa;
+        this.takenCredit = takenCredit;
+        this.takenCourses = takenCourses;
+        this.notTakenCourses = notTakenCourses;
+    }
+    public Transcript(HashMap<String, Float> courseGrades,  float gpa, int takenCredit, ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
+        this.courseGrades = courseGrades;
         this.gpa = gpa;
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;
