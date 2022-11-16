@@ -7,6 +7,8 @@ import java.util.HashMap;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -21,33 +23,251 @@ public class FileManager {
 	public ArrayList<Student> readStudent(String path) {
 
 		ArrayList<Student> students = new ArrayList<Student>();
-
+		
 		try {//https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
-			Object obj = parser.parse(new FileReader(path));
+			JSONArray obj = (JSONArray) parser.parse(new FileReader(path));
+			
+			for(Object o : obj) {
+				JSONObject jsonObject = (JSONObject) o;
 
-			 JSONObject jsonObject = (JSONObject) obj;
+				String studentName = (String) jsonObject.get("studentName");
+				System.out.println(studentName);
+				
+				String studentSurname = (String) jsonObject.get("studentSurname");
+				System.out.println(studentSurname);
+				
+				String enrolledYear = (String) jsonObject.get("enrolledYear");
+				System.out.println(enrolledYear);
+				
+				JSONObject jsonObject1 = (JSONObject) jsonObject.get("transcriptBefore");
+				
+				JSONArray obj2 =  (JSONArray) jsonObject1.get("coursesGrades");
+				int clock = 0;
+				String course = "";
+				HashMap<String, Float> grade = new HashMap<String, Float>();
+				for(Object coursesGrades : obj2) {
+					if(clock == 0) {
+						course = (String) coursesGrades;
+						clock++;
+					}else {
+						grade.put(course, Float.parseFloat((String) coursesGrades));
+						clock--;
+					}
+					System.out.println(coursesGrades);
+				}
+				String GPA = (String) jsonObject1.get("GPA");
+				Long takenCredit = (Long) jsonObject1.get("takenCredit");
+				System.out.println(GPA);
+				System.out.println(takenCredit);
+				
+				JSONArray obj3 =  (JSONArray) jsonObject1.get("takenCourses");
+				for(Object takenCourses : obj3) {
+					JSONObject jsonObject2 = (JSONObject) takenCourses;
+					
+					String courseCode = (String) jsonObject2.get("courseCode");
+					System.out.println(courseCode);
+					
+					String courseName = (String) jsonObject2.get("courseName");
+					System.out.println(courseName);
+					
+					Long courseCredit = (Long) jsonObject2.get("courseCredit");
+					System.out.println(courseCredit);
+					
+					JSONArray obj4 =  (JSONArray) jsonObject2.get("prerequisites");
+					for(Object prerequisites : obj4) {
+						System.out.println(prerequisites);
+					}
+					
+					System.out.println("//students\\");
+					
+					JSONObject jsonObject4 = (JSONObject) jsonObject2.get("lecturer");
+					
+					String lecturerName = (String) jsonObject4.get("lecturerName");
+					System.out.println(lecturerName);
+					
+					String lecturerSurname = (String) jsonObject4.get("lecturerSurname");
+					System.out.println(lecturerSurname);
+					
+					JSONObject jsonObject5 = (JSONObject) jsonObject4.get("schedule");
+					JSONObject jsonObject6 = (JSONObject) jsonObject5.get("courseDayHour");
+					
+					HashMap<String, ArrayList<String>> courseDayHour = new HashMap<String, ArrayList<String>>();
+					JSONArray obj7 =  (JSONArray) jsonObject6.get("Monday");
+					if(obj7 != null) {
+						ArrayList<String> hour = new ArrayList<String>();
+						System.out.println("Monday");
+						for(Object Monday : obj7) {
+							hour.add(String.valueOf(Monday));
+							System.out.println(Monday);
+						}
+						courseDayHour.put("Monday", hour);
+					}
+					
+					JSONArray obj8 =  (JSONArray) jsonObject6.get("Tuesday");
+					if(obj8 != null) {
+						ArrayList<String> hour = new ArrayList<String>();
+						System.out.println("Tuesday");
+						for(Object Tuesday : obj8) {
+							hour.add(String.valueOf(Tuesday));
+							System.out.println(Tuesday);
+						}
+						courseDayHour.put("Tuesday", hour);
+					}
+					
+					JSONArray obj9 =  (JSONArray) jsonObject6.get("Wednesday");
+					if(obj9 != null) {
+						ArrayList<String> hour = new ArrayList<String>();
+						System.out.println("Wednesday");
+						for(Object Wednesday : obj9) {
+							hour.add(String.valueOf(Wednesday));
+							System.out.println(Wednesday);
+						}
+						courseDayHour.put("Wednesday", hour);
+					}
+					
+					JSONArray obj10 =  (JSONArray) jsonObject6.get("Thursday");
+					if(obj10 != null) {
+						ArrayList<String> hour = new ArrayList<String>();
+						System.out.println("Thursday");
+						for(Object Thursday : obj10) {
+							hour.add(String.valueOf(Thursday));
+							System.out.println(Thursday);
+						}
+						courseDayHour.put("Thursday", hour);
+					}
+					
+					JSONArray obj11 =  (JSONArray) jsonObject6.get("Friday");
+					if(obj11 != null) {
+						ArrayList<String> hour = new ArrayList<String>();
+						System.out.println("Friday");
+						for(Object Friday : obj11) {
+							hour.add(String.valueOf(Friday));
+							System.out.println(Friday);
+						}
+						courseDayHour.put("Friday", hour);
+					}
+					
+					//Schedule schedule = new Schedule(courseDayHour);
+					
+				}
+				
+				JSONArray obj12 =  (JSONArray) jsonObject1.get("notTakenCourses");
+				for(Object notTakenCourses : obj12) {
+					JSONObject jsonObject2 = (JSONObject) notTakenCourses;
+					
+					String courseCode = (String) jsonObject2.get("courseCode");
+					System.out.println(courseCode);
+					
+					String courseName = (String) jsonObject2.get("courseName");
+					System.out.println(courseName);
+					
+					Long courseCredit = (Long) jsonObject2.get("courseCredit");
+					System.out.println(courseCredit);
+					
+					JSONArray obj4 =  (JSONArray) jsonObject2.get("prerequisites");
+					for(Object prerequisites : obj4) {
+						System.out.println(prerequisites);
+					}
+					
+					JSONObject jsonObject3 = (JSONObject) jsonObject.get("semester");
+					
+					String semesterName = (String) jsonObject3.get("semesterName");
+					System.out.println(semesterName);
+					
+					JSONArray obj5 =  (JSONArray) jsonObject3.get("openedCourses");
+					for(Object openedCourses : obj5) {
+						System.out.println("*******************");
+						JSONObject jsonObject4 = (JSONObject) openedCourses;
+						
+						String courseCode2 = (String) jsonObject4.get("courseCode");
+						System.out.println(courseCode2);
+						
+						String courseName2 = (String) jsonObject4.get("courseName");
+						System.out.println(courseName2);
+						
+						/*Long courseCredit2 = (Long) jsonObject4.get("courseCredit");
+						System.out.println(courseCredit2);*/
+						
+						JSONArray obj6 =  (JSONArray) jsonObject4.get("prerequisites");
+						for(Object prerequisites : obj6) {
+							System.out.println(prerequisites);
+						}
+						
+					}
+					
+					System.out.println("//students\\");
+					
+					
+					JSONObject jsonObject4 = (JSONObject) jsonObject2.get("lecturer");
+					
+					String lecturerName = (String) jsonObject4.get("lecturerName");
+					System.out.println(lecturerName);
+					
+					String lecturerSurname = (String) jsonObject4.get("lecturerSurname");
+					System.out.println(lecturerSurname);
+					
+					JSONObject jsonObject5 = (JSONObject) jsonObject4.get("schedule");
+					JSONObject jsonObject6 = (JSONObject) jsonObject5.get("courseDayHour");
+					
+					JSONArray obj7 =  (JSONArray) jsonObject6.get("Monday");
+					if(obj7 != null) {
+						System.out.println("Monday");
+						for(Object Monday : obj7) {
+							System.out.println(Monday);
+						}
+					}
+					
+					JSONArray obj8 =  (JSONArray) jsonObject6.get("Tuesday");
+					if(obj8 != null) {
+						System.out.println("Tuesday");
+						for(Object Tuesday : obj8) {
+							System.out.println(Tuesday);
+						}
+					}
+					
+					JSONArray obj9 =  (JSONArray) jsonObject6.get("Wednesday");
+					if(obj9 != null) {
+						System.out.println("Wednesday");
+						for(Object Wednesday : obj9) {
+							System.out.println(Wednesday);
+						}
+					}
+					
+					JSONArray obj10 =  (JSONArray) jsonObject6.get("Thursday");
+					if(obj10 != null) {
+						System.out.println("Thursday");
+						for(Object Thursday : obj10) {
+							System.out.println(Thursday);
+						}
+					}
+					
+					JSONArray obj11 =  (JSONArray) jsonObject6.get("Friday");
+					if(obj11 != null) {
+						System.out.println("Friday");
+						for(Object Friday : obj11) {
+							System.out.println(Friday);
+						}
+					}
+					
+					
+					
+				}
+				//Transcript transcriptBefore = new Transcript(grade, (Float) GPA, (Integer) takenCredit, );
+				
+				System.out.println("//students\\");
 
-			String studentName = (String) jsonObject.get("studentName");
-			String studentSurname = (String) jsonObject.get("Studentsurname");
-			JSONObject rawJSON = (JSONObject) jsonObject.get("transcript");
-			Transcript transcript = (Transcript) initializeTranscript(rawJSON);
-			rawJSON = (JSONObject) jsonObject.get("semester");
-			Semester semester = (Semester) initializeSemester(rawJSON);
-			rawJSON = (JSONObject) jsonObject.get("schedule");
-			Schedule schedule = (Schedule) initializeSchedule(rawJSON);
-			rawJSON = (JSONObject) jsonObject.get("advisor");
-			Advisor advisor = (Advisor) initializeAdvisor(rawJSON);
+				//Advisor advisor = (Advisor) jsonObject.get("advisor");
 
-			//Advisor advisor = (Advisor) jsonObject.get("advisor");
+				//Semester semester = (Semester) jsonObject.get("semester");
 
-			//Semester semester = (Semester) jsonObject.get("semester");
+				//Schedule schedule = (Schedule) jsonObject.get("schedule");
 
-			//Schedule schedule = (Schedule) jsonObject.get("schedule");
-
-			String enrolledYear = (String) jsonObject.get("enrolledYear");
-
-			students.add(new Student(studentName, studentSurname, transcript, semester, schedule, advisor, enrolledYear));
-
+				
+				System.out.println("-----------------");
+				
+				//students.add(new Student(studentName, studentSurname, ))
+			}
+			 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -63,30 +283,107 @@ public class FileManager {
 
 		ArrayList<Course> courses = new ArrayList<Course>();
 
-		try {
-			Object obj = parser.parse(new FileReader(path));
-
-			 JSONObject jsonObject = (JSONObject) obj;
-
-			String courseCode = (String) jsonObject.get("courseCode");
-			String courseName = (String) jsonObject.get("name");
-			Integer credit = (Integer) jsonObject.get("credit");
-			ArrayList<Course> prerequisites = (ArrayList<Course>) jsonObject.get("prerequisites");
-			JSONObject rawJSON = (JSONObject) jsonObject.get("semester");
-			Semester semester = (Semester) initializeSemester(rawJSON);
-			rawJSON = (JSONObject) jsonObject.get("lecturer");
-			Lecturer lecturer = (Lecturer) initializeLecturer(rawJSON);
-			ArrayList<Student> courseStudents = (ArrayList<Student>) jsonObject.get("courseStudents");
+		try {//https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
+			JSONArray obj = (JSONArray) parser.parse(new FileReader(path));
 			
-
-			//Advisor advisor = (Advisor) jsonObject.get("advisor");
-
-			//Semester semester = (Semester) jsonObject.get("semester");
-
-			//Schedule schedule = (Schedule) jsonObject.get("schedule");
-
-			//courses.add(new Course(courseCode, courseName, credit, prerequisites, lecturer, semester, courseStudents));
-
+			for(Object takenCourses : obj) {
+				JSONObject jsonObject2 = (JSONObject) takenCourses;
+				
+				String courseCode = (String) jsonObject2.get("courseCode");
+				System.out.println(courseCode);
+				
+				String courseName = (String) jsonObject2.get("courseName");
+				System.out.println(courseName);
+				
+				Long courseCredit = (Long) jsonObject2.get("courseCredit");
+				System.out.println(courseCredit);
+				
+				JSONArray obj4 =  (JSONArray) jsonObject2.get("prerequisites");
+				for(Object prerequisites : obj4) {
+					System.out.println(prerequisites);
+				}
+				
+				/*JSONObject jsonObject3 = (JSONObject) jsonObject2.get("semester");
+				
+				String semesterName = (String) jsonObject3.get("semesterName");
+				System.out.println(semesterName);
+				
+				JSONArray obj5 =  (JSONArray) jsonObject3.get("openedCourses");
+				for(Object openedCourses : obj5) {
+					System.out.println("*******************");
+					JSONObject jsonObject4 = (JSONObject) openedCourses;
+					
+					String courseCode2 = (String) jsonObject4.get("courseCode");
+					System.out.println(courseCode2);
+					
+					String courseName2 = (String) jsonObject4.get("courseName");
+					System.out.println(courseName2);
+					
+					/*Long courseCredit2 = (Long) jsonObject4.get("courseCredit");
+					System.out.println(courseCredit2);
+					
+					JSONArray obj6 =  (JSONArray) jsonObject4.get("prerequisites");
+					for(Object prerequisites : obj6) {
+						System.out.println(prerequisites);
+					}
+					
+				}*/
+				 
+				System.out.println("//students\\");
+				
+				JSONObject jsonObject4 = (JSONObject) jsonObject2.get("lecturer");
+				
+				String lecturerName = (String) jsonObject4.get("lecturerName");
+				System.out.println(lecturerName);
+				
+				String lecturerSurname = (String) jsonObject4.get("lecturerSurname");
+				System.out.println(lecturerSurname);
+				
+				JSONObject jsonObject5 = (JSONObject) jsonObject4.get("schedule");
+				JSONObject jsonObject6 = (JSONObject) jsonObject5.get("courseDayHour");
+				
+				JSONArray obj7 =  (JSONArray) jsonObject6.get("Monday");
+				if(obj7 != null) {
+					System.out.println("Monday");
+					for(Object Monday : obj7) {
+						System.out.println(Monday);
+					}
+				}
+				
+				JSONArray obj8 =  (JSONArray) jsonObject6.get("Tuesday");
+				if(obj8 != null) {
+					System.out.println("Tuesday");
+					for(Object Tuesday : obj8) {
+						System.out.println(Tuesday);
+					}
+				}
+				
+				JSONArray obj9 =  (JSONArray) jsonObject6.get("Wednesday");
+				if(obj9 != null) {
+					System.out.println("Wednesday");
+					for(Object Wednesday : obj9) {
+						System.out.println(Wednesday);
+					}
+				}
+				
+				JSONArray obj10 =  (JSONArray) jsonObject6.get("Thursday");
+				if(obj10 != null) {
+					System.out.println("Thursday");
+					for(Object Thursday : obj10) {
+						System.out.println(Thursday);
+					}
+				}
+				
+				JSONArray obj11 =  (JSONArray) jsonObject6.get("Friday");
+				if(obj11 != null) {
+					System.out.println("Friday");
+					for(Object Friday : obj11) {
+						System.out.println(Friday);
+					}
+				}
+				
+			}
+			 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -102,26 +399,67 @@ public class FileManager {
 
 		ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>();
 
-		try {
-			Object obj = parser.parse(new FileReader(path));
-
-			 JSONObject jsonObject = (JSONObject) obj;
-
-			String lecturerName = (String) jsonObject.get("name");
-			String lecturerSurname = (String) jsonObject.get("surname");
-			JSONObject rawJSON = (JSONObject) jsonObject.get("schedule");
-			Schedule schedule = (Schedule) initializeSchedule(rawJSON);
-			ArrayList<Course> givenCourses = (ArrayList<Course>) jsonObject.get("givenCourses");
+		try {//https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
+			JSONArray obj = (JSONArray) parser.parse(new FileReader(path));
 			
-
-			//Advisor advisor = (Advisor) jsonObject.get("advisor");
-
-			//Semester semester = (Semester) jsonObject.get("semester");
-
-			//Schedule schedule = (Schedule) jsonObject.get("schedule");
-
-			lecturers.add(new Lecturer(lecturerName, lecturerSurname, schedule, givenCourses));
-
+			for(Object o : obj) {
+				JSONObject jsonObject4 = (JSONObject) o;
+				
+				String lecturerName = (String) jsonObject4.get("lecturerName");
+				System.out.println(lecturerName);
+				
+				String lecturerSurname = (String) jsonObject4.get("lecturerSurname");
+				System.out.println(lecturerSurname);
+				
+				JSONObject jsonObject5 = (JSONObject) jsonObject4.get("schedule");
+				JSONObject jsonObject6 = (JSONObject) jsonObject5.get("courseDayHour");
+				
+				JSONArray obj7 =  (JSONArray) jsonObject6.get("Monday");
+				if(obj7 != null) {
+					System.out.println("Monday");
+					for(Object Monday : obj7) {
+						System.out.println(Monday);
+					}
+				}
+				
+				JSONArray obj8 =  (JSONArray) jsonObject6.get("Tuesday");
+				if(obj8 != null) {
+					System.out.println("Tuesday");
+					for(Object Tuesday : obj8) {
+						System.out.println(Tuesday);
+					}
+				}
+				
+				JSONArray obj9 =  (JSONArray) jsonObject6.get("Wednesday");
+				if(obj9 != null) {
+					System.out.println("Wednesday");
+					for(Object Wednesday : obj9) {
+						System.out.println(Wednesday);
+					}
+				}
+				
+				JSONArray obj10 =  (JSONArray) jsonObject6.get("Thursday");
+				if(obj10 != null) {
+					System.out.println("Thursday");
+					for(Object Thursday : obj10) {
+						System.out.println(Thursday);
+					}
+				}
+				
+				JSONArray obj11 =  (JSONArray) jsonObject6.get("Friday");
+				if(obj11 != null) {
+					System.out.println("Friday");
+					for(Object Friday : obj11) {
+						System.out.println(Friday);
+					}
+				}
+				
+				
+				
+			}
+			
+			System.out.println("//students\\");
+			 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -137,24 +475,67 @@ public class FileManager {
 
 		ArrayList<Advisor> advisors = new ArrayList<Advisor>();
 
-		try {
-			Object obj = parser.parse(new FileReader(path));
-
-			 JSONObject jsonObject = (JSONObject) obj;
-
-			ArrayList<Student> advisedStudents = (ArrayList<Student>) jsonObject.get("advisedStudents");
-			String advisorName = (String) jsonObject.get("courseCode");
-			String advisorSurname = (String) jsonObject.get("name");
+		try {//https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
+			JSONArray obj = (JSONArray) parser.parse(new FileReader(path));
 			
-
-			//Advisor advisor = (Advisor) jsonObject.get("advisor");
-
-			//Semester semester = (Semester) jsonObject.get("semester");
-
-			//Schedule schedule = (Schedule) jsonObject.get("schedule");
-
-			advisors.add(new Advisor(advisedStudents, advisorName, advisorSurname));
-
+			for(Object o : obj) {
+				JSONObject jsonObject4 = (JSONObject) o;
+				
+				String lecturerName = (String) jsonObject4.get("lecturerName");
+				System.out.println(lecturerName);
+				
+				String lecturerSurname = (String) jsonObject4.get("lecturerSurname");
+				System.out.println(lecturerSurname);
+				
+				JSONObject jsonObject5 = (JSONObject) jsonObject4.get("schedule");
+				JSONObject jsonObject6 = (JSONObject) jsonObject5.get("courseDayHour");
+				
+				JSONArray obj7 =  (JSONArray) jsonObject6.get("Monday");
+				if(obj7 != null) {
+					System.out.println("Monday");
+					for(Object Monday : obj7) {
+						System.out.println(Monday);
+					}
+				}
+				
+				JSONArray obj8 =  (JSONArray) jsonObject6.get("Tuesday");
+				if(obj8 != null) {
+					System.out.println("Tuesday");
+					for(Object Tuesday : obj8) {
+						System.out.println(Tuesday);
+					}
+				}
+				
+				JSONArray obj9 =  (JSONArray) jsonObject6.get("Wednesday");
+				if(obj9 != null) {
+					System.out.println("Wednesday");
+					for(Object Wednesday : obj9) {
+						System.out.println(Wednesday);
+					}
+				}
+				
+				JSONArray obj10 =  (JSONArray) jsonObject6.get("Thursday");
+				if(obj10 != null) {
+					System.out.println("Thursday");
+					for(Object Thursday : obj10) {
+						System.out.println(Thursday);
+					}
+				}
+				
+				JSONArray obj11 =  (JSONArray) jsonObject6.get("Friday");
+				if(obj11 != null) {
+					System.out.println("Friday");
+					for(Object Friday : obj11) {
+						System.out.println(Friday);
+					}
+				}
+				
+				
+				
+			}
+			
+			System.out.println("//students\\");
+			 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -162,9 +543,9 @@ public class FileManager {
 		} catch (Exception exception) {
 			exception.printStackTrace();
 		}
-
 		return advisors;
 	}
+	
 	
 	public HashMap jsonToMap(String json) {
 		HashMap map = new Gson().fromJson(json, HashMap.class);
@@ -263,7 +644,7 @@ public class FileManager {
 		ArrayList<Course> takenCourses = gson.fromJson(jsonObject.get("takenCourses").toString(),courseListType);
 		ArrayList<Course> notTakenCourses = gson.fromJson(jsonObject.get("notTakenCourses").toString(),courseListType);
 
-		//return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
+		return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
 
 
 	}
