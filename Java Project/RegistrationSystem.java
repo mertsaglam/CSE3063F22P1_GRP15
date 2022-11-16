@@ -7,7 +7,7 @@ public class RegistrationSystem {
         Student student = enrollmentRequest.getStudent();
         ArrayList<Course> courses = enrollmentRequest.getCourses();
         for (Course course : courses) {
-            if (student.getTranscript().getTakenCourses().contains(course)) {
+            if (student.getTranscriptBefore().getTakenCourses().contains(course)) {
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put(course.getCourseCode(), "takenBefore");
                 enrollmentRequest.appendResult(result);

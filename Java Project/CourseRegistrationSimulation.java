@@ -105,7 +105,7 @@ public class CourseRegistrationSimulation {
 
     public Schedule combineSchedule(ArrayList<Schedule> schedules) {
         Schedule combinedSchedule = new Schedule();
-        HashMap<String, String[]> temp = new HashMap<String, String[]>();
+        HashMap<String, ArrayList<String>> temp = new HashMap<String,ArrayList<String>>();
         for (Schedule schedule : schedules) {
             temp.putAll(schedule.getCourseDayHour());
         }
