@@ -12,6 +12,7 @@ public class CourseRegistrationSimulation {
     private ArrayList<Advisor> advisors;
     private Semester semester;
     private int creditLimit;
+    private ArrayList<EnrollmentRequest> enrollmentRequests;
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsaryCourse> compulsaryCourses, ArrayList<ElectiveCourse> electiveCourses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
         this.students = students;
@@ -33,6 +34,7 @@ public class CourseRegistrationSimulation {
         createLecturer();
         createSemester();
         createEnrollementRequest();
+        checkSystemRequirements();
 
     }
 
@@ -81,17 +83,26 @@ public class CourseRegistrationSimulation {
             ArrayList<CompulsaryCourse> randomCompulsaryCourses = getRandomCompulsaryCourses(this.compulsaryCourses);
             ArrayList<ElectiveCourse> randomElectiveCourses = getRandomElectiveCourses(this.electiveCourses);
             ArrayList<Schedule> schedules = new ArrayList<>();
+            HashMap<String,Schedule> scheduleWithCourse = new HashMap<>();
             for (ElectiveCourse electiveCourse : randomElectiveCourses) {
-                schedules.add(electiveCourse.getSchedule());
+                scheduleWithCourse.put(electiveCourse.getCourseCode(),electiveCourse.getSchedule());
             }//CAN NOT HANDLE HOW TO REACH COURSE SECTION CLASS SCHEDULE POSTPONE TO LATER
-            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCompulsaryCourses, randomElectiveCourses, student, combineSchedule(schedules));
+
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCompulsaryCourses, randomElectiveCourses, student, scheduleWithCourse);
 
         }
 
     }
 
-    public void checkSystemRequirements(EnrollmentRequest enrollmentRequest) {
+    public void checkSystemRequirements() {
         RegistrationSystem registrationSystem = new RegistrationSystem();
+        for(EnrollmentRequest enrollmentRequest1 : this.enrollmentRequests){
+            registrationSystem.getTotalCredit(enrollmentRequest1);
+            registrationSystem.checkCourseIsTakenBefore(enrollmentRequest1);
+            registrationSystem.checkPrerequisites(enrollmentRequest1);
+            registrationSystem.checkTimeConflict(enrollmentRequest1);
+        }
+
     }
 
     public Schedule combineSchedule(ArrayList<Schedule> schedules) {

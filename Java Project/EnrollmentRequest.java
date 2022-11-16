@@ -1,20 +1,22 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class EnrollmentRequest {
 
     private ArrayList<CompulsaryCourse> compulsaryCourses;
     private ArrayList<ElectiveCourse> electiveCourses;
     private Student student;
-    private Schedule schedule;
+    private HashMap<String, Schedule> schedule;
     private HashMap<String, String> result;
+    private int creditLimit;
 
     public EnrollmentRequest(ArrayList<CompulsaryCourse> compulsaryCourses) {
         this.compulsaryCourses = compulsaryCourses;
     }
 
 
-    public EnrollmentRequest(ArrayList<CompulsaryCourse> compulsaryCourses, ArrayList<ElectiveCourse> electiveCourses, Student student, Schedule schedule) {
+    public EnrollmentRequest(ArrayList<CompulsaryCourse> compulsaryCourses, ArrayList<ElectiveCourse> electiveCourses, Student student, HashMap<String, Schedule> schedule) {
         this.compulsaryCourses = compulsaryCourses;
         this.electiveCourses = electiveCourses;
         this.student = student;
@@ -54,11 +56,11 @@ public class EnrollmentRequest {
         this.student = student;
     }
 
-    public Schedule getSchedule() {
+    public HashMap<String, Schedule> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(Schedule schedule) {
+    public void setSchedule(HashMap<String, Schedule> schedule) {
         this.schedule = schedule;
     }
 
@@ -66,4 +68,27 @@ public class EnrollmentRequest {
         this.result.putAll(result);
     }
 
+    public int getCreditLimit() {
+        return creditLimit;
+    }
+
+    public void setCreditLimit(int creditLimit) {
+        this.creditLimit = creditLimit;
+    }
+
+   /* public void checkDuplicate(HashMap hashMap){
+        Map<ArrayList<Schedule>, ArrayList<Object>> reverseMap = new HashMap<>();
+
+
+        for (Object schedules: hashMap.values()) {
+            if (!reverseMap.containsKey(entry.getValue())) {
+                reverseMap.put(entry.getValue(), new ArrayList<>());
+            }
+            ArrayList<Object> keys = reverseMap.get(entry.getValue());
+            keys.add(entry.getKey());
+            reverseMap.put(entry.getValue(), keys);
+        }
+
+
+    }*/
 }
