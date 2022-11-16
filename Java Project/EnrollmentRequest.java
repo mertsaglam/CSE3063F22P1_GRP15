@@ -4,23 +4,24 @@ import java.util.Map;
 
 public class EnrollmentRequest {
 
-    private ArrayList<CompulsaryCourse> compulsaryCourses;
-    private ArrayList<ElectiveCourse> electiveCourses;
+    private ArrayList<Course> courses;
     private Student student;
     private HashMap<String, Schedule> schedule;
     private HashMap<String, String> result;
     private int creditLimit;
 
-    public EnrollmentRequest(ArrayList<CompulsaryCourse> compulsaryCourses) {
-        this.compulsaryCourses = compulsaryCourses;
-    }
-
-
-    public EnrollmentRequest(ArrayList<CompulsaryCourse> compulsaryCourses, ArrayList<ElectiveCourse> electiveCourses, Student student, HashMap<String, Schedule> schedule) {
-        this.compulsaryCourses = compulsaryCourses;
-        this.electiveCourses = electiveCourses;
+    public EnrollmentRequest(ArrayList<Course> courses, Student student, HashMap<String, Schedule> schedule) {
+        this.courses = courses;
         this.student = student;
         this.schedule = schedule;
+    }
+
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(ArrayList<Course> courses) {
+        this.courses = courses;
     }
 
     public HashMap<String, String> getResult() {
@@ -29,23 +30,6 @@ public class EnrollmentRequest {
 
     public void setResult(HashMap<String, String> result) {
         this.result = result;
-    }
-
-
-    public ArrayList<CompulsaryCourse> getCompulsaryCourses() {
-        return compulsaryCourses;
-    }
-
-    public void setCompulsaryCourses(ArrayList<CompulsaryCourse> compulsaryCourses) {
-        this.compulsaryCourses = compulsaryCourses;
-    }
-
-    public ArrayList<ElectiveCourse> getElectiveCourses() {
-        return electiveCourses;
-    }
-
-    public void setElectiveCourses(ArrayList<ElectiveCourse> electiveCourses) {
-        this.electiveCourses = electiveCourses;
     }
 
     public Student getStudent() {
@@ -91,4 +75,15 @@ public class EnrollmentRequest {
 
 
     }*/
+   public HashMap<String, String> checkDuplicate(HashMap<String, Schedule> hashMap) {
+       HashMap<String, String> duplicate = new HashMap<>();
+       for (Map.Entry<String, Schedule> entry : hashMap.entrySet()) {
+           for (Map.Entry<String, Schedule> entry2 : hashMap.entrySet()) {
+               if (entry.getValue().equals(entry2.getValue()) && !entry.getKey().equals(entry2.getKey())) {
+                   duplicate.put(entry.getKey(), entry2.getKey());
+               }
+           }
+       }
+       return duplicate;
+   }
 }

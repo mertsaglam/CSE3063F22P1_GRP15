@@ -85,7 +85,7 @@ public class FileManager {
 
 			//Schedule schedule = (Schedule) jsonObject.get("schedule");
 
-			courses.add(new Course(courseCode, courseName, credit, prerequisites, lecturer, semester, courseStudents));
+			//courses.add(new Course(courseCode, courseName, credit, prerequisites, lecturer, semester, courseStudents));
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -263,7 +263,7 @@ public class FileManager {
 		ArrayList<Course> takenCourses = gson.fromJson(jsonObject.get("takenCourses").toString(),courseListType);
 		ArrayList<Course> notTakenCourses = gson.fromJson(jsonObject.get("notTakenCourses").toString(),courseListType);
 
-		return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
+		//return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
 
 
 	}

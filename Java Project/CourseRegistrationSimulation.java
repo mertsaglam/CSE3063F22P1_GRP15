@@ -6,18 +6,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class CourseRegistrationSimulation {
     private ArrayList<Student> students;
-    private ArrayList<CompulsaryCourse> compulsaryCourses;
-    private ArrayList<ElectiveCourse> electiveCourses;
+    private ArrayList<Course> courses;
     private ArrayList<Lecturer> lecturers;
     private ArrayList<Advisor> advisors;
     private Semester semester;
     private int creditLimit;
     private ArrayList<EnrollmentRequest> enrollmentRequests;
 
-    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsaryCourse> compulsaryCourses, ArrayList<ElectiveCourse> electiveCourses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
+    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<Course> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
         this.students = students;
-        this.compulsaryCourses = compulsaryCourses;
-        this.electiveCourses = electiveCourses;
+        this.courses =courses;
         this.lecturers = lecturers;
         this.advisors = advisors;
         this.semester = semester;
@@ -80,15 +78,13 @@ public class CourseRegistrationSimulation {
 
     public void createEnrollementRequest() {
         for (Student student : this.students) {
-            ArrayList<CompulsaryCourse> randomCompulsaryCourses = getRandomCompulsaryCourses(this.compulsaryCourses);
-            ArrayList<ElectiveCourse> randomElectiveCourses = getRandomElectiveCourses(this.electiveCourses);
-            ArrayList<Schedule> schedules = new ArrayList<>();
-            HashMap<String,Schedule> scheduleWithCourse = new HashMap<>();
-            for (ElectiveCourse electiveCourse : randomElectiveCourses) {
-                scheduleWithCourse.put(electiveCourse.getCourseCode(),electiveCourse.getSchedule());
+            ArrayList<Course> randomCourse = getRandomCourse(this.courses);
+            HashMap<String, Schedule> scheduleWithCourse = new HashMap<>();
+            for (Course course : randomCourse) {
+                scheduleWithCourse.put(course.getCourseCode(), course.getCourseSection().getSchedule());
             }//CAN NOT HANDLE HOW TO REACH COURSE SECTION CLASS SCHEDULE POSTPONE TO LATER
 
-            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCompulsaryCourses, randomElectiveCourses, student, scheduleWithCourse);
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCourse, student, scheduleWithCourse);
 
         }
 
@@ -96,12 +92,16 @@ public class CourseRegistrationSimulation {
 
     public void checkSystemRequirements() {
         RegistrationSystem registrationSystem = new RegistrationSystem();
-        for(EnrollmentRequest enrollmentRequest1 : this.enrollmentRequests){
+        for (EnrollmentRequest enrollmentRequest1 : this.enrollmentRequests) {
             registrationSystem.getTotalCredit(enrollmentRequest1);
             registrationSystem.checkCourseIsTakenBefore(enrollmentRequest1);
             registrationSystem.checkPrerequisites(enrollmentRequest1);
-            registrationSystem.checkTimeConflict(enrollmentRequest1);
+            //registrationSystem.checkTimeConflict(enrollmentRequest1);
         }
+
+    }
+
+    public void setTranscriptAfter(EnrollmentRequest enrollmentRequest) {
 
     }
 
@@ -115,18 +115,18 @@ public class CourseRegistrationSimulation {
         return combinedSchedule;
     }
 
-    public ArrayList<CompulsaryCourse> getRandomCompulsaryCourses(ArrayList<CompulsaryCourse> list) {
+    public ArrayList<Course> getRandomCourse(ArrayList<Course> list) {
         Random rand = new Random(); // object of Random class.
 
         //temprory list to hold selected items.
-        ArrayList<CompulsaryCourse> tempList = new ArrayList<>();
+        ArrayList<Course> tempList = new ArrayList<>();
         for (int i = 0; i < rand.nextInt(list.size()); i++) {
             int randomIndex = rand.nextInt(list.size());
             tempList.add(list.get(randomIndex));
         }
         return tempList;
     }
-
+/*
     public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {
         Random rand = new Random(); // object of Random class.
 
@@ -137,7 +137,7 @@ public class CourseRegistrationSimulation {
             tempList.add(list.get(randomIndex));
         }
         return tempList;
-    }
+    }*/
 
     public void printArraylist(ArrayList<Student> arr) {
         for (int i = 0; i < arr.size(); i++) {

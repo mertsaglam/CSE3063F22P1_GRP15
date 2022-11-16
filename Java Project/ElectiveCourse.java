@@ -5,7 +5,7 @@ public class ElectiveCourse extends Course {
     private int quota;
     private Schedule schedule;
     private String electiveType;
-
+/*
     public ElectiveCourse(String courseCode, String courseName, int credit, ArrayList<Course> prerequisites, Schedule schedule, Semester semester, Lecturer lecturer, int quota, String electiveType) {
         this.courseCode = courseCode;
         this.courseName = courseName;
@@ -16,7 +16,7 @@ public class ElectiveCourse extends Course {
         this.lecturer = lecturer;
         this.quota = quota;
         this.electiveType = electiveType;
-    }
+    }*/
 
     public int getQuota() {
         return quota;

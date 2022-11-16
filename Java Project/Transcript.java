@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class Transcript {
     // courseGrades is haspMap of course object and grades in integer
-    private HashMap<Course, Float> courseGrades;
+    private HashMap<String, Float> courseGrades;
     // Student object
     private Student student;
     // Gpa is a float
@@ -17,8 +17,9 @@ public class Transcript {
 
     // constructor for Transcript takes courseGrade,Student object, gpa,
     // takenCredit, takenCourses, notTakenCourses
-    public Transcript(HashMap<Course, Float> courseGrades, Student student, float gpa, int takenCredit,
-            ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
+
+
+    public Transcript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit, ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
         this.courseGrades = courseGrades;
         this.student = student;
         this.gpa = gpa;
@@ -39,7 +40,7 @@ public class Transcript {
 
     // set method for Transcript takes courseGrade,Student object, gpa, takenCredit,
     // takenCourses, notTakenCourses
-    public void setTranscript(HashMap<Course, Float> courseGrades, Student student, float gpa, int takenCredit,
+    public void setTranscript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit,
             ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
         this.courseGrades = courseGrades;
         this.student = student;
@@ -50,11 +51,11 @@ public class Transcript {
 
     }
 
-    public HashMap<Course, Float> getCourseGrades() {
+    public HashMap<String, Float> getCourseGrades() {
         return courseGrades;
     }
 
-    public void setCourseGrades(HashMap<Course, Float> courseGrades) {
+    public void setCourseGrades(HashMap<String, Float> courseGrades) {
         this.courseGrades = courseGrades;
     }
 
