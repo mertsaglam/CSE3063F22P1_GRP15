@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Semester {
     private String semesterName;
@@ -10,6 +11,15 @@ public class Semester {
 
     public void setSemesterName(String semesterName) {
         this.semesterName = semesterName;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Semester{" +
+                "semesterName='" + semesterName + '\'' +
+                ", openedCourse=" + openedCourse +
+                '}';
     }
 
     public ArrayList<Course> getOpenedCourse() {
@@ -28,3 +38,4 @@ public class Semester {
         this.openedCourse = openedCourse;
     }
 }
+

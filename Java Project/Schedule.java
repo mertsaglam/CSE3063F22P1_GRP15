@@ -45,4 +45,11 @@ public class Schedule {
 
         this.courseDayHour = courseDayHour;
     }
+
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "courseDayHour=" + courseDayHour +
+                '}';
+    }
 }

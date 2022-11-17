@@ -24,6 +24,18 @@ public class Student {
         this.advisor = advisor;
         this.enrolledYear = enrolledYear;
     }
+    public Student( String studentName, String studentSurname, Transcript transcriptBefore,
+                    Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
+        this.studentID = createStudentID();
+
+        this.studentName = studentName;
+        this.studentSurname = studentSurname;
+        this.transcriptBefore = transcriptBefore;
+        this.semester = semester;
+        this.schedule = schedule;
+        this.advisor = advisor;
+        this.enrolledYear = enrolledYear;
+    }
 
     public Student(String studentID, String studentName, String studentSurname, String enrolledYear) {
         this.studentID = createStudentID();
@@ -129,4 +141,5 @@ public class Student {
                 ", enrolledYear='" + enrolledYear + '\'' +
                 '}';
     }
+
 }

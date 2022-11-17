@@ -28,7 +28,6 @@ public class CourseRegistrationSimulation {
     public void starSimulation() {
         readParameters();
         createStudents();
-        createAdvisor();
         createLecturer();
         createSemester();
         createEnrollementRequest();
@@ -42,34 +41,30 @@ public class CourseRegistrationSimulation {
 
     }
 
-    public void createStudents() {
-        FileManager fileManager = new FileManager();
-        this.students = fileManager.readStudent("/Users/omerfarukbulut/Downloads/student1.json");
-        System.out.println((Arrays.toString(this.students.toArray())));
+    public void createStudents() {//done
+        FileManager1 fileManager1 = new FileManager1();
+        this.students = fileManager1.readStudent("/Users/omerfarukbulut/Downloads/student1.json");
 
     }
 
     //CREATE COMPULSARY AND CREATE ELECTIVE COURSES
     public void createSemester() {
-        FileManager fileManager = new FileManager();
-        // not finalized
+        FileManager1 fileManager1 = new FileManager1();
+        this.semester = fileManager1.readSemester("/Users/omerfarukbulut/Downloads/student1.json");
+
 
     }
 
     public void createLecturer() {
-        FileManager fileManager = new FileManager();
-        try {
-            this.lecturers = fileManager.readLecturer("/Users/omerfarukbulut/Downloads/student1.json");
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
+        FileManager1 fileManager1 = new FileManager1();
+        this.lecturers = fileManager1.readLecturers("/Users/omerfarukbulut/Downloads/student1.json");
 
     }
 
-    public void createAdvisor() {
+    /*public void createAdvisor() {  // no need for iteration 1
         FileManager fileManager = new FileManager();
         this.advisors = fileManager.readAdvisor("/Users/omerfarukbulut/Downloads/student1.json");
-    }
+    }*/
 
     public void matchStudentAdvisor() {
         for (Student student : this.students) {
@@ -97,7 +92,7 @@ public class CourseRegistrationSimulation {
             registrationSystem.getTotalCredit(enrollmentRequest1);
             registrationSystem.checkCourseIsTakenBefore(enrollmentRequest1);
             registrationSystem.checkPrerequisites(enrollmentRequest1);
-            //registrationSystem.checkTimeConflict(enrollmentRequest1);
+            checkCourseIsOpened(enrollmentRequest1);
         }
 
     }
@@ -105,7 +100,7 @@ public class CourseRegistrationSimulation {
 
     public Schedule combineSchedule(ArrayList<Schedule> schedules) {
         Schedule combinedSchedule = new Schedule();
-        HashMap<String, ArrayList<String>> temp = new HashMap<String,ArrayList<String>>();
+        HashMap<String, ArrayList<String>> temp = new HashMap<String, ArrayList<String>>();
         for (Schedule schedule : schedules) {
             temp.putAll(schedule.getCourseDayHour());
         }
@@ -177,6 +172,20 @@ public class CourseRegistrationSimulation {
             System.out.println(current);
             // Do something with the current element here
         }
+
+    }
+
+    public void checkCourseIsOpened(EnrollmentRequest enrollmentRequest) {
+        Semester semester = this.semester;
+            for(Course course: enrollmentRequest.getCourses()){
+                if(! semester.getOpenedCourse().contains(course)){
+                    HashMap<String,String> temp = new HashMap<String,String>();
+                    temp.put(course.getCourseCode(),"NotOpened");
+                    enrollmentRequest.appendResult(temp);
+                }
+
+        }
+
 
     }
 }

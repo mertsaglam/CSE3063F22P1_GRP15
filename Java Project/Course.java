@@ -6,7 +6,6 @@ public  class Course {
 	private String courseName;
 	private int credit;
 	private ArrayList<String> prerequisites; //includes courseCodes only
-	private Semester semester;
 	private Lecturer lecturer;
 	private ArrayList<Student> courseStudents;
 	private CourseSection courseSection;
@@ -21,14 +20,17 @@ public  class Course {
 		this.courseStudents = new ArrayList<Student>();
 	}
 	//Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
-	public Course(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, Semester semester, ArrayList<Student> courseStudents) {
+
+	public Course(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, ArrayList<Student> courseStudents, CourseSection courseSection) {
 		this.courseCode = courseCode;
 		this.courseName = courseName;
 		this.credit = credit;
 		this.prerequisites = prerequisites;
 		this.lecturer = lecturer;
 		this.courseStudents = courseStudents;
+		this.courseSection = courseSection;
 	}
+
 	//Getters and setters for the properties
 	//Getter for course code property
 	public String getCourseCode() {
@@ -47,9 +49,6 @@ public  class Course {
 		return prerequisites;
 	}
 	//Getter for semester property
-	public Semester getSemester() {
-		return semester;
-	}
 	//Getter for schedule property
 	public Lecturer getLecturer() {
 		return lecturer;
@@ -71,7 +70,18 @@ public  class Course {
 		this.courseSection = courseSection;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Course{" +
+				"courseCode='" + courseCode + '\'' +
+				", courseName='" + courseName + '\'' +
+				", credit=" + credit +
+				", prerequisites=" + prerequisites +
+				", lecturer=" + lecturer +
+				", courseStudents=" + courseStudents +
+				", courseSection=" + courseSection +
+				'}';
+	}
 }
 class CourseSection {
 

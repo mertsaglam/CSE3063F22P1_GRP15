@@ -32,6 +32,8 @@ public class RegistrationSystem {
 
     }
 
+
+
     public void getTotalCredit(EnrollmentRequest enrollmentRequest) {
         Student student = enrollmentRequest.getStudent();
         int totalCreditTaken = 0;
@@ -49,7 +51,6 @@ public class RegistrationSystem {
         }
     }
 
-    public void setTranscriptAfter(EnrollmentRequest enrollmentRequest) {
-        //enrollmentRequest.getC
-    }
+
+
 }

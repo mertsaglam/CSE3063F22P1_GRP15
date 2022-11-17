@@ -111,4 +111,16 @@ public class Transcript {
     public void setNotTakenCourses(ArrayList<Course> notTakenCourses) {
         this.notTakenCourses = notTakenCourses;
     }
+
+    @Override
+    public String toString() {
+        return "Transcript{" +
+                "courseGrades=" + courseGrades +
+                ", student=" + student +
+                ", gpa=" + gpa +
+                ", takenCredit=" + takenCredit +
+                ", takenCourses=" + takenCourses +
+                ", notTakenCourses=" + notTakenCourses +
+                '}';
+    }
 }

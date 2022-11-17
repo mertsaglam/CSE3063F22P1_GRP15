@@ -42,9 +42,13 @@ public class Lecturer {
     }
 
 
-
-        
-    
-
-
+    @Override
+    public String toString() {
+        return "Lecturer{" +
+                "lecturerName='" + lecturerName + '\'' +
+                ", lecturerSurname='" + lecturerSurname + '\'' +
+                ", schedule=" + schedule +
+                ", givenCourses=" + givenCourses +
+                '}';
+    }
 }
