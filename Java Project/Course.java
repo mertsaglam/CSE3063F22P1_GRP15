@@ -8,7 +8,7 @@ public  class Course {
 	private ArrayList<String> prerequisites; //includes courseCodes only
 	private Lecturer lecturer;
 	private ArrayList<Student> courseStudents;
-	private CourseSection courseSection;
+	private Schedule schedule;
 
 	//Constructor with no parameters
 	public Course() {
@@ -21,14 +21,14 @@ public  class Course {
 	}
 	//Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
 
-	public Course(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, ArrayList<Student> courseStudents, CourseSection courseSection) {
+	public Course(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, ArrayList<Student> courseStudents, Schedule schedule) {
 		this.courseCode = courseCode;
 		this.courseName = courseName;
 		this.credit = credit;
 		this.prerequisites = prerequisites;
 		this.lecturer = lecturer;
 		this.courseStudents = courseStudents;
-		this.courseSection = courseSection;
+		this.schedule = schedule;
 	}
 
 	//Getters and setters for the properties
@@ -62,12 +62,12 @@ public  class Course {
 		this.courseStudents = courseStudents;
 	}
 
-	public CourseSection getCourseSection() {
-		return courseSection;
+	public Schedule getSchedule() {
+		return this.schedule;
 	}
 
-	public void setCourseSection(CourseSection courseSection) {
-		this.courseSection = courseSection;
+	public void setSchedule(Schedule schedule) {
+		this.schedule = schedule;
 	}
 
 	@Override
@@ -79,7 +79,7 @@ public  class Course {
 				", prerequisites=" + prerequisites +
 				", lecturer=" + lecturer +
 				", courseStudents=" + courseStudents +
-				", courseSection=" + courseSection +
+				", schedule=" + schedule +
 				'}';
 	}
 }

@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class CourseRegistrationSimulation {
@@ -12,6 +9,7 @@ public class CourseRegistrationSimulation {
     private Semester semester;
     private int creditLimit;
     private ArrayList<EnrollmentRequest> enrollmentRequests;
+    private ArrayList<String> errors ;
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<Course> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
         this.students = students;
@@ -26,13 +24,16 @@ public class CourseRegistrationSimulation {
     }
 
     public void starSimulation() {
-        readParameters();
+        createSemester();
+        createCourses();
         createStudents();
         createLecturer();
-        createSemester();
-        createEnrollementRequest();
+        createEnrollmentRequest();
         checkSystemRequirements();
-        setTranscriptAfter();
+        printOutputs();
+        checkCourseIsOpened();
+        printOutputs();
+
 
     }
 
@@ -41,23 +42,29 @@ public class CourseRegistrationSimulation {
 
     }
 
+    public void createCourses() {
+        FileManager1 fileManager1 = new FileManager1();
+        this.courses = fileManager1.readCourse("/Users/omerfarukbulut/Downloads/course (1).json");
+
+    }
+
     public void createStudents() {//done
         FileManager1 fileManager1 = new FileManager1();
-        this.students = fileManager1.readStudent("/Users/omerfarukbulut/Downloads/student1.json");
+        this.students = fileManager1.readStudent("/Users/omerfarukbulut/Downloads/student_1_2 (1).json");
 
     }
 
     //CREATE COMPULSARY AND CREATE ELECTIVE COURSES
     public void createSemester() {
         FileManager1 fileManager1 = new FileManager1();
-        this.semester = fileManager1.readSemester("/Users/omerfarukbulut/Downloads/student1.json");
+        this.semester = fileManager1.readSemester("/Users/omerfarukbulut/Downloads/semester (2).json");
 
 
     }
 
     public void createLecturer() {
         FileManager1 fileManager1 = new FileManager1();
-        this.lecturers = fileManager1.readLecturers("/Users/omerfarukbulut/Downloads/student1.json");
+        this.lecturers = fileManager1.readLecturers("/Users/omerfarukbulut/Downloads/lecturer1.json");
 
     }
 
@@ -72,15 +79,17 @@ public class CourseRegistrationSimulation {
         }
     }
 
-    public void createEnrollementRequest() {
+    public void createEnrollmentRequest() {
         for (Student student : this.students) {
-            ArrayList<Course> randomCourse = getRandomCourse(this.courses);
+            ArrayList<Course> randomCourse = this.courses;
             HashMap<String, Schedule> scheduleWithCourse = new HashMap<>();
             for (Course course : randomCourse) {
-                scheduleWithCourse.put(course.getCourseCode(), course.getCourseSection().getSchedule());
+                scheduleWithCourse.put(course.getCourseCode(), course.getSchedule());
             }//CAN NOT HANDLE HOW TO REACH COURSE SECTION CLASS SCHEDULE POSTPONE TO LATER
 
-            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(randomCourse, student, scheduleWithCourse);
+            ArrayList<EnrollmentRequest> enrollmentRequests = new ArrayList<EnrollmentRequest>();
+            enrollmentRequests.add(new EnrollmentRequest(randomCourse, student, scheduleWithCourse));
+            this.enrollmentRequests = enrollmentRequests;
 
         }
 
@@ -92,7 +101,7 @@ public class CourseRegistrationSimulation {
             registrationSystem.getTotalCredit(enrollmentRequest1);
             registrationSystem.checkCourseIsTakenBefore(enrollmentRequest1);
             registrationSystem.checkPrerequisites(enrollmentRequest1);
-            checkCourseIsOpened(enrollmentRequest1);
+
         }
 
     }
@@ -109,16 +118,17 @@ public class CourseRegistrationSimulation {
     }
 
     public ArrayList<Course> getRandomCourse(ArrayList<Course> list) {
-        Random rand = new Random(); // object of Random class.
+        Random random = new Random();
+        ArrayList<Course> newList = new ArrayList<Course>();
 
-        //temprory list to hold selected items.
-        ArrayList<Course> tempList = new ArrayList<>();
-        for (int i = 0; i < rand.nextInt(list.size()); i++) {
-            int randomIndex = rand.nextInt(list.size());
-            tempList.add(list.get(randomIndex));
+        for (int i = 0; i < random.nextInt(list.size()); i++) {
+            int randomIndex = random.nextInt(list.size());
+            newList.add(list.get(randomIndex));
+
         }
-        return tempList;
+        return newList;
     }
+
 
     public void setTranscriptAfter() {
         for (EnrollmentRequest enrollmentRequest : this.enrollmentRequests) {
@@ -152,6 +162,11 @@ public class CourseRegistrationSimulation {
         }
         return null;
     }
+
+    public void printOutputs() {
+
+        System.out.println(this.errors);
+    }
 /*
     public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {
         Random rand = new Random(); // object of Random class.
@@ -175,17 +190,28 @@ public class CourseRegistrationSimulation {
 
     }
 
-    public void checkCourseIsOpened(EnrollmentRequest enrollmentRequest) {
+    public ArrayList<String> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(ArrayList<String> errors) {
+        this.errors = errors;
+    }
+
+    public void checkCourseIsOpened() {
         Semester semester = this.semester;
-            for(Course course: enrollmentRequest.getCourses()){
-                if(! semester.getOpenedCourse().contains(course)){
-                    HashMap<String,String> temp = new HashMap<String,String>();
-                    temp.put(course.getCourseCode(),"NotOpened");
-                    enrollmentRequest.appendResult(temp);
+        for(EnrollmentRequest enrollmentRequest: this.enrollmentRequests) {
+            for (Course course : enrollmentRequest.getCourses()) {
+                if (!semester.getOpenedCourse().contains(course)) {
+
+                    enrollmentRequest.setError(enrollmentRequest.getStudent().getStudentName() + course.getCourseCode() + " not opened");
+                    ArrayList<String> errorsBefore = new ArrayList<String>();
+                    errorsBefore.add(enrollmentRequest.getStudent().getStudentName() + course.getCourseCode() + " not opened");
+                    this.errors = errorsBefore;
                 }
 
+            }
         }
-
 
     }
 }

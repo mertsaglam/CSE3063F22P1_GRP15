@@ -47,10 +47,10 @@ public class Transcript {
 
     // set method for Transcript takes courseGrade,Student object, gpa, takenCredit,
     // takenCourses, notTakenCourses
-    public void setTranscript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit,
+    public void setTranscript(HashMap<String, Float> courseGrades,  float gpa, int takenCredit,
             ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
         this.courseGrades = courseGrades;
-        this.student = student;
+
         this.gpa = gpa;
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;

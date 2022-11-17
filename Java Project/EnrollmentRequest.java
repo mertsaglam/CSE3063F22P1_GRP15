@@ -9,6 +9,7 @@ public class EnrollmentRequest {
     private HashMap<String, Schedule> schedule;
     private HashMap<String, String> result;
     private int creditLimit;
+    private String error;
 
     public EnrollmentRequest(ArrayList<Course> courses, Student student, HashMap<String, Schedule> schedule) {
         this.courses = courses;
@@ -48,8 +49,10 @@ public class EnrollmentRequest {
         this.schedule = schedule;
     }
 
-    public void appendResult(HashMap<String, String> result) {
-        this.result.putAll(result);
+    public void appendResult(HashMap<String, String> result1) {
+        HashMap<String, String> temp = this.result;
+        temp.putAll(result1);
+        setResult(temp);
     }
 
     public int getCreditLimit() {
@@ -93,5 +96,26 @@ public class EnrollmentRequest {
             }
         }
         return duplicate;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+
+    @Override
+    public String toString() {
+        return "EnrollmentRequest{" +
+                "courses=" + courses +
+                ", student=" + student +
+                ", schedule=" + schedule +
+                ", result=" + result +
+                ", creditLimit=" + creditLimit +
+                ", error='" + error + '\'' +
+                '}';
     }
 }
