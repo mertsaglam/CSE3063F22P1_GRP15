@@ -1,6 +1,4 @@
-package src;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Semester {
     private String semesterName;

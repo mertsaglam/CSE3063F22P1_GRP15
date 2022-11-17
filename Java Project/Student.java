@@ -1,5 +1,3 @@
-package src;
-
 public class Student {
 
     private String studentID;
