@@ -1,15 +1,17 @@
+package Iteration_1.src;
+
 import java.util.ArrayList;
 
 public class Lecturer {
     //Name property is a string
     private String lecturerName;
-    //Lecturer surname is a string
+    //Iteration_1.src.Lecturer surname is a string
     private String lecturerSurname;
-    //Schedule is an object of the Schedule class
+    //Iteration_1.src.Schedule is an object of the Iteration_1.src.Schedule class
     private Schedule schedule;
-    //Given courses is an arraylist of Course objects
+    //Given courses is an arraylist of Iteration_1.src.Course objects
     private ArrayList<Course> givenCourses;
-    //Lecturer constructor takes in a name, surname and schedule and given courses arraylist
+    //Iteration_1.src.Lecturer constructor takes in a name, surname and schedule and given courses arraylist
     public Lecturer(String lecturerName, String lecturerSurname, Schedule schedule, ArrayList<Course> givenCourses) {
         this.lecturerName = lecturerName;
         this.lecturerSurname = lecturerSurname;
@@ -44,7 +46,7 @@ public class Lecturer {
 
     @Override
     public String toString() {
-        return "Lecturer{" +
+        return "Iteration_1.src.Lecturer{" +
                 "lecturerName='" + lecturerName + '\'' +
                 ", lecturerSurname='" + lecturerSurname + '\'' +
                 ", schedule=" + schedule +

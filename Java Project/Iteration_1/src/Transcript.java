@@ -1,10 +1,12 @@
+package Iteration_1.src;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Transcript {
     // courseGrades is haspMap of course object and grades in integer
     private HashMap<String, Float> courseGrades;
-    // Student object
+    // Iteration_1.src.Student object
     private  Student student;
     // Gpa is a float
     private float gpa;
@@ -15,7 +17,7 @@ public class Transcript {
     // not taken courses is an arraylist of course object
     private ArrayList<Course> notTakenCourses;
 
-    // constructor for Transcript takes courseGrade,Student object, gpa,
+    // constructor for Iteration_1.src.Transcript takes courseGrade,Iteration_1.src.Student object, gpa,
     // takenCredit, takenCourses, notTakenCourses
 
 
@@ -35,7 +37,7 @@ public class Transcript {
         this.notTakenCourses = notTakenCourses;
     }
 
-    // constructor for Transcript takes nothing as a parameter
+    // constructor for Iteration_1.src.Transcript takes nothing as a parameter
     public Transcript() {
         this.courseGrades = new HashMap<>();
         this.student = new Student();
@@ -45,7 +47,7 @@ public class Transcript {
         this.notTakenCourses = new ArrayList<>();
     }
 
-    // set method for Transcript takes courseGrade,Student object, gpa, takenCredit,
+    // set method for Iteration_1.src.Transcript takes courseGrade,Iteration_1.src.Student object, gpa, takenCredit,
     // takenCourses, notTakenCourses
     public void setTranscript(HashMap<String, Float> courseGrades,  float gpa, int takenCredit,
             ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
@@ -114,7 +116,7 @@ public class Transcript {
 
     @Override
     public String toString() {
-        return "Transcript{" +
+        return "Iteration_1.src.Transcript{" +
                 "courseGrades=" + courseGrades +
                 ", student=" + student +
                 ", gpa=" + gpa +

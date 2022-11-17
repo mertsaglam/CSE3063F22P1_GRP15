@@ -1,10 +1,12 @@
+package Iteration_1.src;
+
 public class ElectiveCourse extends Course {
 
     private int quota;
     private Schedule schedule;
     private String electiveType;
 /*
-    public ElectiveCourse(String courseCode, String courseName, int credit, ArrayList<Course> prerequisites, Schedule schedule, Semester semester, Lecturer lecturer, int quota, String electiveType) {
+    public Iteration_1.src.ElectiveCourse(String courseCode, String courseName, int credit, ArrayList<Iteration_1.src.Course> prerequisites, Iteration_1.src.Schedule schedule, Iteration_1.src.Semester semester, Iteration_1.src.Lecturer lecturer, int quota, String electiveType) {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.credit = credit;

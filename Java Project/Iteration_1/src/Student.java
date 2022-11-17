@@ -1,3 +1,5 @@
+package Iteration_1.src;
+
 public class Student {
 
     private String studentID;
@@ -128,7 +130,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "Iteration_1.src.Student{" +
                 "studentID='" + studentID + '\'' +
                 ", studentName='" + studentName + '\'' +
                 ", studentSurname='" + studentSurname + '\'' +

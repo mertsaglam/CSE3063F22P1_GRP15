@@ -1,4 +1,4 @@
-//import java.util.ArrayList;
+package Iteration_1.src;//import java.util.ArrayList;
 //import java.text.SimpleDateFormat;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return "Schedule{" +
+        return "Iteration_1.src.Schedule{" +
                 "courseDayHour=" + courseDayHour +
                 '}';
     }

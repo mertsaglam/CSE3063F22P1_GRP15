@@ -1,3 +1,5 @@
+package Iteration_1.src;
+
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -69,7 +71,7 @@ public class CourseRegistrationSimulation {
     }
 
     /*public void createAdvisor() {  // no need for iteration 1
-        FileManager fileManager = new FileManager();
+        Iteration_1.src.FileManager fileManager = new Iteration_1.src.FileManager();
         this.advisors = fileManager.readAdvisor("/Users/omerfarukbulut/Downloads/student1.json");
     }*/
 
@@ -169,11 +171,11 @@ public class CourseRegistrationSimulation {
         System.out.println(this.errors);
     }
 /*
-    public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {
+    public ArrayList<Iteration_1.src.ElectiveCourse> getRandomElectiveCourses(ArrayList<Iteration_1.src.ElectiveCourse> list) {
         Random rand = new Random(); // object of Random class.
 
         //temprory list to hold selected items.
-        ArrayList<ElectiveCourse> tempList = new ArrayList<>();
+        ArrayList<Iteration_1.src.ElectiveCourse> tempList = new ArrayList<>();
         for (int i = 0; i < rand.nextInt(list.size()); i++) {
             int randomIndex = rand.nextInt(list.size());
             tempList.add(list.get(randomIndex));

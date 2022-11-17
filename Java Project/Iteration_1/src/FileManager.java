@@ -1,3 +1,5 @@
+package Iteration_1.src;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -147,7 +149,7 @@ public class FileManager {
 						courseDayHour.put("Friday", hour);
 					}
 
-					//Schedule schedule = new Schedule(courseDayHour);
+					//Iteration_1.src.Schedule schedule = new Iteration_1.src.Schedule(courseDayHour);
 
 				}
 
@@ -252,20 +254,20 @@ public class FileManager {
 
 
 				}
-				//Transcript transcriptBefore = new Transcript(grade, (Float) GPA, (Integer) takenCredit, );
+				//Iteration_1.src.Transcript transcriptBefore = new Iteration_1.src.Transcript(grade, (Float) GPA, (Integer) takenCredit, );
 
 				System.out.println("//students\\");
 
-				//Advisor advisor = (Advisor) jsonObject.get("advisor");
+				//Iteration_1.src.Advisor advisor = (Iteration_1.src.Advisor) jsonObject.get("advisor");
 
-				//Semester semester = (Semester) jsonObject.get("semester");
+				//Iteration_1.src.Semester semester = (Iteration_1.src.Semester) jsonObject.get("semester");
 
-				//Schedule schedule = (Schedule) jsonObject.get("schedule");
+				//Iteration_1.src.Schedule schedule = (Iteration_1.src.Schedule) jsonObject.get("schedule");
 
 
 				System.out.println("-----------------");
 
-				//students.add(new Student(studentName, studentSurname, ))
+				//students.add(new Iteration_1.src.Student(studentName, studentSurname, ))
 			}
 
 		} catch (FileNotFoundException e) {
@@ -589,14 +591,14 @@ public class FileManager {
 
 	}
 
-	/*public Semester initializeSemester(JSONObject jsonObject){
+	/*public Iteration_1.src.Semester initializeSemester(JSONObject jsonObject){
 
 		Gson gson = new Gson();
 		String semesterName = jsonObject.get("name").toString();
-		Type courseListType = new TypeToken<ArrayList<Course>>(){}.getType();
-		ArrayList<Course> openedCourse = gson.fromJson(jsonObject.get("openedCourse").toString(),courseListType);
+		Type courseListType = new TypeToken<ArrayList<Iteration_1.src.Course>>(){}.getType();
+		ArrayList<Iteration_1.src.Course> openedCourse = gson.fromJson(jsonObject.get("openedCourse").toString(),courseListType);
 
-		return new Semester(semesterName, openedCourse);
+		return new Iteration_1.src.Semester(semesterName, openedCourse);
 
 	}*/
 

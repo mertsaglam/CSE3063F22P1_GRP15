@@ -1,3 +1,5 @@
+package Iteration_1.src;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -72,7 +74,7 @@ public class EnrollmentRequest {
     }
 
     /* public void checkDuplicate(HashMap hashMap){
-         Map<ArrayList<Schedule>, ArrayList<Object>> reverseMap = new HashMap<>();
+         Map<ArrayList<Iteration_1.src.Schedule>, ArrayList<Object>> reverseMap = new HashMap<>();
 
 
          for (Object schedules: hashMap.values()) {
@@ -109,7 +111,7 @@ public class EnrollmentRequest {
 
     @Override
     public String toString() {
-        return "EnrollmentRequest{" +
+        return "Iteration_1.src.EnrollmentRequest{" +
                 "courses=" + courses +
                 ", student=" + student +
                 ", schedule=" + schedule +

@@ -1,3 +1,5 @@
+package Iteration_1.src;
+
 import java.util.ArrayList;
 
 public  class Course {
@@ -72,7 +74,7 @@ public  class Course {
 
 	@Override
 	public String toString() {
-		return "Course{" +
+		return "Iteration_1.src.Course{" +
 				"courseCode='" + courseCode + '\'' +
 				", courseName='" + courseName + '\'' +
 				", credit=" + credit +
