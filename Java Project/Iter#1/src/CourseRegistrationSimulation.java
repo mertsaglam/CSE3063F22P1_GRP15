@@ -31,7 +31,7 @@ public class CourseRegistrationSimulation {
         createEnrollmentRequest();
         checkSystemRequirements();
         printOutputs();
-        checkCourseIsOpened();
+
         printOutputs();
 
 
@@ -101,6 +101,7 @@ public class CourseRegistrationSimulation {
             registrationSystem.getTotalCredit(enrollmentRequest1);
             registrationSystem.checkCourseIsTakenBefore(enrollmentRequest1);
             registrationSystem.checkPrerequisites(enrollmentRequest1);
+            checkCourseIsOpened();
 
         }
 
