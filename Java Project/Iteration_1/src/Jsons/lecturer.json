@@ -1,0 +1,60 @@
+[{
+	"lecturerName": "name",
+	"lecturerSurname": "surname",
+	"schedule": {
+		"courseDayHour": {
+			"Monday": [
+				1,
+				2,
+				4,
+				5
+			],
+			"Tuesday": [
+				1,
+				2,
+				4
+			],
+			"Friday": [
+				18,
+				3,
+				2
+			]
+		}
+	},
+	"coursesGiven": [
+		{
+			"courseCode": "CSE301",
+			"courseName": "CSECourse1",
+			"courseCredit": 4,
+			"prerequisites": [
+				"CSE101",
+				"CSE201"
+			],
+			"semester": {
+				"semesterName": "fall",
+				"openedCourses": [
+					{
+						"courseCode": "CSE301",
+						"courseName": "CSECourse1",
+						"courseCredit": "int(4)",
+						"prerequisites": [
+							"CSE101",
+							"CSE201"
+						]
+					},
+					{
+						"courseCode": "CSE301",
+						"courseName": "CSECourse1",
+						"courseCredit": 5,
+						"prerequisites": [
+							"CSE101",
+							"CSE201"
+						]
+					}
+				]
+			},
+			"students": []
+		}
+	]
+}
+]

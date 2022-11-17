@@ -1,0 +1,38 @@
+[{
+	"courseCode": "CSE301",
+	"courseName": "CSECourse1",
+	"courseCredit": 4,
+	"prerequisites": [
+		"CSE101",
+		"CSE201"
+	],
+
+    "students": [],
+	"lecturer": {
+		"lecturerName": "name",
+		"lecturerSurname": "surname",
+		"schedule": {
+			"courseDayHour": {
+				"Monday": [
+					1,
+					2,
+					4,
+					5
+				],
+				"Tuesday": [
+					1,
+					2,
+					4
+				],
+				"Friday": [
+					18,
+					3,
+					2
+				]
+			}
+		}
+		
+	}
+	
+}
+]

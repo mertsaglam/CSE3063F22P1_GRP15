@@ -46,27 +46,27 @@ public class CourseRegistrationSimulation {
 
     public void createCourses() {
         FileManager1 fileManager1 = new FileManager1();
-        this.courses = fileManager1.readCourse("/Users/omerfarukbulut/Downloads/course (1).json");
+        this.courses = fileManager1.readCourse("Jsons/course.json");
 
     }
 
     public void createStudents() {//done
         FileManager1 fileManager1 = new FileManager1();
-        this.students = fileManager1.readStudent("/Users/omerfarukbulut/Downloads/student_1_2 (1).json");
+        this.students = fileManager1.readStudent("Jsons/student.json");
 
     }
 
     //CREATE COMPULSARY AND CREATE ELECTIVE COURSES
     public void createSemester() {
         FileManager1 fileManager1 = new FileManager1();
-        this.semester = fileManager1.readSemester("/Users/omerfarukbulut/Downloads/semester (2).json");
+        this.semester = fileManager1.readSemester("Jsons/semester.json");
 
 
     }
 
     public void createLecturer() {
         FileManager1 fileManager1 = new FileManager1();
-        this.lecturers = fileManager1.readLecturers("/Users/omerfarukbulut/Downloads/lecturer1.json");
+        this.lecturers = fileManager1.readLecturers("Jsons/lecturer.json");
 
     }
 
