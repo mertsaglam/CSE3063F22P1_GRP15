@@ -1,4 +1,5 @@
-package Iteration_1.src;
+package Iteration_2.src;
+
 
 public class Student {
 
@@ -12,7 +13,7 @@ public class Student {
     private Advisor advisor;
     private String enrolledYear;
 
-    public Student( String studentName, String studentSurname, Transcript transcriptBefore,Transcript transcriptAfter,
+    public Student(String studentName, String studentSurname, Transcript transcriptBefore, Transcript transcriptAfter,
                    Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
         this.studentID = createStudentID();
 
@@ -25,8 +26,8 @@ public class Student {
         this.advisor = advisor;
         this.enrolledYear = enrolledYear;
     }
-    public Student( String studentName, String studentSurname, Transcript transcriptBefore,
-                    Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
+    public Student(String studentName, String studentSurname, Transcript transcriptBefore,
+                   Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
         this.studentID = createStudentID();
 
         this.studentName = studentName;
