@@ -8,8 +8,8 @@ import java.util.Random;
 public class RegistrationSystem {
     public void checkCourseIsTakenBefore(EnrollmentRequest enrollmentRequest) {
         Student student = enrollmentRequest.getStudent();
-        ArrayList<Course> courses = enrollmentRequest.getCourses();
-        for (Course course : courses) {
+        ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
+        for (CompulsoryCourse course : courses) {
             if (student.getTranscriptBefore().getTakenCourses().contains(course)) {
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put(course.getCourseCode(), "takenBefore");
@@ -21,10 +21,10 @@ public class RegistrationSystem {
     }
 
     public void checkPrerequisites(EnrollmentRequest enrollmentRequest) {
-        ArrayList<Course> compulsaryCourses = enrollmentRequest.getCourses();
+        ArrayList<CompulsoryCourse> compulsaryCourses = enrollmentRequest.getCourses();
         Student student = enrollmentRequest.getStudent();
 
-        for (Course course : compulsaryCourses) {
+        for (CompulsoryCourse course : compulsaryCourses) {
             if (course.getPrerequisites().contains(course)) {
                 HashMap<String, String> result = new HashMap<String, String>();
                 result.put(course.getCourseCode(), "notSatisfiedPreRequisite");
@@ -40,9 +40,9 @@ public class RegistrationSystem {
     public void getTotalCredit(EnrollmentRequest enrollmentRequest) {
         Student student = enrollmentRequest.getStudent();
         int totalCreditTaken = 0;
-        ArrayList<Course> courses = enrollmentRequest.getCourses();
+        ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
 
-        for (Course course : courses) {
+        for (CompulsoryCourse course : courses) {
             totalCreditTaken += course.getCredit();
         }
 

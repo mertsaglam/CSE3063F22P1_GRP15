@@ -15,7 +15,7 @@ public class Student {
 
     public Student(String studentName, String studentSurname, Transcript transcriptBefore, Transcript transcriptAfter,
                    Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
-        this.studentID = createStudentID();
+
 
         this.studentName = studentName;
         this.studentSurname = studentSurname;
@@ -28,7 +28,7 @@ public class Student {
     }
     public Student(String studentName, String studentSurname, Transcript transcriptBefore,
                    Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
-        this.studentID = createStudentID();
+
 
         this.studentName = studentName;
         this.studentSurname = studentSurname;
@@ -40,11 +40,10 @@ public class Student {
     }
 
     public Student(String studentID, String studentName, String studentSurname, String enrolledYear) {
-        this.studentID = createStudentID();
+
         this.studentName = studentName;
         this.studentSurname = studentSurname;
         this.enrolledYear = enrolledYear;
-
     }
 
     public String getStudentID() {
@@ -122,15 +121,15 @@ public class Student {
     public Student() {
     }
 
-    public String createStudentID() {
+    public void createStudentID() {
         String department = "1501";
-        return department + this.enrolledYear + Double.toString(Math.random() * 1000);
+        this.setStudentID(department + this.enrolledYear.substring(2) + String.valueOf((int)(Math.random() * 1000)));
 
     }
 
     @Override
     public String toString() {
-        return "Iteration_1.src.Student{" +
+        return "Student{" +
                 "studentID='" + studentID + '\'' +
                 ", studentName='" + studentName + '\'' +
                 ", studentSurname='" + studentSurname + '\'' +

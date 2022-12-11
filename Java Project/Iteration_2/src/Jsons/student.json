@@ -1,307 +1,110 @@
-[{
-  "studentName": "Omer Faruk",
-  "studentSurname": "Bulut",
-  "enrolledYear": "2019",
-  "transcriptAfter": {},
-  "transcriptBefore": {
-    "courseGrades": {
-      "CSE101": "85",
-      "CSE102": "76"
+[
+    {
+        "studentName": "Omer Faruk",
+        "studentSurname": "Bulut",
+        "enrolledYear": "2020",
+        "transcriptAfter": {},
+        "transcriptBefore": {
+            "courseGrades": {"CSE101": "85", "CSE102": "76"},
+            "GPA": 3.1,
+            "takenCredit": 30,
+            "takenCourses": [
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                }
+            ],
+            "notTakenCourses": [
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+            ]
+        },
+        "semester": {
+            "semesterName": "fall"
+
+        }
     },
-    "GPA": "3.1",
-    "takenCredit": 30,
-    "takenCourses": [
-      {
-        "courseCode": "CSE301",
-        "courseName": "CSECourse1",
-        "courseCredit": 4,
-        "prerequisites": [
-          "CSE101",
-          "CSE201"
-        ],
-        "schedule":{
-            "courseDayHour": {
-                "Monday": [
-                    1,
-                    2,
-                    4,
-                    5
-                ],
-                "Tuesday": [
-                    1,
-                    2,
-                    4
-                ],
-                "Friday": [
-                    18,
-                    3,
-                    2
-                ]
-            }
+    {
+        "studentName": "Omer Faruk",
+        "studentSurname": "Bulut",
+        "enrolledYear": "2020",
+        "transcriptAfter": {},
+        "transcriptBefore": {
+            "courseGrades": {"CSE101": "85", "CSE102": "76"},
+            "GPA": "3.1",
+            "takenCredit": 30,
+            "takenCourses": [
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+            ],
+            "notTakenCourses": [
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                },
+                {
+                    "courseCode": "CSE301",
+                    "courseName": "CSECourse1",
+                    "courseCredit": 4
+                }
+            ]
         },
-
-
-        "students": [],
-        "lecturer": {
-          "lecturerName": "name",
-          "lecturerSurname": "surname",
-          "schedule": {
-            "courseDayHour": {
-              "Monday": [
-                1,
-                2,
-                4,
-                5
-              ],
-              "Tuesday": [
-                1,
-                2,
-                4
-              ],
-              "Friday": [
-                18,
-                3,
-                2
-              ]
-            }
-          }
+        "semester": {
+            "semesterName": "fall"
 
         }
-
-      },
-      {
-        "courseCode": "CSE301",
-        "courseName": "CSECourse1",
-        "courseCredit": 4,
-        "prerequisites": [
-          "CSE101",
-          "CSE201"
-        ],
-        "schedule":{
-            "courseDayHour": {
-                "Monday": [
-                    1,
-                    2,
-                    4,
-                    5
-                ],
-                "Tuesday": [
-                    1,
-                    2,
-                    4
-                ],
-                "Friday": [
-                    18,
-                    3,
-                    2
-                ]
-            }
-        },
-
-        "students": [],
-        "lecturer": {
-          "lecturerName": "name",
-          "lecturerSurname": "surname",
-          "schedule": {
-            "courseDayHour": {
-              "Monday": [
-                1,
-                2,
-                4,
-                5
-              ],
-              "Tuesday": [
-                1,
-                2,
-                4
-              ],
-              "Friday": [
-                18,
-                3,
-                2
-              ]
-            }
-          }
-
-        }
-
-      }
-
-
-    ],
-    "notTakenCourses": [
-      {
-        "lecturerName": "name",
-        "lecturerSurname": "surname",
-        "schedule": {
-          "courseDayHour": {
-            "Monday": [
-              1,
-              2,
-              4,
-              5
-            ],
-            "Tuesday": [
-              1,
-              2,
-              4
-            ],
-            "Friday": [
-              18,
-              3,
-              2
-            ]
-          }
-        },
-        "coursesGiven": [
-          {
-            "courseCode": "CSE301",
-            "courseName": "CSECourse1",
-            "courseCredit": 4,
-            "prerequisites": [
-              "CSE101",
-              "CSE201"
-            ],
-
-            "students": []
-          }
-        ]
-      },
-      {
-        "lecturerName": "name",
-        "lecturerSurname": "surname",
-        "schedule": {
-          "courseDayHour": {
-            "Monday": [
-              1,
-              2,
-              4,
-              5
-            ],
-            "Tuesday": [
-              1,
-              2,
-              4
-            ],
-            "Friday": [
-              18,
-              3,
-              2
-            ]
-          }
-        },
-        "coursesGiven": [
-          {
-            "courseCode": "CSE301",
-            "courseName": "CSECourse1",
-            "courseCredit": 4,
-            "prerequisites": [
-              "CSE101",
-              "CSE201"
-            ],
-
-            "students": []
-          }
-        ]
-      }
-    ]
-  },
-  "semester": {
-    "semesterName": "fall",
-    "openedCourses": [
-      {
-        "courseCode": "CSE301",
-        "courseName": "CSECourse1",
-        "courseCredit": 4,
-        "prerequisites": [
-          "CSE101",
-          "CSE201"
-        ],
-
-        "lecturer": {
-          "lecturerName": "name",
-          "lecturerSurname": "surname",
-          "schedule": {
-            "courseDayHour": {
-              "Monday": [
-                1,
-                2,
-                4,
-                5
-              ],
-              "Tuesday": [
-                1,
-                2,
-                4
-              ],
-              "Friday": [
-                18,
-                3,
-                2
-              ]
-            }
-          },
-          "coursesGiven": [
-            {
-              "courseCode": "CSEq01",
-              "courseName": "CSECourse1",
-              "courseCredit": 6,
-              "prerequisites": [
-                "CSE101",
-                "CSE201"
-              ]
-            }
-          ]
-        },
-        "students": []
-      },
-      {
-        "courseCode": "CSE301",
-        "courseName": "CSECourse1",
-        "courseCredit": 4,
-        "prerequisites": [
-          "CSE101",
-          "CSE201"
-        ],
-
-        "lecturer": {
-          "lecturerName": "name",
-          "lecturerSurname": "surname",
-          "schedule": {
-            "courseDayHour": {
-              "Monday": [
-                1,
-                2,
-                4,
-                5
-              ],
-              "Tuesday": [
-                1,
-                2,
-                4
-              ],
-              "Friday": [
-                18,
-                3,
-                2
-              ]
-            }
-          },
-          "coursesGiven": [
-            {
-              "courseCode": "CSE301",
-              "courseName": "CSECourse1",
-              "courseCredit": 6,
-              "prerequisites": [
-                "CSE101",
-                "CSE201"
-              ]
-            }
-          ]
-        },
-        "students": []
-      }
-    ]
-  }
-}
+    }
 ]

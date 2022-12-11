@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public  class Course {
 	
-	private String courseCode;
-	private String courseName;
-	private int credit;
-	private ArrayList<String> prerequisites; //includes courseCodes only
-	private Lecturer lecturer;
+	private final String courseCode;
+	private final String courseName;
+	private final int credit;
+	private final ArrayList<String> prerequisites; //includes courseCodes only
+	private final Lecturer lecturer;
 	private ArrayList<Student> courseStudents;
 	private Schedule schedule;
 

@@ -7,24 +7,24 @@ import java.util.Map;
 
 public class EnrollmentRequest {
 
-    private ArrayList<Course> courses;
+    private ArrayList<CompulsoryCourse> courses;
     private Student student;
     private HashMap<String, Schedule> schedule;
     private HashMap<String, String> result;
     private int creditLimit;
     private String error;
 
-    public EnrollmentRequest(ArrayList<Course> courses, Student student, HashMap<String, Schedule> schedule) {
+    public EnrollmentRequest(ArrayList<CompulsoryCourse> courses, Student student, HashMap<String, Schedule> schedule) {
         this.courses = courses;
         this.student = student;
         this.schedule = schedule;
     }
 
-    public ArrayList<Course> getCourses() {
+    public ArrayList<CompulsoryCourse> getCourses() {
         return courses;
     }
 
-    public void setCourses(ArrayList<Course> courses) {
+    public void setCourses(ArrayList<CompulsoryCourse> courses) {
         this.courses = courses;
     }
 
@@ -68,7 +68,7 @@ public class EnrollmentRequest {
 
     public int getTotalCredit() {
         int credit = 0;
-        for (Course course : this.courses) {
+        for (CompulsoryCourse course : this.courses) {
             credit += course.getCredit();
         }
         return credit;

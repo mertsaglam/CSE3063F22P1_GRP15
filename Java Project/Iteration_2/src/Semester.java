@@ -19,7 +19,7 @@ public class Semester {
 
     @Override
     public String toString() {
-        return "Iteration_1.src.Semester{" +
+        return "Semester{" +
                 "semesterName='" + semesterName + '\'' +
                 ", openedCourse=" + openedCourse +
                 '}';

@@ -123,7 +123,7 @@ public class Student {
 
     public String createStudentID() {
         String department = "1501";
-        return department + this.enrolledYear + Double.toString(Math.random() * 1000);
+        return department + this.enrolledYear + Math.random() * 1000;
 
     }
 

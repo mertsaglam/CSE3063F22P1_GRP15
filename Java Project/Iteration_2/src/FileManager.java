@@ -23,7 +23,7 @@ import org.json.simple.parser.JSONParser;
 
 public class FileManager {
 
-	private JSONParser parser;
+	private final JSONParser parser;
 
 	public FileManager() {
 		parser = new JSONParser();

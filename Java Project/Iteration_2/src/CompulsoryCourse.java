@@ -4,18 +4,18 @@ package Iteration_2.src;
 
 import java.util.ArrayList;
 
-public  class Course {
+public  class CompulsoryCourse {
 	
-	private String courseCode;
-	private String courseName;
-	private int credit;
+	private final String courseCode;
+	private final String courseName;
+	private final int credit;
 	private ArrayList<String> prerequisites; //includes courseCodes only
 	private Lecturer lecturer;
+	private  CourseSection courseSection;
 	private ArrayList<Student> courseStudents;
-	private Schedule schedule;
 
 	//Constructor with no parameters
-	public Course() {
+	public CompulsoryCourse() {
 		this.courseCode = "";
 		this.courseName = "";
 		this.credit = 0;
@@ -25,14 +25,21 @@ public  class Course {
 	}
 	//Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
 
-	public Course(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, ArrayList<Student> courseStudents, Schedule schedule) {
+
+	public CompulsoryCourse(String courseCode, String courseName, int credit) {
+		this.courseCode = courseCode;
+		this.courseName = courseName;
+		this.credit = credit;
+	}
+
+	public CompulsoryCourse(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, CourseSection courseSection, ArrayList<Student> courseStudents) {
 		this.courseCode = courseCode;
 		this.courseName = courseName;
 		this.credit = credit;
 		this.prerequisites = prerequisites;
 		this.lecturer = lecturer;
+		this.courseSection = courseSection;
 		this.courseStudents = courseStudents;
-		this.schedule = schedule;
 	}
 
 	//Getters and setters for the properties
@@ -66,24 +73,16 @@ public  class Course {
 		this.courseStudents = courseStudents;
 	}
 
-	public Schedule getSchedule() {
-		return this.schedule;
-	}
-
-	public void setSchedule(Schedule schedule) {
-		this.schedule = schedule;
-	}
-
 	@Override
 	public String toString() {
-		return "Iteration_1.src.Course{" +
+		return "CompulsoryCourse{" +
 				"courseCode='" + courseCode + '\'' +
 				", courseName='" + courseName + '\'' +
 				", credit=" + credit +
 				", prerequisites=" + prerequisites +
 				", lecturer=" + lecturer +
+				", courseSection=" + courseSection +
 				", courseStudents=" + courseStudents +
-				", schedule=" + schedule +
 				'}';
 	}
 }
@@ -136,5 +135,14 @@ class CourseSection {
 		this.quota = quota;
 	}
 
+	@Override
+	public String toString() {
+		return "CourseSection{" +
+				"courseCode='" + courseCode + '\'' +
+				", sectionCount=" + sectionCount +
+				", schedule=" + schedule +
+				", quota=" + quota +
+				'}';
+	}
 }
 

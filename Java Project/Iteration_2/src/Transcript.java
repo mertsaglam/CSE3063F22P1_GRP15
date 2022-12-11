@@ -1,7 +1,6 @@
 package Iteration_2.src;
 
-import Iteration_1.src.Course;
-import Iteration_1.src.Student;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,22 +8,22 @@ import java.util.HashMap;
 public class Transcript {
     // courseGrades is haspMap of course object and grades in integer
     private HashMap<String, Float> courseGrades;
-    // Iteration_1.src.Student object
-    private Iteration_1.src.Student student;
+    // Student object
+    private Student student;
     // Gpa is a float
     private float gpa;
     // takenCredit is an integer
     private int takenCredit;
     // takenCourses is an arraylist of course object
-    private ArrayList<Iteration_1.src.Course> takenCourses;
+    private ArrayList<CompulsoryCourse> takenCourses;
     // not taken courses is an arraylist of course object
-    private ArrayList<Iteration_1.src.Course> notTakenCourses;
+    private ArrayList<CompulsoryCourse> notTakenCourses;
 
-    // constructor for Iteration_1.src.Transcript takes courseGrade,Iteration_1.src.Student object, gpa,
+    // constructor for Transcript takes courseGrade,Student object, gpa,
     // takenCredit, takenCourses, notTakenCourses
 
 
-    public Transcript(HashMap<String, Float> courseGrades, Iteration_1.src.Student student, float gpa, int takenCredit, ArrayList<Iteration_1.src.Course> takenCourses, ArrayList<Iteration_1.src.Course> notTakenCourses) {
+    public Transcript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit, ArrayList<CompulsoryCourse> takenCourses, ArrayList<CompulsoryCourse> notTakenCourses) {
         this.courseGrades = courseGrades;
         this.student = student;
         this.gpa = gpa;
@@ -32,7 +31,7 @@ public class Transcript {
         this.takenCourses = takenCourses;
         this.notTakenCourses = notTakenCourses;
     }
-    public Transcript(HashMap<String, Float> courseGrades, float gpa, int takenCredit, ArrayList<Iteration_1.src.Course> takenCourses, ArrayList<Iteration_1.src.Course> notTakenCourses) {
+    public Transcript(HashMap<String, Float> courseGrades, float gpa, int takenCredit, ArrayList<CompulsoryCourse> takenCourses, ArrayList<CompulsoryCourse> notTakenCourses) {
         this.courseGrades = courseGrades;
         this.gpa = gpa;
         this.takenCredit = takenCredit;
@@ -40,20 +39,20 @@ public class Transcript {
         this.notTakenCourses = notTakenCourses;
     }
 
-    // constructor for Iteration_1.src.Transcript takes nothing as a parameter
+    // constructor for Transcript takes nothing as a parameter
     public Transcript() {
         this.courseGrades = new HashMap<>();
-        this.student = new Iteration_1.src.Student();
+        this.student = new Student();
         this.gpa = 0;
         this.takenCredit = 0;
         this.takenCourses = new ArrayList<>();
         this.notTakenCourses = new ArrayList<>();
     }
 
-    // set method for Iteration_1.src.Transcript takes courseGrade,Iteration_1.src.Student object, gpa, takenCredit,
+    // set method for Transcript takes courseGrade,Student object, gpa, takenCredit,
     // takenCourses, notTakenCourses
     public void setTranscript(HashMap<String, Float> courseGrades, float gpa, int takenCredit,
-                              ArrayList<Iteration_1.src.Course> takenCourses, ArrayList<Iteration_1.src.Course> notTakenCourses) {
+                              ArrayList<CompulsoryCourse> takenCourses, ArrayList<CompulsoryCourse> notTakenCourses) {
         this.courseGrades = courseGrades;
 
         this.gpa = gpa;
@@ -62,10 +61,10 @@ public class Transcript {
         this.notTakenCourses = notTakenCourses;
 
     }
-    public void addTakenCourse(Iteration_1.src.Course course){
+    public void addTakenCourse(CompulsoryCourse course){
         this.takenCourses.add(course);
     }
-    public void removeCourse(Iteration_1.src.Course course){
+    public void removeCourse(CompulsoryCourse course){
         this.notTakenCourses.remove(course);
     }
 
@@ -77,7 +76,7 @@ public class Transcript {
         this.courseGrades = courseGrades;
     }
 
-    public Iteration_1.src.Student getStudent() {
+    public Student getStudent() {
         return student;
     }
 
@@ -101,25 +100,25 @@ public class Transcript {
         this.takenCredit = takenCredit;
     }
 
-    public ArrayList<Iteration_1.src.Course> getTakenCourses() {
+    public ArrayList<CompulsoryCourse> getTakenCourses() {
         return takenCourses;
     }
 
-    public void setTakenCourses(ArrayList<Iteration_1.src.Course> takenCourses) {
+    public void setTakenCourses(ArrayList<CompulsoryCourse> takenCourses) {
         this.takenCourses = takenCourses;
     }
 
-    public ArrayList<Iteration_1.src.Course> getNotTakenCourses() {
+    public ArrayList<CompulsoryCourse> getNotTakenCourses() {
         return notTakenCourses;
     }
 
-    public void setNotTakenCourses(ArrayList<Course> notTakenCourses) {
+    public void setNotTakenCourses(ArrayList<CompulsoryCourse> notTakenCourses) {
         this.notTakenCourses = notTakenCourses;
     }
 
     @Override
     public String toString() {
-        return "Iteration_1.src.Transcript{" +
+        return "Transcript{" +
                 "courseGrades=" + courseGrades +
                 ", student=" + student +
                 ", gpa=" + gpa +

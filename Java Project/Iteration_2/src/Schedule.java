@@ -48,7 +48,7 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return "Iteration_1.src.Schedule{" +
+        return "Schedule{" +
                 "courseDayHour=" + courseDayHour +
                 '}';
     }

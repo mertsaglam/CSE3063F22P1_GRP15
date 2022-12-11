@@ -9,7 +9,7 @@ public class Transcript {
     // Iteration_1.src.Student object
     private  Student student;
     // Gpa is a float
-    private float gpa;
+    private float GPA;
     // takenCredit is an integer
     private int takenCredit;
     // takenCourses is an arraylist of course object
@@ -24,14 +24,14 @@ public class Transcript {
     public Transcript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit, ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
         this.courseGrades = courseGrades;
         this.student = student;
-        this.gpa = gpa;
+        this.GPA = gpa;
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;
         this.notTakenCourses = notTakenCourses;
     }
     public Transcript(HashMap<String, Float> courseGrades,  float gpa, int takenCredit, ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
         this.courseGrades = courseGrades;
-        this.gpa = gpa;
+        this.GPA = gpa;
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;
         this.notTakenCourses = notTakenCourses;
@@ -41,7 +41,7 @@ public class Transcript {
     public Transcript() {
         this.courseGrades = new HashMap<>();
         this.student = new Student();
-        this.gpa = 0;
+        this.GPA = 0;
         this.takenCredit = 0;
         this.takenCourses = new ArrayList<>();
         this.notTakenCourses = new ArrayList<>();
@@ -53,7 +53,7 @@ public class Transcript {
             ArrayList<Course> takenCourses, ArrayList<Course> notTakenCourses) {
         this.courseGrades = courseGrades;
 
-        this.gpa = gpa;
+        this.GPA = gpa;
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;
         this.notTakenCourses = notTakenCourses;
@@ -82,12 +82,12 @@ public class Transcript {
         this.student = student;
     }
 
-    public float getGpa() {
-        return gpa;
+    public float getGPA() {
+        return GPA;
     }
 
-    public void setGpa(float gpa) {
-        this.gpa = gpa;
+    public void setGPA(float GPA) {
+        this.GPA = GPA;
     }
 
     public int getTakenCredit() {
@@ -119,7 +119,7 @@ public class Transcript {
         return "Iteration_1.src.Transcript{" +
                 "courseGrades=" + courseGrades +
                 ", student=" + student +
-                ", gpa=" + gpa +
+                ", gpa=" + GPA +
                 ", takenCredit=" + takenCredit +
                 ", takenCourses=" + takenCourses +
                 ", notTakenCourses=" + notTakenCourses +

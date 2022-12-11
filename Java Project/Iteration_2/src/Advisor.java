@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class Advisor {
     //The students that are advised by the advisor
-    private ArrayList<Student> advisedStudents;
+    private final ArrayList<Student> advisedStudents;
     //The advisor's name
-    private String advisorName;
+    private final String advisorName;
     //The advisor's surname
-    private String advisorSurname;
+    private final String advisorSurname;
 
     //Constructor for advisor takes in an arraylist of students, name and surname
     public Advisor(ArrayList<Student> advisedStudents, String advisorName, String advisorSurname) {

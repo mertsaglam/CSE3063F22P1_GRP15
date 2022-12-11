@@ -1,10 +1,6 @@
 package Iteration_2.src;
 
-import Iteration_1.src.Course;
-import Iteration_1.src.Lecturer;
-import Iteration_1.src.Semester;
-import Iteration_1.src.Student;
-import Iteration_1.src.Transcript;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -19,7 +15,7 @@ import java.util.HashMap;
 public class FileManager1 {
 
 
-    public Iteration_1.src.Semester readSemester(String path) {
+    public Semester readSemester(String path) {
         try {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Path.of(path));
@@ -30,7 +26,7 @@ public class FileManager1 {
         }
         return null;
     }
-    public ArrayList<Iteration_1.src.Student> readStudent(String path){
+    public ArrayList<Student> readStudent(String path){
         try {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Path.of(path));
@@ -41,11 +37,11 @@ public class FileManager1 {
         }
         return null;
     }
-    public ArrayList<Iteration_1.src.Course> readCourse(String path){
+    public ArrayList<CompulsoryCourse> readCourse(String path){
         try {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Path.of(path));
-            Type courseType = new TypeToken<ArrayList<Course>>(){}.getType();
+            Type courseType = new TypeToken<ArrayList<CompulsoryCourse>>(){}.getType();
             return gson.fromJson(reader, courseType);
 
         } catch (IOException e) {
@@ -53,7 +49,7 @@ public class FileManager1 {
         }
         return null;
     }
-    public ArrayList<Iteration_1.src.Lecturer> readLecturers(String path){
+    public ArrayList<Lecturer> readLecturers(String path){
         try {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Path.of(path));
@@ -65,7 +61,7 @@ public class FileManager1 {
         }
         return null;
     }
-    public Iteration_1.src.Transcript readTranscript(String path){
+    public Transcript readTranscript(String path){
         try {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Path.of(path));

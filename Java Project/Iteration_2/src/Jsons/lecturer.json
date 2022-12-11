@@ -1,60 +1,139 @@
-[{
-	"lecturerName": "name",
-	"lecturerSurname": "surname",
-	"schedule": {
-		"courseDayHour": {
-			"Monday": [
-				1,
-				2,
-				4,
-				5
-			],
-			"Tuesday": [
-				1,
-				2,
-				4
-			],
-			"Friday": [
-				18,
-				3,
-				2
-			]
-		}
-	},
-	"coursesGiven": [
-		{
-			"courseCode": "CSE301",
-			"courseName": "CSECourse1",
-			"courseCredit": 4,
-			"prerequisites": [
-				"CSE101",
-				"CSE201"
-			],
-			"semester": {
-				"semesterName": "fall",
-				"openedCourses": [
-					{
-						"courseCode": "CSE301",
-						"courseName": "CSECourse1",
-						"courseCredit": "int(4)",
-						"prerequisites": [
-							"CSE101",
-							"CSE201"
-						]
-					},
-					{
-						"courseCode": "CSE301",
-						"courseName": "CSECourse1",
-						"courseCredit": 5,
-						"prerequisites": [
-							"CSE101",
-							"CSE201"
-						]
-					}
-				]
-			},
-			"students": []
-		}
-	]
-}
+[
+    {
+        "lecturerName": "Haluk Rahmi",
+        "lecturerSurname": "Topçuoğlu",
+        "schedule": {
+            "courseDayHour": {
+                "Monday": [1, 2, 4, 5],
+                "Tuesday": [1, 2, 4],
+                "Friday": [18, 3, 2]
+            }
+        },
+        "givenCourses": [
+
+
+        ]
+    },
+    {
+        "lecturerName": "Çiğdem",
+        "lecturerSurname": "Eroğlu Erdem",
+        "schedule": {
+            "courseDayHour": {
+                "Monday": [1, 2, 4, 5],
+                "Tuesday": [1, 2, 4],
+                "Friday": [18, 3, 2]
+            }
+        },
+        "givenCourses": [
+            {
+                "courseCode": "CSE4288",
+                "courseName": "Int. to Machine Learning",
+                "courseCredit": 5,
+                "prerequisites": ["STAT2253","MATH2256"],
+                "students": []
+
+            },
+            {
+                "courseCode": "MATH2059",
+                "courseName": "Numerical Methods",
+                "courseCredit": 4,
+                "prerequisites": ["MATH1001"],
+                "students": []
+
+            }
+
+        ]
+    },
+    {
+        "lecturerName": "Ali Fuat",
+        "lecturerSurname": "Alkaya",
+        "givenCourses": [
+
+
+        ]
+    },
+    {
+        "lecturerName": "Murat Can",
+        "lecturerSurname": "Ganiz",
+        "schedule": {
+            "courseDayHour": {
+                "Monday": [1, 2, 4, 5],
+                "Tuesday": [1, 2, 4],
+                "Friday": [18, 3, 2]
+            }
+        },
+        "givenCourses": [
+            {
+                "courseCode": "CSE3063",
+                "courseName": "Object-Oriented Software Desg.",
+                "courseCredit": 5,
+                "prerequisites": ["CSE2023"],
+                "students": []
+            }
+
+
+        ]
+    },
+    {
+        "lecturerName": "Müjdat",
+        "lecturerSurname": "Soytürk",
+        "schedule": {
+            "courseDayHour": {
+                "Monday": [1, 2, 4, 5],
+                "Tuesday": [1, 2, 4],
+                "Friday": [18, 3, 2]
+            }
+        },
+        "givenCourses": [
+            {
+                "courseCode": "IE3081",
+                "courseName": "Modeling and Disc. Simulation",
+                "courseCredit": 4,
+                "prerequisites": ["STAT2253"],
+                "students": []
+            }
+
+
+        ]
+    },
+    {
+        "lecturerName": "Borahan",
+        "lecturerSurname": "Tümer",
+        "schedule": {
+            "courseDayHour": {
+                "Monday": [1, 2, 4, 5],
+                "Tuesday": [1, 2, 4],
+                "Friday": [18, 3, 2]
+            }
+        },
+        "givenCourses": [
+
+
+
+        ]
+    },
+    {
+        "lecturerName": "Mustafa",
+        "lecturerSurname": "Ağaoğlu",
+        "schedule": {
+            "courseDayHour": {
+                "Monday": [1, 2, 4, 5],
+                "Tuesday": [1, 2, 4],
+                "Friday": [18, 3, 2]
+            }
+        },
+        "givenCourses": [
+            {
+                "courseCode": "CSE2023",
+                "courseName": "Discrete Comp. Structures",
+                "courseCredit": 6,
+                "prerequisites": [],
+                "students": []
+
+            }
+
+
+        ]
+    }
+
 ]

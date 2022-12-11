@@ -1,7 +1,7 @@
 package Iteration_2.src;
 
 
-public class ElectiveCourse extends Course {
+public class ElectiveCourse extends CompulsoryCourse {
 
     private int quota;
     private Schedule schedule;
