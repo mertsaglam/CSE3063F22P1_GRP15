@@ -30,9 +30,6 @@ public class CourseRegistrationSimulation {
         createStudents();
         createLecturer();
         createEnrollmentRequest();
-        checkSystemRequirements();
-        printOutputs();
-
         printOutputs();
 
 
@@ -45,7 +42,7 @@ public class CourseRegistrationSimulation {
 
     public void createCourses() {
         FileManager1 fileManager1 = new FileManager1();
-        this.courses = fileManager1.readCourse("Jsons/course.json");
+        this.courses = fileManager1.readCourse("Jsons/compulsoryCourses.json");
 
     }
 
@@ -88,7 +85,7 @@ public class CourseRegistrationSimulation {
 
     }
 
-    public void checkSystemRequirements() {
+    /*public void checkSystemRequirements() {
         RegistrationSystem registrationSystem = new RegistrationSystem();
         for (EnrollmentRequest enrollmentRequest1 : this.enrollmentRequests) {
             registrationSystem.getTotalCredit(enrollmentRequest1);
@@ -98,7 +95,7 @@ public class CourseRegistrationSimulation {
 
         }
 
-    }
+    }*/
 
 
     public Schedule combineSchedule(ArrayList<Schedule> schedules) {
@@ -192,9 +189,9 @@ public class CourseRegistrationSimulation {
         this.errors = errors;
     }
 
-    public void checkCourseIsOpened() {
+    /*public void checkCourseIsOpened() {
         Semester semester = this.semester;
-        for(EnrollmentRequest enrollmentRequest: this.enrollmentRequests) {
+        for (EnrollmentRequest enrollmentRequest : this.enrollmentRequests) {
             for (CompulsoryCourse course : enrollmentRequest.getCourses()) {
                 if (!semester.getOpenedCourse().contains(course)) {
 
@@ -207,5 +204,5 @@ public class CourseRegistrationSimulation {
             }
         }
 
-    }
+    }*/
 }

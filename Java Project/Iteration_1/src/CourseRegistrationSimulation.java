@@ -46,7 +46,7 @@ public class CourseRegistrationSimulation {
 
     public void createCourses() {
         FileManager1 fileManager1 = new FileManager1();
-        this.courses = fileManager1.readCourse("Jsons/course.json");
+        this.courses = fileManager1.readCourse("Jsons/compulsoryCourses.json");
 
     }
 

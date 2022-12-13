@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Advisor {
     //The students that are advised by the advisor
     private  String advisorName;
+
     //The advisor's surname
     private  String advisorSurname;
 
@@ -18,6 +19,21 @@ public class Advisor {
 
     //Constructor for advisor with no parameters
     public Advisor() {
+    }
+
+    public String getAdvisorSurname() {
+        return advisorSurname;
+    }
+
+    public void setAdvisorSurname(String advisorSurname) {
+        this.advisorSurname = advisorSurname;
+    }
+    public String getAdvisorName() {
+        return advisorName;
+    }
+
+    public void setAdvisorName(String advisorName) {
+        this.advisorName = advisorName;
     }
 }
 

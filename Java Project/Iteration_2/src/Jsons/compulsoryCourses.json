@@ -166,10 +166,12 @@
       "courseCode": "CSE2225",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [15, 16],
-          "Tuesday": [15, 16],
-          "Wednesday": [15]
+        "1": {
+          "courseDayHour": {
+            "Monday": [15, 16],
+            "Tuesday": [15, 16],
+            "Wednesday": [15]
+          }
         }
       },
       "quota": 45
@@ -225,9 +227,11 @@
       "courseCode": "EE2031",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Monday": [13, 14],
+            "Wednesday": [16]
+          }
         }
       },
       "quota": 45
@@ -382,7 +386,7 @@
         "1": {
           "courseDayHour": {
             "Monday": [13, 14],
-            "Tuesday": [9, 10]
+            "Friday": [9, 10]
           }
         }
       },
@@ -427,8 +431,8 @@
     "prerequisites": [],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Müjdat",
+      "lecturerSurname": "Soytürk",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -438,12 +442,14 @@
       }
     },
     "courseSection": {
-      "courseCode": "CSE2023",
+      "courseCode": "STAT2253",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Tuesday": [15, 116],
+            "Friday": [16]
+          }
         }
       },
       "quota": 45
@@ -456,8 +462,8 @@
     "prerequisites": ["CSE2225"],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Mustafa",
+      "lecturerSurname": "Ağaoğlu",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -467,12 +473,21 @@
       }
     },
     "courseSection": {
-      "courseCode": "CSE2023",
-      "sectionCount": 1,
+      "courseCode": "CSE3055",
+      "sectionCount": 2,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Wednesday": [10, 11, 13, 14],
+            "Thursday": [11]
+          }
+        },
+        "2": {
+          "courseDayHour": {
+            "Tuesday": [15, 16],
+            "Wednesday": [10, 11],
+            "Thursday": [11]
+          }
         }
       },
       "quota": 45
@@ -485,8 +500,8 @@
     "prerequisites": ["CSE2225"],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Ali Haydar",
+      "lecturerSurname": "Özer",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -496,12 +511,28 @@
       }
     },
     "courseSection": {
-      "courseCode": "CSE2023",
+      "courseCode": "CSE3033",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Monday": [11],
+            "Thursday": [15, 16],
+            "Friday": [10, 11]
+          }
+        },
+        "2": {
+          "courseDayHour": {
+            "Monday": [11],
+            "Tuesday": [13, 14],
+            "Friday": [10, 11]
+          }
+        },
+        "3": {
+          "courseDayHour": {
+            "Monday": [11, 13, 14],
+            "Friday": [10, 11]
+          }
         }
       },
       "quota": 45
@@ -514,8 +545,8 @@
     "prerequisites": ["CSE2023"],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Murat Can",
+      "lecturerSurname": "Ganiz",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -525,12 +556,26 @@
       }
     },
     "courseSection": {
-      "courseCode": "CSE2023",
+      "courseCode": "CSE3063",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Monday": [9, 10],
+            "Tuesday": [9]
+          }
+        },
+        "2": {
+          "courseDayHour": {
+            "Tuesday": [10, 11],
+            "Wednesday": [9]
+          }
+        },
+        "3": {
+          "courseDayHour": {
+            "Tuesday": [10, 11],
+            "Wednesday": [9]
+          }
         }
       },
       "quota": 45
@@ -538,13 +583,13 @@
   },
   {
     "courseCode": "CSE3215",
-    "courseName": "Digital Logic\nDesign",
+    "courseName": "Digital Logic Design",
     "courseCredit": 6,
     "prerequisites": [],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Betul",
+      "lecturerSurname": "Boz",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -554,12 +599,28 @@
       }
     },
     "courseSection": {
-      "courseCode": "CSE2023",
-      "sectionCount": 1,
+      "courseCode": "CSE3215",
+      "sectionCount": 3,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Tuesday": [10, 11],
+            "Wednesday": [9],
+            "Thursday": [13, 14]
+          }
+        },
+        "2": {
+          "courseDayHour": {
+            "Tuesday": [10, 11],
+            "Wednesday": [9, 15, 16]
+          }
+        },
+        "3": {
+          "courseDayHour": {
+            "Tuesday": [10, 11],
+            "Wednesday": [9],
+            "Thursday": [15, 16]
+          }
         }
       },
       "quota": 45
@@ -586,9 +647,11 @@
       "courseCode": "CSE2023",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Thursday": [9, 10],
+            "Friday": [9]
+          }
         }
       },
       "quota": 45
@@ -615,9 +678,12 @@
       "courseCode": "CSE2023",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Tuesday": [10, 11],
+            "Wednesday": [10, 11],
+            "Thursday": [11]
+          }
         }
       },
       "quota": 45
@@ -641,12 +707,14 @@
       }
     },
     "courseSection": {
-      "courseCode": "CSE2023",
+      "courseCode": "CSE3264",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "Monday": [13, 14],
-          "Wednesday": [16]
+        "1": {
+          "courseDayHour": {
+            "Monday": [13, 14],
+            "Wednesday": [16]
+          }
         }
       },
       "quota": 45
@@ -659,8 +727,8 @@
     "prerequisites": ["EE2031"],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Haluk Rahmi",
+      "lecturerSurname": "Topcuoglu",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -668,6 +736,20 @@
           "Friday": [18, 3, 2]
         }
       }
+    },
+    "courseSection": {
+      "courseCode": "CSE3038",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Wednesday": [9],
+            "Thursday": [9, 10],
+            "Friday": [10, 11]
+          }
+        }
+      },
+      "quota": 45
     }
   },
   {
@@ -677,8 +759,8 @@
     "prerequisites": ["MATH2055"],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Mehmet Kadir",
+      "lecturerSurname": "Baran",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -686,6 +768,19 @@
           "Friday": [18, 3, 2]
         }
       }
+    },
+    "courseSection": {
+      "courseCode": "CSE3048",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Wednesday": [15, 16],
+            "Thursday": [13]
+          }
+        }
+      },
+      "quota": 45
     }
   },
   {
@@ -695,8 +790,8 @@
     "prerequisites": ["MATH2256"],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Canan Ağlan",
+      "lecturerSurname": "Gökler",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -704,6 +799,19 @@
           "Friday": [18, 3, 2]
         }
       }
+    },
+    "courseSection": {
+      "courseCode": "IE3235",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [9, 10],
+            "Tuesday": [9]
+          }
+        }
+      },
+      "quota": 45
     }
   },
   {
@@ -713,8 +821,8 @@
     "prerequisites": [],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Ömer",
+      "lecturerSurname": "Korçak",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -722,6 +830,19 @@
           "Friday": [18, 3, 2]
         }
       }
+    },
+    "courseSection": {
+      "courseCode": "CSE4074",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [14],
+            "Thursday": [14, 15]
+          }
+        }
+      },
+      "quota": 45
     }
   },
   {
@@ -740,6 +861,19 @@
           "Friday": [18, 3, 2]
         }
       }
+    },
+    "courseSection": {
+      "courseCode": "CSE4219",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [14],
+            "Thursday": [14, 15]
+          }
+        }
+      },
+      "quota": 45
     }
   },
   {
@@ -749,8 +883,8 @@
     "prerequisites": ["STAT2253", "MATH2256"],
     "students": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Ali Haydar",
+      "lecturerSurname": "Özer",
       "schedule": {
         "courseDayHour": {
           "Monday": [1, 2, 4, 5],
@@ -758,6 +892,19 @@
           "Friday": [18, 3, 2]
         }
       }
+    },
+    "courseSection": {
+      "courseCode": "CSE4288",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [14],
+            "Thursday": [14, 15]
+          }
+        }
+      },
+      "quota": 45
     }
   },
   {
