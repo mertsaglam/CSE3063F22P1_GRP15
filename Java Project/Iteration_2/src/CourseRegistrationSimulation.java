@@ -10,17 +10,15 @@ public class CourseRegistrationSimulation {
     private ArrayList<CompulsoryCourse> courses;
     private ArrayList<Lecturer> lecturers;
     private ArrayList<Advisor> advisors;
-    private Semester semester;
     private int creditLimit;
     private ArrayList<EnrollmentRequest> enrollmentRequests;
     private ArrayList<String> errors ;
 
-    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, Semester semester, int creditLimit) {
+    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors,  int creditLimit) {
         this.students = students;
         this.courses = courses;
         this.lecturers = lecturers;
         this.advisors = advisors;
-        this.semester = semester;
         this.creditLimit = creditLimit;
     }
 
@@ -28,7 +26,6 @@ public class CourseRegistrationSimulation {
     }
 
     public void starSimulation() {
-        createSemester();
         createCourses();
         createStudents();
         createLecturer();
@@ -55,14 +52,6 @@ public class CourseRegistrationSimulation {
     public void createStudents() {//done
         FileManager1 fileManager1 = new FileManager1();
         this.students = fileManager1.readStudent("Jsons/student.json");
-
-    }
-
-    //CREATE COMPULSARY AND CREATE ELECTIVE COURSES
-    public void createSemester() {
-        FileManager1 fileManager1 = new FileManager1();
-        this.semester = fileManager1.readSemester("Jsons/semester.json");
-
 
     }
 

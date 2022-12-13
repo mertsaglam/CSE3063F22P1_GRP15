@@ -8,32 +8,29 @@ public class Student {
     private String studentSurname;
     private Transcript transcriptBefore;
     private Transcript transcriptAfter;
-    private Semester semester;
     private Schedule schedule;
     private Advisor advisor;
     private String enrolledYear;
 
     public Student(String studentName, String studentSurname, Transcript transcriptBefore, Transcript transcriptAfter,
-                   Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
+                    Schedule schedule, Advisor advisor, String enrolledYear) {
 
 
         this.studentName = studentName;
         this.studentSurname = studentSurname;
         this.transcriptBefore = transcriptBefore;
         this.transcriptAfter = transcriptAfter;
-        this.semester = semester;
         this.schedule = schedule;
         this.advisor = advisor;
         this.enrolledYear = enrolledYear;
     }
     public Student(String studentName, String studentSurname, Transcript transcriptBefore,
-                   Semester semester, Schedule schedule, Advisor advisor, String enrolledYear) {
+                    Schedule schedule, Advisor advisor, String enrolledYear) {
 
 
         this.studentName = studentName;
         this.studentSurname = studentSurname;
         this.transcriptBefore = transcriptBefore;
-        this.semester = semester;
         this.schedule = schedule;
         this.advisor = advisor;
         this.enrolledYear = enrolledYear;
@@ -86,14 +83,6 @@ public class Student {
         this.transcriptAfter = transcriptAfter;
     }
 
-    public Semester getSemester() {
-        return this.semester;
-    }
-
-    public void setSemester(Semester semester) {
-        this.semester = semester;
-    }
-
     public Schedule getSchedule() {
         return this.schedule;
     }
@@ -135,7 +124,6 @@ public class Student {
                 ", studentSurname='" + studentSurname + '\'' +
                 ", transcriptBefore=" + transcriptBefore +
                 ", transcriptAfter=" + transcriptAfter +
-                ", semester=" + semester +
                 ", schedule=" + schedule +
                 ", advisor=" + advisor +
                 ", enrolledYear='" + enrolledYear + '\'' +

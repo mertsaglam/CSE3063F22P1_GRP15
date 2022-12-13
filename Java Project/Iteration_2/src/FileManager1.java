@@ -15,17 +15,7 @@ import java.util.HashMap;
 public class FileManager1 {
 
 
-    public Semester readSemester(String path) {
-        try {
-            Gson gson = new Gson();
-            Reader reader = Files.newBufferedReader(Path.of(path));
-            return gson.fromJson(reader, Semester.class);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
     public ArrayList<Student> readStudent(String path){
         try {
             Gson gson = new Gson();

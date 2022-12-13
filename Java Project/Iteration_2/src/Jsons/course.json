@@ -1,574 +1,768 @@
 [
-    {
-        "courseCode": "CSE1200",
-        "courseName": "Introduction to Computer Engineering",
-        "courseCredit": 4,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Fatma Corut",
-            "lecturerSurname": "Ergin",
-            "schedule": {
-                "courseDayHour": {
-                    "Wednesday": [13, 2],
-                    "Friday": [10,11]
-                }
-            }
-        },
-        "courseSection": {
-            "courseCode": "CSE1200",
-            "sectionCount": 1,
-            "schedule": {
-                "courseDayHour": {
-                    "Wednesday": [13, 2],
-                    "Friday": [10,11]
-                }
-            },
-            "quota": 45
+  {
+    "courseCode": "CSE1200",
+    "courseName": "Introduction to Computer Engineering",
+    "courseCredit": 4,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Fatma Corut",
+      "lecturerSurname": "Ergin",
+      "schedule": {
+        "courseDayHour": {
+          "Wednesday": [13, 2],
+          "Friday": [10, 11]
         }
+      }
     },
-    {
-        "courseCode": "CSE1241",
-        "courseName": "Computer Programming I",
-        "courseCredit": 6,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Sanem Arslan",
-            "lecturerSurname": "Yılmaz",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [10, 11],
-                    "Wednesday": [14]
-                }
-            }
-        },
-        "courseSection": {
-            "courseCode": "CSE1241",
-            "sectionCount": 1,
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [10, 11],
-                    "Wednesday": [14]
-                }
-            },
-            "quota": 45
+    "courseSection": {
+      "courseCode": "CSE1200",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Wednesday": [13, 2],
+            "Friday": [10, 11]
+          }
         }
-
-    },
-    {
-        "courseCode": "CSE1242",
-        "courseName": "Computer Programming II",
-        "courseCredit": 6,
-        "prerequisites": ["CSE1241"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Mustafa",
-            "lecturerSurname": "Ağaoğlu",
-            "schedule": {
-                "courseDayHour": {
-                    "Tuesday": [13, 14]
-                }
-            }
-        },
-        "courseSection": {
-            "courseCode": "CSE1242",
-            "sectionCount": 1,
-            "schedule": {
-                "courseDayHour": {
-                    "Tuesday": [13, 14]
-                }
-            },
-            "quota": 45
-        }
-    },
-    {
-        "courseCode": "MATH2256",
-        "courseName": "Linear Algebra for Comp. Eng.",
-        "courseCredit": 5,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Tuesday": [10],
-                    "Thursday": [8,9]
-                }
-            }
-        },
-        "courseSection": {
-            "courseCode": "MATH2256",
-            "sectionCount": 1,
-            "schedule": {
-                "courseDayHour": {
-                    "Tuesday": [10],
-                    "Thursday": [8,9]
-                }
-            },
-            "quota": 45
-        }
-
-    },
-    {
-        "courseCode": "MATH2059",
-        "courseName": "Numerical Methods",
-        "courseCredit": 4,
-        "prerequisites": ["MATH1001"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Ciğdem Eroğlu ",
-            "lecturerSurname": "Erdem",
-            "schedule": {
-                "courseDayHour": {
-                    "Tuesday": [10],
-                    "Thursday": [8,9]
-                }
-            }
-        },
-        "courseSection": {
-            "courseCode": "MATH2059",
-            "sectionCount": 1,
-            "schedule": {
-                "courseDayHour": {
-                    "Tuesday": [10],
-                    "Thursday": [8,9]
-                }
-            },
-            "quota": 45
-        }
-
-    },
-    {
-        "courseCode": "CSE2225",
-        "courseName": "Data Structures",
-        "courseCredit": 7,
-        "prerequisites": ["CSE1242"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Mustafa Borahan",
-            "lecturerSurname": "Tümer",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        },
-        "courseSection": {
-            "courseCode": "CSE2225",
-            "sectionCount": 1,
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [15,16],
-                    "Tuesday": [15,16],
-                    "Wednesday": [15]
-                }
-            },
-            "quota": 45
-        }
-    },
-    {
-        "courseCode": "CSE2023",
-        "courseName": "Discrete Comp. Structures",
-        "courseCredit": 6,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "EE2031",
-        "courseName": "Electric Circuits",
-        "courseCredit": 5,
-        "prerequisites": ["PHYS1102"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "ECON2004",
-        "courseName": "Engineering Economy",
-        "courseCredit": 4,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "MATH2055",
-        "courseName": "Differential Equations",
-        "courseCredit": 4,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE2246",
-        "courseName": "Analysis of Algorithms",
-        "courseCredit": 6,
-        "prerequisites": ["CSE225"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE2260",
-        "courseName": "Principles of Prog. Languages",
-        "courseCredit": 6,
-        "prerequisites": ["CSE1242"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "EE2032",
-        "courseName": "Electronics",
-        "courseCredit": 5,
-        "prerequisites": ["EE2031"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE2138",
-        "courseName": "Systems Programming",
-        "courseCredit": 7,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "STAT2253",
-        "courseName": "Prob. and Stat. for Comp. Eng.",
-        "courseCredit": 5,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3055",
-        "courseName": "Database Systems",
-        "courseCredit": 7,
-        "prerequisites": ["CSE2225"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3033",
-        "courseName": "Operating Systems",
-        "courseCredit": 7,
-        "prerequisites": ["CSE2225"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3063",
-        "courseName": "Object-Oriented Software Desg.",
-        "courseCredit": 5,
-        "prerequisites": ["CSE2023"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3215",
-        "courseName": "Digital Logic\nDesign",
-        "courseCredit": 6,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "IE3081",
-        "courseName": "Modeling and Disc. Simulation",
-        "courseCredit": 4,
-        "prerequisites": ["STAT2253"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3044",
-        "courseName": "Software Engineering",
-        "courseCredit": 7,
-        "prerequisites": ["CSE3055"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3264",
-        "courseName": "Formal Lang. & Auto. Theory",
-        "courseCredit": 5,
-        "prerequisites": ["CSE2023"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3038",
-        "courseName": "Computer Organization",
-        "courseCredit": 7,
-        "prerequisites": ["EE2031"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE3048",
-        "courseName": "Int. to Signals and Systems",
-        "courseCredit": 5,
-        "prerequisites": ["MATH2055"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "IE3235",
-        "courseName": "Operations Research",
-        "courseCredit": 4,
-        "prerequisites": ["MATH2256"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE4074",
-        "courseName": "Computer Networks",
-        "courseCredit": 5,
-        "prerequisites": [],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE4219",
-        "courseName": "Prin. of Embed. System Design",
-        "courseCredit": 5,
-        "prerequisites": ["CSE3038"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE4288",
-        "courseName": "Int. to Machine Learning",
-        "courseCredit": 5,
-        "prerequisites": ["STAT2253","MATH2256"],
-        "students": [],
-        "lecturer": {
-            "lecturerName": "Nureddin",
-            "lecturerSurname": "Turkan",
-            "schedule": {
-                "courseDayHour": {
-                    "Monday": [1, 2, 4, 5],
-                    "Tuesday": [1, 2, 4],
-                    "Friday": [18, 3, 2]
-                }
-            }
-        }
-    },
-    {
-        "courseCode": "CSE301",
-        "courseName": "CSECourse1",
-        "courseCredit": 4
+      },
+      "quota": 45
     }
+  },
+  {
+    "courseCode": "CSE1241",
+    "courseName": "Computer Programming I",
+    "courseCredit": 6,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Sanem Arslan",
+      "lecturerSurname": "Yılmaz",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [10, 11],
+          "Wednesday": [14]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE1241",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [10, 11],
+            "Wednesday": [14]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE1242",
+    "courseName": "Computer Programming II",
+    "courseCredit": 6,
+    "prerequisites": ["CSE1241"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Mustafa",
+      "lecturerSurname": "Ağaoğlu",
+      "schedule": {
+        "courseDayHour": {
+          "Tuesday": [13, 14]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE1242",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Tuesday": [13, 14]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "MATH2256",
+    "courseName": "Linear Algebra for Comp. Eng.",
+    "courseCredit": 5,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Tuesday": [10],
+          "Thursday": [8, 9]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "MATH2256",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Tuesday": [10],
+            "Thursday": [8, 9]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "MATH2059",
+    "courseName": "Numerical Methods",
+    "courseCredit": 4,
+    "prerequisites": ["MATH1001"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Ciğdem Eroğlu ",
+      "lecturerSurname": "Erdem",
+      "schedule": {
+        "courseDayHour": {
+          "Tuesday": [10],
+          "Thursday": [8, 9]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "MATH2059",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Tuesday": [10],
+          "Thursday": [8, 9]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE2225",
+    "courseName": "Data Structures",
+    "courseCredit": 7,
+    "prerequisites": ["CSE1242"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Mustafa Borahan",
+      "lecturerSurname": "Tümer",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2225",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [15, 16],
+          "Tuesday": [15, 16],
+          "Wednesday": [15]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE2023",
+    "courseName": "Discrete Comp. Structures",
+    "courseCredit": 6,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Mustafa",
+      "lecturerSurname": "Ağaoğlu",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [13, 14],
+            "Wednesday": [16]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "EE2031",
+    "courseName": "Electric Circuits",
+    "courseCredit": 5,
+    "prerequisites": ["PHYS1102"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Fulya",
+      "lecturerSurname": "Çallıalp",
+      "schedule": {
+        "courseDayHour": {
+          "Tuesday": [13, 14],
+          "Wednesday": [14]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "EE2031",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "ECON2004",
+    "courseName": "Engineering Economy",
+    "courseCredit": 4,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Ayşe Bengi Özlüarda",
+      "lecturerSurname": "Hamarat",
+      "schedule": {
+        "courseDayHour": {
+          "Thursday": [13, 14]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "ECON2004",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Thursday": [13, 14]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "MATH2055",
+    "courseName": "Differential Equations",
+    "courseCredit": 4,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Zeynep",
+      "lecturerSurname": "Yılmaz",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "MATH2055",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Wednesday": [8, 9, 10]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE2246",
+    "courseName": "Analysis of Algorithms",
+    "courseCredit": 6,
+    "prerequisites": ["CSE225"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Ömer",
+      "lecturerSurname": "Korçak",
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [1, 2, 4, 5],
+            "Tuesday": [1, 2, 4],
+            "Friday": [18, 3, 2]
+          }
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [15, 16],
+            "Thursday": [14, 15],
+            "Friday": [15]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE2260",
+    "courseName": "Principles of Prog. Languages",
+    "courseCredit": 6,
+    "prerequisites": ["CSE1242"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Fatma Corut",
+      "lecturerSurname": "Ergin",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2260",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [9, 10, 11],
+            "Wednesday": [15, 16]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "EE2032",
+    "courseName": "Electronics",
+    "courseCredit": 5,
+    "prerequisites": ["EE2031"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Oğuzhan",
+      "lecturerSurname": "Ceylan",
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [1, 2, 4, 5],
+            "Tuesday": [1, 2, 4],
+            "Friday": [18, 3, 2]
+          }
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "EE2032",
+      "sectionCount": 1,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [13, 14],
+            "Tuesday": [9, 10]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE2138",
+    "courseName": "Systems Programming",
+    "courseCredit": 7,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2138",
+      "sectionCount": 2,
+      "schedule": {
+        "1": {
+          "courseDayHour": {
+            "Monday": [13, 14],
+            "Wednesday": [16]
+          }
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "STAT2253",
+    "courseName": "Prob. and Stat. for Comp. Eng.",
+    "courseCredit": 5,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE3055",
+    "courseName": "Database Systems",
+    "courseCredit": 7,
+    "prerequisites": ["CSE2225"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE3033",
+    "courseName": "Operating Systems",
+    "courseCredit": 7,
+    "prerequisites": ["CSE2225"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE3063",
+    "courseName": "Object-Oriented Software Desg.",
+    "courseCredit": 5,
+    "prerequisites": ["CSE2023"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE3215",
+    "courseName": "Digital Logic\nDesign",
+    "courseCredit": 6,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "IE3081",
+    "courseName": "Modeling and Disc. Simulation",
+    "courseCredit": 4,
+    "prerequisites": ["STAT2253"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE3044",
+    "courseName": "Software Engineering",
+    "courseCredit": 7,
+    "prerequisites": ["CSE3055"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE3264",
+    "courseName": "Formal Lang. & Auto. Theory",
+    "courseCredit": 5,
+    "prerequisites": ["CSE2023"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    },
+    "courseSection": {
+      "courseCode": "CSE2023",
+      "sectionCount": 1,
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [13, 14],
+          "Wednesday": [16]
+        }
+      },
+      "quota": 45
+    }
+  },
+  {
+    "courseCode": "CSE3038",
+    "courseName": "Computer Organization",
+    "courseCredit": 7,
+    "prerequisites": ["EE2031"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    }
+  },
+  {
+    "courseCode": "CSE3048",
+    "courseName": "Int. to Signals and Systems",
+    "courseCredit": 5,
+    "prerequisites": ["MATH2055"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    }
+  },
+  {
+    "courseCode": "IE3235",
+    "courseName": "Operations Research",
+    "courseCredit": 4,
+    "prerequisites": ["MATH2256"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    }
+  },
+  {
+    "courseCode": "CSE4074",
+    "courseName": "Computer Networks",
+    "courseCredit": 5,
+    "prerequisites": [],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    }
+  },
+  {
+    "courseCode": "CSE4219",
+    "courseName": "Prin. of Embed. System Design",
+    "courseCredit": 5,
+    "prerequisites": ["CSE3038"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    }
+  },
+  {
+    "courseCode": "CSE4288",
+    "courseName": "Int. to Machine Learning",
+    "courseCredit": 5,
+    "prerequisites": ["STAT2253", "MATH2256"],
+    "students": [],
+    "lecturer": {
+      "lecturerName": "Nureddin",
+      "lecturerSurname": "Turkan",
+      "schedule": {
+        "courseDayHour": {
+          "Monday": [1, 2, 4, 5],
+          "Tuesday": [1, 2, 4],
+          "Friday": [18, 3, 2]
+        }
+      }
+    }
+  },
+  {
+    "courseCode": "CSE301",
+    "courseName": "CSECourse1",
+    "courseCredit": 4
+  }
 ]

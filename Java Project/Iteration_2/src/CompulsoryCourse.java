@@ -3,59 +3,33 @@ package Iteration_2.src;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public  class CompulsoryCourse {
+public  class CompulsoryCourse extends Course {
 	
-	private final String courseCode;
-	private final String courseName;
-	private final int credit;
+
 	private ArrayList<String> prerequisites; //includes courseCodes only
 	private Lecturer lecturer;
 	private  CourseSection courseSection;
 	private ArrayList<Student> courseStudents;
+	private  String givenSemester;
 
-	//Constructor with no parameters
-	public CompulsoryCourse() {
-		this.courseCode = "";
-		this.courseName = "";
-		this.credit = 0;
-		this.prerequisites = new ArrayList<String>();
-		this.lecturer = new Lecturer();
-		this.courseStudents = new ArrayList<Student>();
-	}
+
 	//Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
 
 
 	public CompulsoryCourse(String courseCode, String courseName, int credit) {
-		this.courseCode = courseCode;
-		this.courseName = courseName;
-		this.credit = credit;
 	}
 
-	public CompulsoryCourse(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, CourseSection courseSection, ArrayList<Student> courseStudents) {
-		this.courseCode = courseCode;
-		this.courseName = courseName;
-		this.credit = credit;
+	public CompulsoryCourse(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, CourseSection courseSection, ArrayList<Student> courseStudents, String givenSemester) {
 		this.prerequisites = prerequisites;
 		this.lecturer = lecturer;
 		this.courseSection = courseSection;
 		this.courseStudents = courseStudents;
+		this.givenSemester = givenSemester;
 	}
 
-	//Getters and setters for the properties
-	//Getter for course code property
-	public String getCourseCode() {
-		return courseCode;
-	}
-	//Getter for course name property
-	public String getCourseName() {
-		return courseName;
-	}
-	//Getter for credit property
-	public int getCredit() {
-		return credit;
-	}
-	//Getter for prerequisites property
+
 	public ArrayList<String> getPrerequisites() {
 		return prerequisites;
 	}
@@ -73,12 +47,17 @@ public  class CompulsoryCourse {
 		this.courseStudents = courseStudents;
 	}
 
+	public CourseSection getCourseSection() {
+		return courseSection;
+	}
+
+	public void setCourseSection(CourseSection courseSection) {
+		this.courseSection = courseSection;
+	}
+
 	@Override
 	public String toString() {
 		return "CompulsoryCourse{" +
-				"courseCode='" + courseCode + '\'' +
-				", courseName='" + courseName + '\'' +
-				", credit=" + credit +
 				", prerequisites=" + prerequisites +
 				", lecturer=" + lecturer +
 				", courseSection=" + courseSection +
@@ -90,12 +69,12 @@ class CourseSection {
 
 	private String courseCode;
 	private int sectionCount;
-	private Schedule schedule;
+	private HashMap<String,Schedule> schedule;
 	private int quota;
 
-	public CourseSection(String courseCode, int sectionID, Schedule schedule, int quota) {
+	public CourseSection(String courseCode, int sectionCount, HashMap<String, Schedule> schedule, int quota) {
 		this.courseCode = courseCode;
-		this.sectionCount = sectionID;
+		this.sectionCount = sectionCount;
 		this.schedule = schedule;
 		this.quota = quota;
 	}
@@ -119,11 +98,24 @@ class CourseSection {
 		this.sectionCount = sectionCount;
 	}
 
-	public Schedule getSchedule() {
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
+	public int getSectionCount() {
+		return sectionCount;
+	}
+
+	public HashMap<String, Schedule> getSchedule() {
 		return schedule;
 	}
 
-	public void setSchedule(Schedule schedule) {
+	public void setSchedule(HashMap<String, Schedule> schedule) {
 		this.schedule = schedule;
 	}
 

@@ -1,23 +1,24 @@
 package Iteration_2.src;
 
 
-public class ElectiveCourse extends CompulsoryCourse {
+public class ElectiveCourse extends Course {
 
     private int quota;
     private Schedule schedule;
     private String electiveType;
-/*
-    public Iteration_1.src.ElectiveCourse(String courseCode, String courseName, int credit, ArrayList<Iteration_1.src.Course> prerequisites, Iteration_1.src.Schedule schedule, Iteration_1.src.Semester semester, Iteration_1.src.Lecturer lecturer, int quota, String electiveType) {
-        this.courseCode = courseCode;
-        this.courseName = courseName;
-        this.credit = credit;
-        this.prerequisites = prerequisites;
-        this.schedule = schedule;
-        this.semester = semester;
-        this.lecturer = lecturer;
+
+    public ElectiveCourse(String courseCode, String courseName, int credit, int quota, Schedule schedule, String electiveType) {
+        super(courseCode, courseName, credit);
         this.quota = quota;
+        this.schedule = schedule;
         this.electiveType = electiveType;
-    }*/
+    }
+
+    public ElectiveCourse(int quota, Schedule schedule, String electiveType) {
+        this.quota = quota;
+        this.schedule = schedule;
+        this.electiveType = electiveType;
+    }
 
     public int getQuota() {
         return quota;
