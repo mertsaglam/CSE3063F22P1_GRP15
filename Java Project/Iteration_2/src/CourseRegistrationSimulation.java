@@ -140,7 +140,7 @@ public class CourseRegistrationSimulation {
                 transcript.removeCourse(getCoursebyCourseCode(courseCode));
             }
             int totalCredit = enrollmentRequest.getTotalCredit() + student.getTranscriptBefore().getTakenCredit();
-            Transcript transcript1 = new Transcript(courseGrades, student, random.nextFloat(4), totalCredit, transcript.getTakenCourses(), transcript.getNotTakenCourses());
+            Transcript transcript1 = new Transcript(courseGrades, /*student,*/ random.nextFloat()*4, totalCredit, transcript.getTakenCourses(), transcript.getNotTakenCourses());
             student.setTranscriptAfter(transcript1);
         }
     }
