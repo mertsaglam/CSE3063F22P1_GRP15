@@ -2,6 +2,7 @@ package Iteration_2.src;
 
 
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,7 +10,7 @@ public class Transcript {
     // courseGrades is haspMap of course object and grades in integer
     private HashMap<String, Float> courseGrades;
     // Student object
-    private Student student;
+    //private Student student;
     // Gpa is a float
     private float gpa;
     // takenCredit is an integer
@@ -23,14 +24,14 @@ public class Transcript {
     // takenCredit, takenCourses, notTakenCourses
 
 
-    public Transcript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit, ArrayList<CompulsoryCourse> takenCourses, ArrayList<CompulsoryCourse> notTakenCourses) {
+    /*public Transcript(HashMap<String, Float> courseGrades, Student student, float gpa, int takenCredit, ArrayList<CompulsoryCourse> takenCourses, ArrayList<CompulsoryCourse> notTakenCourses) {
         this.courseGrades = courseGrades;
-        this.student = student;
+        //this.student = student;
         this.gpa = gpa;
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;
         this.notTakenCourses = notTakenCourses;
-    }
+    }*/
     public Transcript(HashMap<String, Float> courseGrades, float gpa, int takenCredit, ArrayList<CompulsoryCourse> takenCourses, ArrayList<CompulsoryCourse> notTakenCourses) {
         this.courseGrades = courseGrades;
         this.gpa = gpa;
@@ -42,7 +43,7 @@ public class Transcript {
     // constructor for Transcript takes nothing as a parameter
     public Transcript() {
         this.courseGrades = new HashMap<>();
-        this.student = new Student();
+        //this.student = new Student();
         this.gpa = 0;
         this.takenCredit = 0;
         this.takenCourses = new ArrayList<>();
@@ -76,13 +77,13 @@ public class Transcript {
         this.courseGrades = courseGrades;
     }
 
-    public Student getStudent() {
+    /*public Student getStudent() {
         return student;
     }
 
     public void setStudent(Student student) {
         this.student = student;
-    }
+    }*/
 
     public float getGpa() {
         return gpa;
@@ -120,7 +121,7 @@ public class Transcript {
     public String toString() {
         return "Transcript{" +
                 "courseGrades=" + courseGrades +
-                ", student=" + student +
+                //", student=" + student +
                 ", gpa=" + gpa +
                 ", takenCredit=" + takenCredit +
                 ", takenCourses=" + takenCourses +
