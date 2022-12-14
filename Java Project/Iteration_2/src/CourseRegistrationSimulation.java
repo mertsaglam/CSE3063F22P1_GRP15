@@ -13,6 +13,8 @@ public class CourseRegistrationSimulation {
     private int creditLimit;
     private ArrayList<EnrollmentRequest> enrollmentRequests;
     private ArrayList<String> errors ;
+    private String[] names = {"Ahmet","Ali","Ayşe","Fatma","Kemal"};
+    private String[] surnames = {"Kebapçı","Çevik","Öztürk","Vural","Ertekin"};
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors,  int creditLimit) {
         this.students = students;
@@ -27,10 +29,14 @@ public class CourseRegistrationSimulation {
 
     public void starSimulation() {
         createCourses();
-        createStudents();
+        //createStudents();
         createLecturer();
+        students = createRandomStudent(5);
         createEnrollmentRequest();
+        //setTranscriptAfter();
         printOutputs();
+        
+        writeToJson();
 
 
     }
@@ -158,6 +164,44 @@ public class CourseRegistrationSimulation {
 
         System.out.println(this.errors);
     }
+    
+    public ArrayList<Student> createRandomStudent(int size) {
+    	ArrayList<Student> students1 = new ArrayList<Student>();  	
+    	for(int i = 0; i < size; i++) {
+    		students1.add(new Student(names[new Random().nextInt(names.length-1)], surnames[new Random().nextInt(surnames.length-1)], new Transcript(), new Transcript(), new Schedule(), new Advisor(), "2020"));
+    		students1.get(i).createStudentID();
+   
+    	}
+    	return students1;
+    }
+    
+    public void writeToJson() {
+    	JsonArrayBuilder builder = Json.createArrayBuilder();
+    	
+    	for(int i = 0; i < students.size(); i++) {	
+        		     builder.add(Json.createObjectBuilder()
+        		         .add("studentID", students.get(i).getStudentID())
+        		         .add("studentName", students.get(i).getStudentName())
+        		         .add("studentSurname", students.get(i).getStudentSurname())
+        		         .add("transcriptBefore", students.get(i).getTranscriptBefore().toString())
+        		         .add("transcriptAfter", students.get(i).getTranscriptAfter().toString())
+        		         .add("schedule", students.get(i).getSchedule().toString())
+        		         .add("advisor", students.get(i).getAdvisor().toString())
+        		         .add("enrolledYear", students.get(i).getEnrolledYear()))
+        		     .build();
+    	}
+    	JsonArray array = builder.build();
+    	
+    	try {
+    		JsonWriter writer = Json.createWriter(new FileOutputStream("deneme.json"));
+    		writer.writeArray(array);
+    		writer.close();
+    		
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
+    }
+    
 /*
     public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {
         Random rand = new Random(); // object of Random class.
