@@ -5,9 +5,11 @@ package Iteration_2.src;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public  class CompulsoryCourse extends Course {
-	
+public  class CompulsoryCourse {
 
+	private String courseCode;
+	private  String courseName;
+	private int credit;
 	private ArrayList<String> prerequisites; //includes courseCodes only
 	private Lecturer lecturer;
 	private  CourseSection courseSection;
@@ -18,10 +20,10 @@ public  class CompulsoryCourse extends Course {
 	//Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
 
 
-	public CompulsoryCourse(String courseCode, String courseName, int credit) {
-	}
-
 	public CompulsoryCourse(String courseCode, String courseName, int credit, ArrayList<String> prerequisites, Lecturer lecturer, CourseSection courseSection, ArrayList<Student> courseStudents, String givenSemester) {
+		this.courseCode = courseCode;
+		this.courseName = courseName;
+		this.credit = credit;
 		this.prerequisites = prerequisites;
 		this.lecturer = lecturer;
 		this.courseSection = courseSection;
@@ -29,6 +31,45 @@ public  class CompulsoryCourse extends Course {
 		this.givenSemester = givenSemester;
 	}
 
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
+	public String getCourseName() {
+		return courseName;
+	}
+
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
+	}
+
+	public int getCredit() {
+		return credit;
+	}
+
+	public void setCredit(int credit) {
+		this.credit = credit;
+	}
+
+	public void setPrerequisites(ArrayList<String> prerequisites) {
+		this.prerequisites = prerequisites;
+	}
+
+	public void setLecturer(Lecturer lecturer) {
+		this.lecturer = lecturer;
+	}
+
+	public String getGivenSemester() {
+		return givenSemester;
+	}
+
+	public void setGivenSemester(String givenSemester) {
+		this.givenSemester = givenSemester;
+	}
 
 	public ArrayList<String> getPrerequisites() {
 		return prerequisites;
@@ -58,10 +99,14 @@ public  class CompulsoryCourse extends Course {
 	@Override
 	public String toString() {
 		return "CompulsoryCourse{" +
+				"courseCode='" + courseCode + '\'' +
+				", courseName='" + courseName + '\'' +
+				", credit=" + credit +
 				", prerequisites=" + prerequisites +
 				", lecturer=" + lecturer +
 				", courseSection=" + courseSection +
 				", courseStudents=" + courseStudents +
+				", givenSemester='" + givenSemester + '\'' +
 				'}';
 	}
 }

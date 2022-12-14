@@ -1,14 +1,13 @@
 package Iteration_2.src;
 
 
-public class ElectiveCourse extends Course {
+public class ElectiveCourse {
 
     private int quota;
     private Schedule schedule;
     private String electiveType;
 
     public ElectiveCourse(String courseCode, String courseName, int credit, int quota, Schedule schedule, String electiveType) {
-        super(courseCode, courseName, credit);
         this.quota = quota;
         this.schedule = schedule;
         this.electiveType = electiveType;
