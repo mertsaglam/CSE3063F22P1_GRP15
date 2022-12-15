@@ -2,8 +2,11 @@ package Iteration_2.src;
 
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
@@ -73,5 +76,11 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
+    }
+    public void writeToFile(Student student,String filePath ) throws IOException {
+        File file = new File("course.json");
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        FileWriter fileWriter = new FileWriter(file,false);
+        fileWriter.write(gson.toJson(student));
     }
 }

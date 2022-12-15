@@ -12,5 +12,6 @@
     <orderEntry type="library" name="java-json-schema" level="project" />
     <orderEntry type="library" name="json-simple-1.1 2" level="project" />
     <orderEntry type="library" name="gson-2.8.6" level="project" />
+    <orderEntry type="library" name="javax.json:javax.json-api:1.1.4" level="project" />
   </component>
 </module>

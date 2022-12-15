@@ -2,6 +2,14 @@ package Iteration_2.src;
 
 
 
+import com.google.gson.JsonArray;
+import com.google.gson.stream.JsonWriter;
+
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -190,18 +198,18 @@ public class CourseRegistrationSimulation {
         		         .add("enrolledYear", students.get(i).getEnrolledYear()))
         		     .build();
     	}
-    	JsonArray array = builder.build();
+    	//JsonArray array = builder.build();
     	
     	try {
-    		JsonWriter writer = Json.createWriter(new FileOutputStream("deneme.json"));
-    		writer.writeArray(array);
+    		JsonWriter writer = (JsonWriter) Json.createWriter(new FileOutputStream("deneme.json"));
+    		//writer.writeArray(array);
     		writer.close();
     		
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
     }
-    
+
 /*
     public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {
         Random rand = new Random(); // object of Random class.

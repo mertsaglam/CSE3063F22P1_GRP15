@@ -14,7 +14,7 @@ public  class CompulsoryCourse {
 	private Lecturer lecturer;
 	private  CourseSection courseSection;
 	private ArrayList<Student> courseStudents;
-	private  String givenSemester;
+	private  String openedTerm;
 
 
 	//Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
@@ -28,7 +28,7 @@ public  class CompulsoryCourse {
 		this.lecturer = lecturer;
 		this.courseSection = courseSection;
 		this.courseStudents = courseStudents;
-		this.givenSemester = givenSemester;
+		this.openedTerm = givenSemester;
 	}
 
 	public String getCourseCode() {
@@ -63,12 +63,12 @@ public  class CompulsoryCourse {
 		this.lecturer = lecturer;
 	}
 
-	public String getGivenSemester() {
-		return givenSemester;
+	public String getOpenedTerm() {
+		return openedTerm;
 	}
 
-	public void setGivenSemester(String givenSemester) {
-		this.givenSemester = givenSemester;
+	public void setOpenedTerm(String openedTerm) {
+		this.openedTerm = openedTerm;
 	}
 
 	public ArrayList<String> getPrerequisites() {
@@ -106,7 +106,7 @@ public  class CompulsoryCourse {
 				", lecturer=" + lecturer +
 				", courseSection=" + courseSection +
 				", courseStudents=" + courseStudents +
-				", givenSemester='" + givenSemester + '\'' +
+				", givenSemester='" + openedTerm + '\'' +
 				'}';
 	}
 }
