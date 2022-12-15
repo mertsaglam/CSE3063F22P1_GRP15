@@ -172,6 +172,7 @@ class CourseSection {
 		this.quota = quota;
 	}
 
+
 	@Override
 	public String toString() {
 		return "CourseSection{" +
