@@ -167,9 +167,23 @@ public class CourseRegistrationSimulation {
     
     public ArrayList<Student> createRandomStudent(int size) {
     	ArrayList<Student> students1 = new ArrayList<Student>();  	
-    	for(int i = 0; i < size; i++) {
+    	for(int i = 0; i < size; i++) {   		
     		students1.add(new Student(names[new Random().nextInt(names.length-1)], surnames[new Random().nextInt(surnames.length-1)], new Transcript(), new Transcript(), new Schedule(), new Advisor(), "2020"));
     		students1.get(i).createStudentID();
+    		Transcript transcriptBefore = students1.get(i).getTranscriptBefore();
+    		transcriptBefore.setTakenCourses(getRandomCourse(courses));
+    		
+    		HashMap<String, Integer> courseGrades = new HashMap<String, Integer>();
+    		int takenCredit = 0;
+    		for (int j = 0; j < transcriptBefore.getTakenCourses().size(); j++) {
+    			takenCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
+    			transcriptBefore.setTakenCredit(takenCredit);
+    			
+    			courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(),new Random().nextInt(100));
+    		}
+    		transcriptBefore.setCourseGrades(courseGrades);
+    		transcriptBefore.setGpa(Math.round(new Random().nextFloat()*400.0)/100.0f);
+    		
    
     	}
     	return students1;
