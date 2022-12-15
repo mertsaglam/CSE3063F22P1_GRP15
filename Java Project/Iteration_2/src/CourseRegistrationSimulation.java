@@ -149,44 +149,21 @@ public class CourseRegistrationSimulation {
         return newList;
     }
 
-
-    public void setTranscriptAfter() {
-        for (EnrollmentRequest enrollmentRequest : this.enrollmentRequests) {
-            ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
-            Student student = enrollmentRequest.getStudent();
-            ArrayList<String> passedCourses = new ArrayList<String>();
-            Random random = new Random();
-            Transcript transcript = student.getTranscriptBefore();
-            for (CompulsoryCourse course : courses) {
-                if (!enrollmentRequest.getResult().containsKey(course.getCourseCode())) {
-                    passedCourses.add(course.getCourseCode());
-                }
-            }
-            HashMap<String, Float> courseGrades = new HashMap<String, Float>();
-            for (String courseCode : passedCourses) {
-                courseGrades.put(courseCode, random.nextFloat(100));
-                transcript.addTakenCourse(getCoursebyCourseCode(courseCode));
-                transcript.removeCourse(getCoursebyCourseCode(courseCode));
-            }
-            int totalCredit = enrollmentRequest.getTotalCredit() + student.getTranscriptBefore().getTakenCredit();
-            Transcript transcript1 = new Transcript(courseGrades, /*student,*/ random.nextFloat()*4, totalCredit, transcript.getTakenCourses(), transcript.getNotTakenCourses());
-            student.setTranscriptAfter(transcript1);
-        }
+    public boolean passOrFail(){
+        Random random = new Random();
+        return random.nextDouble() < this.probToPassClass;
     }
 
-    public CompulsoryCourse getCoursebyCourseCode(String courseCode) {
-        for (CompulsoryCourse course : this.courses) {
-            if (course.getCourseCode().equals(courseCode))
-                return course;
+    public void setTranscriptAfter(EnrollmentRequest enrollmentRequest) {
+        Student student = enrollmentRequest.getStudent();
+        String[] letterGrades = {"AA","AB","BB","BC","CC","DC","DD"};
+        int select = new Random().nextInt(letterGrades.length);
+        student.setTranscriptAfter(new Transcript());
 
-        }
-        return null;
     }
 
-    public void printOutputs() {
 
-        System.out.println(this.errors);
-    }
+
     
     public ArrayList<Student> createRandomStudent(int size) {
     	ArrayList<Student> students1 = new ArrayList<Student>();  	

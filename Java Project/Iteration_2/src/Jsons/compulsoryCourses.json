@@ -2,7 +2,7 @@
   {
     "courseCode": "CSE1200",
     "courseName": "Introduction to Computer Engineering",
-    "credit": 0,
+    "credit": 4,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Fatma Corut",
@@ -32,7 +32,7 @@
   {
     "courseCode": "CSE1241",
     "courseName": "Computer Programming I",
-    "credit": 0,
+    "credit": 6,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Sanem Arslan",
@@ -62,7 +62,7 @@
   {
     "courseCode": "CSE1242",
     "courseName": "Computer Programming II",
-    "credit": 0,
+    "credit": 6,
     "prerequisites": ["CSE1241"],
     "lecturer": {
       "lecturerName": "Mustafa",
@@ -90,7 +90,7 @@
   {
     "courseCode": "MATH2256",
     "courseName": "Linear Algebra for Comp. Eng.",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Nureddin",
@@ -120,7 +120,7 @@
   {
     "courseCode": "MATH2059",
     "courseName": "Numerical Methods",
-    "credit": 0,
+    "credit": 4,
     "prerequisites": ["MATH1001"],
     "lecturer": {
       "lecturerName": "Ciğdem Eroğlu ",
@@ -147,7 +147,7 @@
   {
     "courseCode": "CSE2225",
     "courseName": "Data Structures",
-    "credit": 0,
+    "credit": 7,
     "prerequisites": ["CSE1242"],
     "lecturer": {
       "lecturerName": "Mustafa Borahan",
@@ -179,7 +179,7 @@
   {
     "courseCode": "CSE2023",
     "courseName": "Discrete Comp. Structures",
-    "credit": 0,
+    "credit": 6,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Mustafa",
@@ -209,7 +209,7 @@
   {
     "courseCode": "EE2031",
     "courseName": "Electric Circuits",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": ["PHYS1102"],
     "lecturer": {
       "lecturerName": "Fulya",
@@ -239,7 +239,7 @@
   {
     "courseCode": "ECON2004",
     "courseName": "Engineering Economy",
-    "credit": 0,
+    "credit": 4,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Ayşe Bengi Özlüarda",
@@ -267,7 +267,7 @@
   {
     "courseCode": "MATH2055",
     "courseName": "Differential Equations",
-    "credit": 0,
+    "credit": 4,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Zeynep",
@@ -297,7 +297,7 @@
   {
     "courseCode": "CSE2246",
     "courseName": "Analysis of Algorithms",
-    "credit": 0,
+    "credit": 6,
     "prerequisites": ["CSE225"],
     "lecturer": {
       "lecturerName": "Ömer",
@@ -325,7 +325,7 @@
   {
     "courseCode": "CSE2260",
     "courseName": "Principles of Prog. Languages",
-    "credit": 0,
+    "credit": 6,
     "prerequisites": ["CSE1242"],
     "lecturer": {
       "lecturerName": "Fatma Corut",
@@ -356,7 +356,7 @@
   {
     "courseCode": "EE2032",
     "courseName": "Electronics",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": ["EE2031"],
     "lecturer": {
       "lecturerName": "Oğuzhan",
@@ -383,11 +383,11 @@
   {
     "courseCode": "CSE2138",
     "courseName": "Systems Programming",
-    "credit": 0,
+    "credit": 7,
     "prerequisites": [],
     "lecturer": {
-      "lecturerName": "Nureddin",
-      "lecturerSurname": "Turkan",
+      "lecturerName": "Betül",
+      "lecturerSurname": "Boz",
       "schedule": {
         "courseDayHour": {
           "Monday": ["1", "2", "4", "5"],
@@ -414,7 +414,7 @@
   {
     "courseCode": "STAT2253",
     "courseName": "Prob. and Stat. for Comp. Eng.",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Müjdat",
@@ -445,7 +445,7 @@
   {
     "courseCode": "CSE3055",
     "courseName": "Database Systems",
-    "credit": 0,
+    "credit": 7,
     "prerequisites": ["CSE2225"],
     "lecturer": {
       "lecturerName": "Mustafa",
@@ -483,7 +483,7 @@
   {
     "courseCode": "CSE3033",
     "courseName": "Operating Systems",
-    "credit": 0,
+    "credit": 7,
     "prerequisites": ["CSE2225"],
     "lecturer": {
       "lecturerName": "Ali Haydar",
@@ -528,7 +528,7 @@
   {
     "courseCode": "CSE3063",
     "courseName": "Object-Oriented Software Desg.",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": ["CSE2023"],
     "lecturer": {
       "lecturerName": "Murat Can",
@@ -571,7 +571,7 @@
   {
     "courseCode": "CSE3215",
     "courseName": "Digital Logic Design",
-    "credit": 0,
+    "credit": 6,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Betul",
@@ -616,7 +616,7 @@
   {
     "courseCode": "IE3081",
     "courseName": "Modeling and Disc. Simulation",
-    "credit": 0,
+    "credit": 4,
     "prerequisites": ["STAT2253"],
     "lecturer": {
       "lecturerName": "Nureddin",
@@ -647,7 +647,7 @@
   {
     "courseCode": "CSE3044",
     "courseName": "Software Engineering",
-    "credit": 0,
+    "credit": 7,
     "prerequisites": ["CSE3055"],
     "lecturer": {
       "lecturerName": "Nureddin",
@@ -679,7 +679,7 @@
   {
     "courseCode": "CSE3264",
     "courseName": "Formal Lang. & Auto. Theory",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": ["CSE2023"],
     "lecturer": {
       "lecturerName": "Nureddin",
@@ -710,7 +710,7 @@
   {
     "courseCode": "CSE3038",
     "courseName": "Computer Organization",
-    "credit": 0,
+    "credit": 7,
     "prerequisites": ["EE2031"],
     "lecturer": {
       "lecturerName": "Haluk Rahmi",
@@ -742,7 +742,7 @@
   {
     "courseCode": "CSE3048",
     "courseName": "Int. to Signals and Systems",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": ["MATH2055"],
     "lecturer": {
       "lecturerName": "Mehmet Kadir",
@@ -773,7 +773,7 @@
   {
     "courseCode": "IE3235",
     "courseName": "Operations Research",
-    "credit": 0,
+    "credit": 4,
     "prerequisites": ["MATH2256"],
     "lecturer": {
       "lecturerName": "Canan Ağlan",
@@ -804,7 +804,7 @@
   {
     "courseCode": "CSE4074",
     "courseName": "Computer Networks",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": [],
     "lecturer": {
       "lecturerName": "Ömer",
@@ -835,7 +835,7 @@
   {
     "courseCode": "CSE4219",
     "courseName": "Prin. of Embed. System Design",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": ["CSE3038"],
     "lecturer": {
       "lecturerName": "Nureddin",
@@ -866,7 +866,7 @@
   {
     "courseCode": "CSE4288",
     "courseName": "Int. to Machine Learning",
-    "credit": 0,
+    "credit": 5,
     "prerequisites": ["STAT2253", "MATH2256"],
     "lecturer": {
       "lecturerName": "Ali Haydar",
@@ -897,7 +897,7 @@
   {
     "courseCode": "CSE301",
     "courseName": "CSECourse1",
-    "credit": 0,
+    "credit": 4,
     "openedTerm": "spring"
   }
 ]
