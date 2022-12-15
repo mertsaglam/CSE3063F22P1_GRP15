@@ -38,7 +38,7 @@ public class CourseRegistrationSimulation {
     public CourseRegistrationSimulation() {
     }
 
-    public void starSimulation() {
+    public void starSimulation() throws IOException {
         createCourses();
         createStudents();
         //2matchStudentAdvisor();
@@ -49,6 +49,9 @@ public class CourseRegistrationSimulation {
        // printOutputs();
         
         //writeToJson();
+        
+        /*FileManager1 asd = new FileManager1();
+        asd.writeToFileWithArray(students, "src/a/Jsons/students.json");*/
 
 
     }
