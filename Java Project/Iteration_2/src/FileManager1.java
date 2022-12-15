@@ -78,9 +78,10 @@ public class FileManager1 {
         return null;
     }
     public void writeToFile(Student student,String filePath ) throws IOException {
-        File file = new File("course.json");
+        File file = new File(filePath );
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         FileWriter fileWriter = new FileWriter(file,false);
         fileWriter.write(gson.toJson(student));
     }
+
 }

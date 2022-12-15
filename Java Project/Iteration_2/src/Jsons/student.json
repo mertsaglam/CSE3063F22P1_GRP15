@@ -10,24 +10,149 @@
             "takenCredit": 30,
             "takenCourses": [
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "CSE1200",
+                    "courseName": "Introduction to Computer Engineering",
+                    "credit": 0,
+                    "prerequisites": [],
+                    "lecturer": {
+                        "lecturerName": "Fatma Corut",
+                        "lecturerSurname": "Ergin",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Friday": ["10", "11"],
+                                "Wednesday": ["13", "2"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "CSE1200",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Friday": ["10", "11"],
+                                    "Wednesday": ["13", "2"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 },
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "CSE1241",
+                    "courseName": "Computer Programming I",
+                    "credit": 0,
+                    "prerequisites": [],
+                    "lecturer": {
+                        "lecturerName": "Sanem Arslan",
+                        "lecturerSurname": "Yılmaz",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Monday": ["10", "11"],
+                                "Wednesday": ["14"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "CSE1241",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Monday": ["10", "11"],
+                                    "Wednesday": ["14"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 },
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "CSE1242",
+                    "courseName": "Computer Programming II",
+                    "credit": 0,
+                    "prerequisites": ["CSE1241"],
+                    "lecturer": {
+                        "lecturerName": "Mustafa",
+                        "lecturerSurname": "Ağaoğlu",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Tuesday": ["13", "14"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "CSE1242",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Tuesday": ["13", "14"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 },
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "MATH2256",
+                    "courseName": "Linear Algebra for Comp. Eng.",
+                    "credit": 0,
+                    "prerequisites": [],
+                    "lecturer": {
+                        "lecturerName": "Nureddin",
+                        "lecturerSurname": "Turkan",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Thursday": ["8", "9"],
+                                "Tuesday": ["10"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "MATH2256",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Thursday": ["8", "9"],
+                                    "Tuesday": ["10"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
+                },
+                {
+                    "courseCode": "MATH2059",
+                    "courseName": "Numerical Methods",
+                    "credit": 0,
+                    "prerequisites": ["MATH1001"],
+                    "lecturer": {
+                        "lecturerName": "Ciğdem Eroğlu ",
+                        "lecturerSurname": "Erdem",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Thursday": ["8", "9"],
+                                "Tuesday": ["10"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "MATH2059",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "courseDayHour": {
+                                "courseDayHour": {}
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 }
             ],
             "notTakenCourses": [
@@ -45,7 +170,7 @@
                     "courseCode": "CSE301",
                     "courseName": "CSECourse1",
                     "courseCredit": 4
-                },
+                }
             ]
         },
         "semester": {
@@ -64,25 +189,150 @@
             "takenCredit": 30,
             "takenCourses": [
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "CSE1200",
+                    "courseName": "Introduction to Computer Engineering",
+                    "credit": 0,
+                    "prerequisites": [],
+                    "lecturer": {
+                        "lecturerName": "Fatma Corut",
+                        "lecturerSurname": "Ergin",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Friday": ["10", "11"],
+                                "Wednesday": ["13", "2"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "CSE1200",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Friday": ["10", "11"],
+                                    "Wednesday": ["13", "2"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 },
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "CSE1241",
+                    "courseName": "Computer Programming I",
+                    "credit": 0,
+                    "prerequisites": [],
+                    "lecturer": {
+                        "lecturerName": "Sanem Arslan",
+                        "lecturerSurname": "Yılmaz",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Monday": ["10", "11"],
+                                "Wednesday": ["14"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "CSE1241",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Monday": ["10", "11"],
+                                    "Wednesday": ["14"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 },
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "CSE1242",
+                    "courseName": "Computer Programming II",
+                    "credit": 0,
+                    "prerequisites": ["CSE1241"],
+                    "lecturer": {
+                        "lecturerName": "Mustafa",
+                        "lecturerSurname": "Ağaoğlu",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Tuesday": ["13", "14"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "CSE1242",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Tuesday": ["13", "14"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 },
                 {
-                    "courseCode": "CSE301",
-                    "courseName": "CSECourse1",
-                    "courseCredit": 4
+                    "courseCode": "MATH2256",
+                    "courseName": "Linear Algebra for Comp. Eng.",
+                    "credit": 0,
+                    "prerequisites": [],
+                    "lecturer": {
+                        "lecturerName": "Nureddin",
+                        "lecturerSurname": "Turkan",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Thursday": ["8", "9"],
+                                "Tuesday": ["10"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "MATH2256",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "1": {
+                                "courseDayHour": {
+                                    "Thursday": ["8", "9"],
+                                    "Tuesday": ["10"]
+                                }
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
                 },
+                {
+                    "courseCode": "MATH2059",
+                    "courseName": "Numerical Methods",
+                    "credit": 0,
+                    "prerequisites": ["MATH1001"],
+                    "lecturer": {
+                        "lecturerName": "Ciğdem Eroğlu ",
+                        "lecturerSurname": "Erdem",
+                        "schedule": {
+                            "courseDayHour": {
+                                "Thursday": ["8", "9"],
+                                "Tuesday": ["10"]
+                            }
+                        }
+                    },
+                    "courseSection": {
+                        "courseCode": "MATH2059",
+                        "sectionCount": 1,
+                        "schedule": {
+                            "courseDayHour": {
+                                "courseDayHour": {}
+                            }
+                        },
+                        "quota": 45
+                    },
+                    "openedTerm": "fall"
+                }
             ],
             "notTakenCourses": [
                 {

@@ -2,6 +2,7 @@ package Iteration_2.src;
 
 
 
+import Iteration_1.src.Course;
 import com.google.gson.JsonArray;
 import com.google.gson.stream.JsonWriter;
 
@@ -21,6 +22,8 @@ public class CourseRegistrationSimulation {
     private int creditLimit;
     private ArrayList<EnrollmentRequest> enrollmentRequests;
     private ArrayList<String> errors ;
+    private double probToPassClass;
+    private double probTo;
     private String[] names = {"Ahmet","Ali","Ayşe","Fatma","Kemal"};
     private String[] surnames = {"Kebapçı","Çevik","Öztürk","Vural","Ertekin"};
 
@@ -37,14 +40,15 @@ public class CourseRegistrationSimulation {
 
     public void starSimulation() {
         createCourses();
-        //createStudents();
-        createLecturer();
-        students = createRandomStudent(5);
-        createEnrollmentRequest();
+        createStudents();
+        //2matchStudentAdvisor();
+        //createLecturer();
+        //students = createRandomStudent(5);
+        sequence();
         //setTranscriptAfter();
-        printOutputs();
+       // printOutputs();
         
-        writeToJson();
+        //writeToJson();
 
 
     }
@@ -56,13 +60,17 @@ public class CourseRegistrationSimulation {
 
     public void createCourses() {
         FileManager1 fileManager1 = new FileManager1();
-        this.courses = fileManager1.readCourse("Jsons/compulsoryCourses.json");
+        this.courses = fileManager1.readCourse("Java Project/Iteration_2/src/Jsons/compulsoryCourses.json");
 
     }
 
     public void createStudents() {//done
         FileManager1 fileManager1 = new FileManager1();
-        this.students = fileManager1.readStudent("Jsons/student.json");
+        ArrayList<Student> students = fileManager1.readStudent("Java Project/Iteration_2/src/Jsons/student.json");
+        for (Student student : students){
+            student.createStudentID();
+        }
+        this.students = students;
 
     }
 
@@ -83,18 +91,25 @@ public class CourseRegistrationSimulation {
         }
     }
 
-    public void createEnrollmentRequest() {
-        for (Student student : this.students) {
-            ArrayList<CompulsoryCourse> randomCourse = this.courses;
-            HashMap<String, Schedule> scheduleWithCourse = new HashMap<>();
-            for (CompulsoryCourse course : randomCourse) {
-          //      scheduleWithCourse.put(course.getCourseCode(), course.getSchedule());
-            }//CAN NOT HANDLE HOW TO REACH COURSE SECTION CLASS SCHEDULE POSTPONE TO LATER
+    public void sequence() {
+        ArrayList<CompulsoryCourse> courses = this.courses;
+        Random random = new Random();
+        for(Student student: students){
+            int appliedCourseNumber = random.nextInt(1,5);
+            ArrayList<CompulsoryCourse> appliedCourses  = new ArrayList<CompulsoryCourse>();
+            for (int i = 0; i < appliedCourseNumber; i++) {
+                CompulsoryCourse randomCourse = courses.get(random.nextInt(courses.size()));
+                appliedCourses.add(randomCourse);
+                System.out.println(student.getStudentID() + " applied for " + randomCourse.getCourseCode());
+                // Log
 
-            ArrayList<EnrollmentRequest> enrollmentRequests = new ArrayList<EnrollmentRequest>();
-            enrollmentRequests.add(new EnrollmentRequest(randomCourse, student, scheduleWithCourse));
-            this.enrollmentRequests = enrollmentRequests;
 
+
+            }
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(appliedCourses,student);
+            RegistrationSystem registrationSystem = new RegistrationSystem();
+            registrationSystem.checkCourseIsTakenBefore(enrollmentRequest);
+            registrationSystem.checkPrerequisites(enrollmentRequest);
         }
 
     }

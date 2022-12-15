@@ -9,14 +9,23 @@ public class RegistrationSystem {
     public void checkCourseIsTakenBefore(EnrollmentRequest enrollmentRequest) {
         Student student = enrollmentRequest.getStudent();
         ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
+        ArrayList<CompulsoryCourse> takenCourses = new ArrayList<CompulsoryCourse>();
         for (CompulsoryCourse course : courses) {
-            if (student.getTranscriptBefore().getTakenCourses().contains(course)) {
-                HashMap<String, String> result = new HashMap<String, String>();
-                result.put(course.getCourseCode(), "takenBefore");
-                enrollmentRequest.appendResult(result);
+            if (student.getTranscriptBefore().getTakenCourses().stream().map(CompulsoryCourse::getCourseCode).toList().contains(course.getCourseCode())) {
+                System.out.println(course.getCourseCode()+ " can not be taken because it has already been taken.");
+                //Log
+            }
+            else{
+                System.out.println("Course " + course.getCourseCode()+ " is taken");
+                takenCourses.add(course);
+                //Log
+
             }
 
+
         }
+        enrollmentRequest.setCourses(takenCourses);
+        System.out.println(enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
 
     }
 
@@ -25,10 +34,9 @@ public class RegistrationSystem {
         Student student = enrollmentRequest.getStudent();
 
         for (CompulsoryCourse course : compulsaryCourses) {
-            if (course.getPrerequisites().contains(course)) {
-                HashMap<String, String> result = new HashMap<String, String>();
-                result.put(course.getCourseCode(), "notSatisfiedPreRequisite");
-                enrollmentRequest.appendResult(result);
+            if (student.getTranscriptBefore().getTakenCourses().stream().map(CompulsoryCourse::getCourseCode).toList().contains(course.getCourseCode())) {
+                System.out.println("Course "+ course.getCourseCode() +" can not taken because prerequisites are not satisfied.");
+                //Log
             }
 
         }

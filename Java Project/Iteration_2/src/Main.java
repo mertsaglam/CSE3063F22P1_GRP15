@@ -13,9 +13,9 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        FileManager1 fileManager1 = new FileManager1();
+       FileManager1 fileManager1 = new FileManager1();
         ArrayList<CompulsoryCourse> courses = fileManager1.readCourse("Java Project/Iteration_2/src/Jsons/compulsoryCourses.json");
-        for(CompulsoryCourse course: courses){
+        /* for(CompulsoryCourse course: courses){
             String randomSemester = new Random().nextBoolean() ? "fall" : "spring";
             course.setOpenedTerm(randomSemester);
         }
@@ -24,6 +24,8 @@ public class Main {
         File file = new File("course.json");
         FileWriter fileWriter = new FileWriter(file,true);
         fileWriter.write(jsonArray.toString());
-        fileWriter.close();
+        fileWriter.close();*/
+        CourseRegistrationSimulation courseRegistrationSimulation = new CourseRegistrationSimulation();
+        courseRegistrationSimulation.starSimulation();
     }
 }

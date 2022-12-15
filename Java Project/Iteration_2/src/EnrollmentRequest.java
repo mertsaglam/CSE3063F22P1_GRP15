@@ -14,10 +14,9 @@ public class EnrollmentRequest {
     private int creditLimit;
     private String error;
 
-    public EnrollmentRequest(ArrayList<CompulsoryCourse> courses, Student student, HashMap<String, Schedule> schedule) {
+    public EnrollmentRequest(ArrayList<CompulsoryCourse> courses, Student student) {
         this.courses = courses;
         this.student = student;
-        this.schedule = schedule;
     }
 
     public ArrayList<CompulsoryCourse> getCourses() {
@@ -72,33 +71,6 @@ public class EnrollmentRequest {
             credit += course.getCredit();
         }
         return credit;
-    }
-
-    /* public void checkDuplicate(HashMap hashMap){
-         Map<ArrayList<Schedule>, ArrayList<Object>> reverseMap = new HashMap<>();
-
-
-         for (Object schedules: hashMap.values()) {
-             if (!reverseMap.containsKey(entry.getValue())) {
-                 reverseMap.put(entry.getValue(), new ArrayList<>());
-             }
-             ArrayList<Object> keys = reverseMap.get(entry.getValue());
-             keys.add(entry.getKey());
-             reverseMap.put(entry.getValue(), keys);
-         }
-
-
-     }*/
-    public HashMap<String, String> checkDuplicate(HashMap<String, Schedule> hashMap) {
-        HashMap<String, String> duplicate = new HashMap<>();
-        for (Map.Entry<String, Schedule> entry : hashMap.entrySet()) {
-            for (Map.Entry<String, Schedule> entry2 : hashMap.entrySet()) {
-                if (entry.getValue().equals(entry2.getValue()) && !entry.getKey().equals(entry2.getKey())) {
-                    duplicate.put(entry.getKey(), entry2.getKey());
-                }
-            }
-        }
-        return duplicate;
     }
 
     public String getError() {
