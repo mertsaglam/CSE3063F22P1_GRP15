@@ -83,5 +83,13 @@ public class FileManager1 {
         FileWriter fileWriter = new FileWriter(file,false);
         fileWriter.write(gson.toJson(student));
     }
+    
+    public void writeToFileWithArray(ArrayList<Student> student,String filePath ) throws IOException {
+        File file = new File(filePath );
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        FileWriter fileWriter = new FileWriter(file,false);
+        fileWriter.write(gson.toJson(student));
+        fileWriter.close();
+    }
 
 }
