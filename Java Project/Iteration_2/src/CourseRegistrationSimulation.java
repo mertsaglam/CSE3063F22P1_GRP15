@@ -1,15 +1,6 @@
 package Iteration_2.src;
 
 
-
-import Iteration_1.src.Course;
-import com.google.gson.JsonArray;
-import com.google.gson.stream.JsonWriter;
-
-import javax.json.Json;
-import javax.json.JsonArrayBuilder;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -21,13 +12,13 @@ public class CourseRegistrationSimulation {
     private ArrayList<Advisor> advisors;
     private int creditLimit;
     private ArrayList<EnrollmentRequest> enrollmentRequests;
-    private ArrayList<String> errors ;
+    private ArrayList<String> errors;
     private double probToPassClass;
     private double probTo;
-    private String[] names = {"Ahmet","Ali","Ayşe","Fatma","Kemal"};
-    private String[] surnames = {"Kebapçı","Çevik","Öztürk","Vural","Ertekin"};
+    private String[] names = {"Ahmet", "Ali", "Ayşe", "Fatma", "Kemal"};
+    private String[] surnames = {"Kebapçı", "Çevik", "Öztürk", "Vural", "Ertekin"};
 
-    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors,  int creditLimit) {
+    public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, int creditLimit) {
         this.students = students;
         this.courses = courses;
         this.lecturers = lecturers;
@@ -46,8 +37,8 @@ public class CourseRegistrationSimulation {
         //students = createRandomStudent(5);
         sequence();
         //setTranscriptAfter();
-       // printOutputs();
-        
+        // printOutputs();
+
         //writeToJson();
         
         /*FileManager1 asd = new FileManager1();
@@ -70,7 +61,7 @@ public class CourseRegistrationSimulation {
     public void createStudents() {//done
         FileManager1 fileManager1 = new FileManager1();
         ArrayList<Student> students = fileManager1.readStudent("Java Project/Iteration_2/src/Jsons/students.json");
-        for (Student student : students){
+        for (Student student : students) {
             student.createStudentID();
         }
         this.students = students;
@@ -97,9 +88,9 @@ public class CourseRegistrationSimulation {
     public void sequence() {
         ArrayList<CompulsoryCourse> courses = this.courses;
         Random random = new Random();
-        for(Student student: students){
-            int appliedCourseNumber = random.nextInt(1,5);
-            ArrayList<CompulsoryCourse> appliedCourses  = new ArrayList<CompulsoryCourse>();
+        for (Student student : students) {
+            int appliedCourseNumber = random.nextInt(1, 5);
+            ArrayList<CompulsoryCourse> appliedCourses = new ArrayList<CompulsoryCourse>();
             for (int i = 0; i < appliedCourseNumber; i++) {
                 CompulsoryCourse randomCourse = courses.get(random.nextInt(courses.size()));
                 appliedCourses.add(randomCourse);
@@ -107,12 +98,13 @@ public class CourseRegistrationSimulation {
                 // Log
 
 
-
             }
-            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(appliedCourses,student);
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(appliedCourses, student);
             RegistrationSystem registrationSystem = new RegistrationSystem();
             registrationSystem.checkCourseIsTakenBefore(enrollmentRequest);
             registrationSystem.checkPrerequisites(enrollmentRequest);
+            System.out.println(enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
+
         }
 
     }
@@ -152,72 +144,70 @@ public class CourseRegistrationSimulation {
         return newList;
     }
 
-    public boolean passOrFail(){
+    public boolean passOrFail() {
         Random random = new Random();
         return random.nextDouble() < this.probToPassClass;
     }
 
     public void setTranscriptAfter(EnrollmentRequest enrollmentRequest) {
         Student student = enrollmentRequest.getStudent();
-        String[] letterGrades = {"AA","AB","BB","BC","CC","DC","DD"};
+        String[] letterGrades = {"AA", "AB", "BB", "BC", "CC", "DC", "DD"};
         int select = new Random().nextInt(letterGrades.length);
         student.setTranscriptAfter(new Transcript());
 
     }
 
 
-
-    
     public ArrayList<Student> createRandomStudent(int size) {
-    	ArrayList<Student> students1 = new ArrayList<Student>();  	
-    	for(int i = 0; i < size; i++) {   		
-    		students1.add(new Student(names[new Random().nextInt(names.length-1)], surnames[new Random().nextInt(surnames.length-1)], new Transcript(), new Transcript(), new Schedule(), new Advisor(), "2020"));
-    		students1.get(i).createStudentID();
-    		Transcript transcriptBefore = students1.get(i).getTranscriptBefore();
-    		transcriptBefore.setTakenCourses(getRandomCourse(courses));
-    		
-    		HashMap<String, Integer> courseGrades = new HashMap<String, Integer>();
-    		int takenCredit = 0;
-    		for (int j = 0; j < transcriptBefore.getTakenCourses().size(); j++) {
-    			takenCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
-    			transcriptBefore.setTakenCredit(takenCredit);
-    			
-    			courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(),new Random().nextInt(100));
-    		}
-    		transcriptBefore.setCourseGrades(courseGrades);
-    		transcriptBefore.setGpa(Math.round(new Random().nextFloat()*400.0)/100.0f);
-    		
-   
-    	}
-    	return students1;
+        ArrayList<Student> students1 = new ArrayList<Student>();
+        for (int i = 0; i < size; i++) {
+            students1.add(new Student(names[new Random().nextInt(names.length - 1)], surnames[new Random().nextInt(surnames.length - 1)], new Transcript(), new Transcript(), new Schedule(), new Advisor(), "2020"));
+            students1.get(i).createStudentID();
+            Transcript transcriptBefore = students1.get(i).getTranscriptBefore();
+            transcriptBefore.setTakenCourses(getRandomCourse(courses));
+
+            HashMap<String, Integer> courseGrades = new HashMap<String, Integer>();
+            int takenCredit = 0;
+            for (int j = 0; j < transcriptBefore.getTakenCourses().size(); j++) {
+                takenCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
+                transcriptBefore.setTakenCredit(takenCredit);
+
+                courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), new Random().nextInt(100));
+            }
+            transcriptBefore.setCourseGrades(courseGrades);
+            transcriptBefore.setGpa(Math.round(new Random().nextFloat() * 400.0) / 100.0f);
+
+
+        }
+        return students1;
     }
-    
-    public void writeToJson() {
-    	JsonArrayBuilder builder = Json.createArrayBuilder();
-    	
-    	for(int i = 0; i < students.size(); i++) {	
-        		     builder.add(Json.createObjectBuilder()
-        		         .add("studentID", students.get(i).getStudentID())
-        		         .add("studentName", students.get(i).getStudentName())
-        		         .add("studentSurname", students.get(i).getStudentSurname())
-        		         .add("transcriptBefore", students.get(i).getTranscriptBefore().toString())
-        		         .add("transcriptAfter", students.get(i).getTranscriptAfter().toString())
-        		         .add("schedule", students.get(i).getSchedule().toString())
-        		         .add("advisor", students.get(i).getAdvisor().toString())
-        		         .add("enrolledYear", students.get(i).getEnrolledYear()))
-        		     .build();
-    	}
-    	//JsonArray array = builder.build();
-    	
-    	try {
-    		JsonWriter writer = (JsonWriter) Json.createWriter(new FileOutputStream("deneme.json"));
-    		//writer.writeArray(array);
-    		writer.close();
-    		
-    	} catch (IOException e) {
-    		e.printStackTrace();
-    	}
-    }
+
+//    public void writeToJson() {
+//    	JsonArrayBuilder builder = Json.createArrayBuilder();
+//
+//    	for(int i = 0; i < students.size(); i++) {
+//        		     builder.add(Json.createObjectBuilder()
+//        		         .add("studentID", students.get(i).getStudentID())
+//        		         .add("studentName", students.get(i).getStudentName())
+//        		         .add("studentSurname", students.get(i).getStudentSurname())
+//        		         .add("transcriptBefore", students.get(i).getTranscriptBefore().toString())
+//        		         .add("transcriptAfter", students.get(i).getTranscriptAfter().toString())
+//        		         .add("schedule", students.get(i).getSchedule().toString())
+//        		         .add("advisor", students.get(i).getAdvisor().toString())
+//        		         .add("enrolledYear", students.get(i).getEnrolledYear()))
+//        		     .build();
+//    	}
+//    	//JsonArray array = builder.build();
+//
+//    	try {
+//    		JsonWriter writer = (JsonWriter) Json.createWriter(new FileOutputStream("deneme.json"));
+//    		//writer.writeArray(array);
+//    		writer.close();
+//
+//    	} catch (IOException e) {
+//    		e.printStackTrace();
+//    	}
+//    }
 
 /*
     public ArrayList<ElectiveCourse> getRandomElectiveCourses(ArrayList<ElectiveCourse> list) {

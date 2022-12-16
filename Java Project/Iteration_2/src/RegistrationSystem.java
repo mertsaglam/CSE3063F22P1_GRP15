@@ -12,7 +12,7 @@ public class RegistrationSystem {
         ArrayList<CompulsoryCourse> takenCourses = new ArrayList<CompulsoryCourse>();
         for (CompulsoryCourse course : courses) {
             if (student.getTranscriptBefore().getTakenCourses().stream().map(CompulsoryCourse::getCourseCode).toList().contains(course.getCourseCode())) {
-                System.out.println(course.getCourseCode() + " can not be taken because it has already been taken.");
+                System.out.println("Course " + course.getCourseCode() + " can not be taken because it has already been taken.");
                 //Log
             } else {
                 System.out.println("Course " + course.getCourseCode() + " passed 'is taken before' test ");
@@ -24,25 +24,32 @@ public class RegistrationSystem {
 
         }
         enrollmentRequest.setCourses(takenCourses);
-        System.out.println(enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
 
     }
 
     public void checkPrerequisites(EnrollmentRequest enrollmentRequest) {
         ArrayList<CompulsoryCourse> compulsaryCourses = enrollmentRequest.getCourses();
         Student student = enrollmentRequest.getStudent();
-
+        ArrayList<CompulsoryCourse> takenCourses = new ArrayList<CompulsoryCourse>();
         for (CompulsoryCourse course : compulsaryCourses) {
             if (course.getPrerequisites() != null) {
                 if (!student.getTranscriptBefore().getTakenCourses().stream().map(CompulsoryCourse::getCourseCode).toList().containsAll(course.getPrerequisites())) {
                     System.out.println("Course " + course.getCourseCode() + " can not taken because prerequisites are not satisfied.");
+                } else {
+                    System.out.println("Course " + course.getCourseCode() + " passed 'prerequisites' test ");
+                    takenCourses.add(course);
                 }
 
 
                 //Log
+            } else {
+                System.out.println("Course " + course.getCourseCode() + "  passed 'prerequisites' test ");
+                takenCourses.add(course);
             }
 
+
         }
+        enrollmentRequest.setCourses(takenCourses);
 
     }
 
