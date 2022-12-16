@@ -17,6 +17,7 @@ public class CourseRegistrationSimulation {
     private double probTo;
     private String[] names = {"Ahmet", "Ali", "Ayşe", "Fatma", "Kemal"};
     private String[] surnames = {"Kebapçı", "Çevik", "Öztürk", "Vural", "Ertekin"};
+    private String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, int creditLimit) {
         this.students = students;
@@ -34,7 +35,7 @@ public class CourseRegistrationSimulation {
         createStudents();
         //2matchStudentAdvisor();
         //createLecturer();
-        //students = createRandomStudent(5);
+        //students = createRandomStudent(500);
         sequence();
         //setTranscriptAfter();
         // printOutputs();
@@ -166,16 +167,36 @@ public class CourseRegistrationSimulation {
             Transcript transcriptBefore = students1.get(i).getTranscriptBefore();
             transcriptBefore.setTakenCourses(getRandomCourse(courses));
 
-            HashMap<String, Integer> courseGrades = new HashMap<String, Integer>();
+            HashMap<String, String> courseGrades = new HashMap<String, String>();
             int takenCredit = 0;
             for (int j = 0; j < transcriptBefore.getTakenCourses().size(); j++) {
                 takenCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
                 transcriptBefore.setTakenCredit(takenCredit);
 
-                courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), new Random().nextInt(100));
+                courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length-1)]);
             }
             transcriptBefore.setCourseGrades(courseGrades);
-            transcriptBefore.setGpa(Math.round(new Random().nextFloat() * 400.0) / 100.0f);
+            
+            float gpa = 0f;
+            int totalCredit = 0;
+            for (int j = 0; j < transcriptBefore.getTakenCourses().size(); j++) {
+            	String letterGrade = transcriptBefore.getCourseGrades().get(transcriptBefore.getTakenCourses().get(j).getCourseCode());
+            	if ( letterGrade == "AA")
+            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 4;
+            	else if ( letterGrade == "BA")
+            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3.5;
+            	else if ( letterGrade == "BB")
+            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3;
+            	else if ( letterGrade == "CB")
+            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2.5;
+            	else if ( letterGrade == "CC")
+            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2;
+            	else if ( letterGrade == "DC")
+            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 1.5;
+            	totalCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
+            }
+            
+            transcriptBefore.setGpa(gpa/totalCredit/*Math.round(new Random().nextFloat() * 400.0) / 100.0f*/);
 
 
         }
