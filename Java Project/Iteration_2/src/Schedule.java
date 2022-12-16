@@ -10,7 +10,7 @@ public class Schedule {
     private HashMap<String, ArrayList<String>> courseDayHour;
 
     //added ver1.0
-    public Schedule(HashMap<String,ArrayList<String>> courseDayHour) {
+    public Schedule(HashMap<String, ArrayList<String>> courseDayHour) {
         this.courseDayHour = courseDayHour;
 
 
@@ -52,5 +52,19 @@ public class Schedule {
         return "Schedule{" +
                 "courseDayHour=" + courseDayHour +
                 '}';
+    }
+
+    public boolean isCollided(Schedule schedule, Schedule schedule1) {
+        for (String key : schedule.getCourseDayHour().keySet()) {
+            if (schedule1.getCourseDayHour().containsKey(key)) {
+
+                for (String value : schedule.getCourseDayHour().get(key)) {
+                    if (schedule1.getCourseDayHour().get(key).contains(value))
+                        return true;
+                }
+            }
+        }
+        return false;
+
     }
 }

@@ -18,4 +18,20 @@ public class Advisor extends Lecturer {
     public Advisor() {
     }
     //Constructor for advisor with no parameters
+    public void checkScheduleCollision(EnrollmentRequest enrollmentRequest){
+        ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
+        ArrayList<CompulsoryCourse> canBeTaken = new ArrayList<>();
+        Schedule schedule = new Schedule();
+        for(CompulsoryCourse course: courses){
+            if (canBeTaken.isEmpty()){
+                canBeTaken.add(course);
+            }
+            else{
+                for (CompulsoryCourse compulsoryCourse: canBeTaken){
+                  //  if(schedule.isCollided(compulsoryCourse.get))
+                }
+            }
+        }
+
+    }
 }

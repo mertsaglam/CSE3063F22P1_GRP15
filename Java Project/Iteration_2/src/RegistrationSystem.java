@@ -53,6 +53,19 @@ public class RegistrationSystem {
 
     }
 
+    public void isOpenedThisTerm(EnrollmentRequest enrollmentRequest,String term) {
+        ArrayList<CompulsoryCourse> courses =enrollmentRequest.getCourses();
+        Student student = enrollmentRequest.getStudent();
+        ArrayList<CompulsoryCourse> takenCourses = new ArrayList<CompulsoryCourse>();
+        for (CompulsoryCourse course : courses){
+            if(course.getOpenedTerm() == term){
+                takenCourses.add(course);
+            }
+            else
+                System.out.println("Course"+course.getCourseCode()+" can not been taken because it does not opened this term");
+        }
+
+    }
 
     public void getTotalCredit(EnrollmentRequest enrollmentRequest) {
         Student student = enrollmentRequest.getStudent();
