@@ -69,7 +69,7 @@ public class CourseRegistrationSimulation {
 
     public void createStudents() {//done
         FileManager1 fileManager1 = new FileManager1();
-        ArrayList<Student> students = fileManager1.readStudent("Java Project/Iteration_2/src/Jsons/student.json");
+        ArrayList<Student> students = fileManager1.readStudent("Java Project/Iteration_2/src/Jsons/students.json");
         for (Student student : students){
             student.createStudentID();
         }

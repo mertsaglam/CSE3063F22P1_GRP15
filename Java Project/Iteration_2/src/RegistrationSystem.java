@@ -12,11 +12,10 @@ public class RegistrationSystem {
         ArrayList<CompulsoryCourse> takenCourses = new ArrayList<CompulsoryCourse>();
         for (CompulsoryCourse course : courses) {
             if (student.getTranscriptBefore().getTakenCourses().stream().map(CompulsoryCourse::getCourseCode).toList().contains(course.getCourseCode())) {
-                System.out.println(course.getCourseCode()+ " can not be taken because it has already been taken.");
+                System.out.println(course.getCourseCode() + " can not be taken because it has already been taken.");
                 //Log
-            }
-            else{
-                System.out.println("Course " + course.getCourseCode()+ " is taken");
+            } else {
+                System.out.println("Course " + course.getCourseCode() + " passed 'is taken before' test ");
                 takenCourses.add(course);
                 //Log
 
@@ -34,15 +33,18 @@ public class RegistrationSystem {
         Student student = enrollmentRequest.getStudent();
 
         for (CompulsoryCourse course : compulsaryCourses) {
-            if (student.getTranscriptBefore().getTakenCourses().stream().map(CompulsoryCourse::getCourseCode).toList().contains(course.getCourseCode())) {
-                System.out.println("Course "+ course.getCourseCode() +" can not taken because prerequisites are not satisfied.");
+            if (course.getPrerequisites() != null) {
+                if (!student.getTranscriptBefore().getTakenCourses().stream().map(CompulsoryCourse::getCourseCode).toList().containsAll(course.getPrerequisites())) {
+                    System.out.println("Course " + course.getCourseCode() + " can not taken because prerequisites are not satisfied.");
+                }
+
+
                 //Log
             }
 
         }
 
     }
-
 
 
     public void getTotalCredit(EnrollmentRequest enrollmentRequest) {
@@ -61,7 +63,6 @@ public class RegistrationSystem {
             enrollmentRequest.appendResult(result);
         }
     }
-
 
 
 }
