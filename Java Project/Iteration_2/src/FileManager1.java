@@ -93,7 +93,7 @@ public class FileManager1 {
 
     public void writeToFileWithArray(ArrayList<Student> student, String filePath) throws IOException {
         File file = new File(filePath);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().serializeSpecialFloatingPointValues().create();
         FileWriter fileWriter = new FileWriter(file, false);
         fileWriter.write(gson.toJson(student));
         fileWriter.close();
