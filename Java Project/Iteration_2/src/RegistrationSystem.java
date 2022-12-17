@@ -3,6 +3,7 @@ package Iteration_2.src;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Random;
 
 public class RegistrationSystem {
@@ -58,12 +59,13 @@ public class RegistrationSystem {
         Student student = enrollmentRequest.getStudent();
         ArrayList<CompulsoryCourse> takenCourses = new ArrayList<CompulsoryCourse>();
         for (CompulsoryCourse course : courses){
-            if(course.getOpenedTerm() == term){
+            if(Objects.equals(course.getOpenedTerm(), term)){
                 takenCourses.add(course);
             }
             else
                 System.out.println("Course"+course.getCourseCode()+" can not been taken because it does not opened this term");
         }
+        enrollmentRequest.setCourses(takenCourses);
 
     }
 

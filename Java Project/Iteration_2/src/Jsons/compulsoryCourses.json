@@ -136,8 +136,10 @@
       "courseCode": "MATH2059",
       "sectionCount": 1,
       "schedule": {
-        "courseDayHour": {
-          "courseDayHour": {}
+        "1": {
+          "courseDayHour": {
+            "Monday": ["1", "2", "4", "5"]
+          }
         }
       },
       "quota": 45
@@ -434,7 +436,7 @@
         "1": {
           "courseDayHour": {
             "Friday": ["16"],
-            "Tuesday": ["15", "116"]
+            "Tuesday": ["15", "16"]
           }
         }
       },
@@ -716,10 +718,12 @@
       "lecturerName": "Haluk Rahmi",
       "lecturerSurname": "Topcuoglu",
       "schedule": {
-        "courseDayHour": {
-          "Monday": ["1", "2", "4", "5"],
-          "Friday": ["18", "3", "2"],
-          "Tuesday": ["1", "2", "4"]
+        "1": {
+          "courseDayHour": {
+            "Monday": ["1", "2", "4", "5"],
+            "Friday": ["18", "3", "2"],
+            "Tuesday": ["1", "2", "4"]
+          }
         }
       }
     },
@@ -810,10 +814,12 @@
       "lecturerName": "Ömer",
       "lecturerSurname": "Korçak",
       "schedule": {
-        "courseDayHour": {
-          "Monday": ["1", "2", "4", "5"],
-          "Friday": ["18", "3", "2"],
-          "Tuesday": ["1", "2", "4"]
+        "1": {
+          "courseDayHour": {
+            "Monday": ["1", "2", "4", "5"],
+            "Friday": ["18", "3", "2"],
+            "Tuesday": ["1", "2", "4"]
+          }
         }
       }
     },
@@ -841,10 +847,12 @@
       "lecturerName": "Nureddin",
       "lecturerSurname": "Turkan",
       "schedule": {
-        "courseDayHour": {
-          "Monday": ["1", "2", "4", "5"],
-          "Friday": ["18", "3", "2"],
-          "Tuesday": ["1", "2", "4"]
+        "1": {
+          "courseDayHour": {
+            "Monday": ["1", "2", "4", "5"],
+            "Friday": ["18", "3", "2"],
+            "Tuesday": ["1", "2", "4"]
+          }
         }
       }
     },
@@ -892,12 +900,6 @@
       },
       "quota": 45
     },
-    "openedTerm": "spring"
-  },
-  {
-    "courseCode": "CSE301",
-    "courseName": "CSECourse1",
-    "credit": 4,
     "openedTerm": "spring"
   }
 ]

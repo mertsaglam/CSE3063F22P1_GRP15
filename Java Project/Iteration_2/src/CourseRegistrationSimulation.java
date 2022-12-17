@@ -31,20 +31,11 @@ public class CourseRegistrationSimulation {
     }
 
     public void starSimulation() throws IOException {
-        createCourses();
         createStudents();
-        //2matchStudentAdvisor();
-        //createLecturer();
-        //students = createRandomStudent(500);
-        sequence();
-        //setTranscriptAfter();
-        // printOutputs();
-
-        //writeToJson();
-        
-        /*FileManager1 asd = new FileManager1();
-        asd.writeToFileWithArray(students, "src/a/Jsons/students.json");*/
-
+        createLecturer();
+        System.out.println(this.lecturers);
+        createAdvisors();
+        System.out.println(this.advisors);
 
     }
 
@@ -71,8 +62,13 @@ public class CourseRegistrationSimulation {
 
     public void createLecturer() {
         FileManager1 fileManager1 = new FileManager1();
-        this.lecturers = fileManager1.readLecturers("Jsons/lecturer.json");
+        this.lecturers = fileManager1.readLecturers("Java Project/Iteration_2/src/Jsons/lecturer.json");
 
+    }
+
+    public void createAdvisors() {
+        Lecturer lecturer = new Lecturer();
+        this.advisors = lecturer.lecturerToAdvisor(lecturers);
     }
 
     /*public void createAdvisor() {  // no need for iteration 1
@@ -104,6 +100,7 @@ public class CourseRegistrationSimulation {
             RegistrationSystem registrationSystem = new RegistrationSystem();
             registrationSystem.checkCourseIsTakenBefore(enrollmentRequest);
             registrationSystem.checkPrerequisites(enrollmentRequest);
+            enrollmentRequest.getStudent().getAdvisor().checkScheduleCollision(enrollmentRequest);
             System.out.println(enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
 
         }
@@ -122,16 +119,6 @@ public class CourseRegistrationSimulation {
 
     }*/
 
-
-    public Schedule combineSchedule(ArrayList<Schedule> schedules) {
-        Schedule combinedSchedule = new Schedule();
-        HashMap<String, ArrayList<String>> temp = new HashMap<String, ArrayList<String>>();
-        for (Schedule schedule : schedules) {
-            temp.putAll(schedule.getCourseDayHour());
-        }
-        combinedSchedule.setCourseDayHour(temp);
-        return combinedSchedule;
-    }
 
     public ArrayList<CompulsoryCourse> getRandomCourse(ArrayList<CompulsoryCourse> list) {
         Random random = new Random();
@@ -173,30 +160,30 @@ public class CourseRegistrationSimulation {
                 takenCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
                 transcriptBefore.setTakenCredit(takenCredit);
 
-                courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length-1)]);
+                courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length - 1)]);
             }
             transcriptBefore.setCourseGrades(courseGrades);
-            
+
             float gpa = 0f;
             int totalCredit = 0;
             for (int j = 0; j < transcriptBefore.getTakenCourses().size(); j++) {
-            	String letterGrade = transcriptBefore.getCourseGrades().get(transcriptBefore.getTakenCourses().get(j).getCourseCode());
-            	if ( letterGrade == "AA")
-            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 4;
-            	else if ( letterGrade == "BA")
-            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3.5;
-            	else if ( letterGrade == "BB")
-            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3;
-            	else if ( letterGrade == "CB")
-            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2.5;
-            	else if ( letterGrade == "CC")
-            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2;
-            	else if ( letterGrade == "DC")
-            		gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 1.5;
-            	totalCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
+                String letterGrade = transcriptBefore.getCourseGrades().get(transcriptBefore.getTakenCourses().get(j).getCourseCode());
+                if (Objects.equals(letterGrade, "AA"))
+                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 4;
+                else if (Objects.equals(letterGrade, "BA"))
+                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3.5;
+                else if (Objects.equals(letterGrade, "BB"))
+                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3;
+                else if (Objects.equals(letterGrade, "CB"))
+                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2.5;
+                else if (Objects.equals(letterGrade, "CC"))
+                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2;
+                else if (Objects.equals(letterGrade, "DC"))
+                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 1.5;
+                totalCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
             }
-            
-            transcriptBefore.setGpa(gpa/totalCredit/*Math.round(new Random().nextFloat() * 400.0) / 100.0f*/);
+
+            transcriptBefore.setGpa(gpa / totalCredit/*Math.round(new Random().nextFloat() * 400.0) / 100.0f*/);
 
 
         }

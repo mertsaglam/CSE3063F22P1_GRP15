@@ -4,6 +4,7 @@ package Iteration_2.src;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public  class CompulsoryCourse {
 
@@ -94,6 +95,13 @@ public  class CompulsoryCourse {
 
 	public void setCourseSection(CourseSection courseSection) {
 		this.courseSection = courseSection;
+	}
+	public Schedule getRandomSection(){
+		int size =this.getCourseSection().getSchedule().size();
+		HashMap<String,Schedule> scheduleHashMap = this.getCourseSection().getSchedule();
+		Random random = new Random();
+		return size == 1 ? scheduleHashMap.get(String.valueOf(1)):scheduleHashMap.get(String.valueOf(random.nextInt(1,size)));
+
 	}
 
 	@Override

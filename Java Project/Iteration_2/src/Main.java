@@ -26,24 +26,10 @@ public class Main {
         FileWriter fileWriter = new FileWriter(file,true);
         fileWriter.write(jsonArray.toString());
         fileWriter.close();*/
-       // CourseRegistrationSimulation courseRegistrationSimulation = new CourseRegistrationSimulation();
-        //courseRegistrationSimulation.starSimulation();
-        ArrayList<String> test = new ArrayList<>();
-        test.add("8");
-        test.add("9");
-        ArrayList<String> test1 = new ArrayList<>();
-        test1.add("10");
-        test1.add("11");
-        HashMap<String,ArrayList<String>>  courseDayHour = new HashMap<>();
-        courseDayHour.put("Thursday",test);
-        courseDayHour.put("Thursday",test);
-        courseDayHour.put("Wed",test);
+        CourseRegistrationSimulation courseRegistrationSimulation = new CourseRegistrationSimulation();
+        courseRegistrationSimulation.starSimulation();
 
-        HashMap<String,ArrayList<String>>  courseDayHour1= new HashMap<>();
-        courseDayHour1.put("Wed",test);
-        Schedule schedule1 = new Schedule(courseDayHour);
-        Schedule schedule = new Schedule(courseDayHour1);
-        System.out.println(schedule);
+
     }
 
 }

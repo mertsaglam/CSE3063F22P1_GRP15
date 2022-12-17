@@ -59,17 +59,7 @@ public class FileManager1 {
         return null;
     }
 
-    public Transcript readTranscript(String path) {
-        try {
-            Gson gson = new Gson();
-            Reader reader = Files.newBufferedReader(Path.of(path));
-            return gson.fromJson(reader, Transcript.class);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     public HashMap<String, String> readParams(String path) {
         try {

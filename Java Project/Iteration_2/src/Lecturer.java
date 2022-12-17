@@ -2,6 +2,8 @@ package Iteration_2.src;
 
 
 
+import com.sun.nio.sctp.PeerAddressChangeNotification;
+
 import java.util.ArrayList;
 
 public class Lecturer {
@@ -47,5 +49,15 @@ public class Lecturer {
                 ", lecturerSurname='" + lecturerSurname + '\'' +
                 ", schedule=" + schedule +
                 '}';
+    }
+    public ArrayList<Advisor> lecturerToAdvisor(ArrayList<Lecturer> lecturers){
+        ArrayList<Advisor> advisors = new ArrayList<>();
+        for(Lecturer lecturer : lecturers){
+            Advisor advisor =new Advisor(lecturer.getLecturerName(),lecturer.getLecturerSurname(),lecturer.getSchedule(),new ArrayList<String>());
+            advisors.add(advisor);
+            System.out.println(advisor);
+        }
+        return advisors;
+
     }
 }
