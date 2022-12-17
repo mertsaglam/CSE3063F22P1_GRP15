@@ -25,12 +25,18 @@ public class Schedule {
         courseDayHour.put("Friday", new String[]{"8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"});
         courseDayHour.put("Saturday", new String[]{"8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"});
         courseDayHour.put("Sunday", new String[]{"8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"});*/
+    
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
 
     // added ver 2.0
     public Schedule() {
         this.courseDayHour = new HashMap<String, ArrayList<String>>();
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
 
@@ -39,6 +45,9 @@ public class Schedule {
 
     public HashMap<String, ArrayList<String>> getCourseDayHour() {
         return courseDayHour;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     //setter
@@ -46,6 +55,9 @@ public class Schedule {
     public void setCourseDayHour(HashMap<String, ArrayList<String>> courseDayHour) {
 
         this.courseDayHour = courseDayHour;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
 
@@ -54,6 +66,9 @@ public class Schedule {
         return "Schedule{" +
                 "courseDayHour=" + courseDayHour +
                 '}';
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public boolean isCollided(Schedule schedule, Schedule schedule1) {
@@ -68,6 +83,9 @@ public class Schedule {
             }
         }
         return false;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
 
     }
 
@@ -79,5 +97,8 @@ public class Schedule {
         schedule.courseDayHour.putAll(schedule1.courseDayHour);
         this.courseDayHour = schedule.courseDayHour;
         return schedule;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 }
