@@ -15,8 +15,6 @@ public class Advisor extends Lecturer {
     public Advisor(String lecturerName, String lecturerSurname, Schedule schedule, ArrayList<String> students) {
         super(lecturerName, lecturerSurname, schedule);
         this.students = students;
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
     }
 
     public Advisor() {
@@ -24,8 +22,6 @@ public class Advisor extends Lecturer {
 
     public void appendStudent(String studentID) {
         this.students.add(studentID);
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
     }
 
     //Constructor for advisor with no parameters
@@ -55,8 +51,6 @@ public class Advisor extends Lecturer {
             }
         }
         enrollmentRequest.setCourses(canBeTaken);
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
     }
 
     @Override
@@ -67,9 +61,5 @@ public class Advisor extends Lecturer {
                 ", Students='" + students + '\'' +
                 ", schedule=" + getSchedule() +
                 '}';
-        
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
-        
     }
 }
