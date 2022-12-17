@@ -138,6 +138,8 @@ public class Transcript {
                 gpa += this.getTakenCourses().get(j).getCredit() * 2;
             else if (letterGrade == "DC")
                 gpa += this.getTakenCourses().get(j).getCredit() * 1.5;
+            else if (letterGrade == "FF")
+                gpa += this.getTakenCourses().get(j).getCredit() * 0;
             totalCredit += this.getTakenCourses().get(j).getCredit();
         }
 
@@ -145,7 +147,7 @@ public class Transcript {
     }
 
     public HashMap<String, String> randomCourseGrade(ArrayList<CompulsoryCourse> courses) {
-        String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
+        String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC", "FF"};
         HashMap<String, String> hashmap = new HashMap<String, String>();
 
         for (int j = 0; j < courses.size(); j++)
