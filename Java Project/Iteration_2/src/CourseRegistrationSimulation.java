@@ -1,8 +1,10 @@
 package Iteration_2.src;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class CourseRegistrationSimulation {
     private ArrayList<Student> students;
@@ -31,6 +33,8 @@ public class CourseRegistrationSimulation {
     }
 
     public void starSimulation() throws IOException {
+        FileManager1 fileManager1 = new FileManager1();
+        createParams();
         createStudents();
         createLecturer();
         readParameters();
@@ -43,7 +47,13 @@ public class CourseRegistrationSimulation {
             Advisor advisor = student.getAdvisor();
             checkSystemRequirements(enrollmentRequest);
             advisor.checkScheduleCollision(enrollmentRequest);
-            student.calculateTranscriptAfter(enrollmentRequest);
+            student.calculateTranscriptAfter(enrollmentRequest,this.probToPassClass);
+            fileManager1.writeToFile(student,("Java Project/Iteration_2/src/Outputs/"+ student.getStudentID()+".json"));
+            try {
+                TimeUnit.MILLISECONDS.sleep(300);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
 
@@ -68,6 +78,13 @@ public class CourseRegistrationSimulation {
             student.createStudentID();
         }
         this.students = students;
+
+    }
+    public void createParams(){
+        FileManager1 fileManager1 = new FileManager1();
+        HashMap params = fileManager1.readParams("Java Project/Iteration_2/src/input.json") ;
+        this.probToPassClass = (double) params.get("prob_to_pass_class");
+        this.term = (String) params.get("semester");
 
     }
 

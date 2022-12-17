@@ -77,8 +77,9 @@ public class FileManager1 {
     public void writeToFile(Student student, String filePath) throws IOException {
         File file = new File(filePath);
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter fileWriter = new FileWriter(file, false);
+        FileWriter fileWriter = new FileWriter(file, true);
         fileWriter.write(gson.toJson(student));
+        fileWriter.close();
     }
 
     public void writeToFileWithArray(ArrayList<Student> student, String filePath) throws IOException {

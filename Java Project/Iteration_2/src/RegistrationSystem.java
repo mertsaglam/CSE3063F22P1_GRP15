@@ -63,7 +63,7 @@ public class RegistrationSystem {
                 takenCourses.add(course);
             }
             else
-                System.out.println("Course"+course.getCourseCode()+" can not been taken because it does not opened this term");
+                System.out.println("Course "+ course.getCourseCode()+" can not been taken because it does not opened this term");
         }
         enrollmentRequest.setCourses(takenCourses);
 

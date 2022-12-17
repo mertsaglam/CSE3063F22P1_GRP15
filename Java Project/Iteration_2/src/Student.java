@@ -1,6 +1,10 @@
 package Iteration_2.src;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
+
 public class Student {
 
     private String studentID;
@@ -115,12 +119,24 @@ public class Student {
         this.setStudentID(department + this.enrolledYear.substring(2) + String.valueOf((int)(Math.random() * 1000)));
 
     }
-    public void calculateTranscriptAfter(EnrollmentRequest enrollmentRequest) {
+    public void calculateTranscriptAfter(EnrollmentRequest enrollmentRequest,double prob) {
         Student student = enrollmentRequest.getStudent();
         Transcript transcriptBefore = student.getTranscriptBefore();
-        transcriptBefore.addCourseGrade(transcriptBefore.randomCourseGrade(enrollmentRequest.getCourses()));
+        ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
+        ArrayList<CompulsoryCourse> failedCourses = new ArrayList<>();
+        for(CompulsoryCourse course :courses){
+            if(new Random().nextDouble() <prob){
+                HashMap<String,String> failed = new HashMap<>();
+                failed.put(course.getCourseCode(),"FF");
+                transcriptBefore.addCourseGrade(failed);
+                System.out.println("Student "+ this.studentID +" failed the course "+ course.getCourseCode());
+            }
+        }
+        transcriptBefore.addCourseGrade(transcriptBefore.randomCourseGrade(courses));
+
         transcriptBefore.addTakenCourse(enrollmentRequest.getCourses());
         transcriptBefore.setGpa(transcriptBefore.calculateGpa());
+        student.setTranscriptAfter(transcriptBefore);
 
     }
 

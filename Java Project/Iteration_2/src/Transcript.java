@@ -65,13 +65,16 @@ public class Transcript {
     public void addTakenCourse(ArrayList<CompulsoryCourse> courses) {
         this.takenCourses.addAll(courses);
     }
-
+    public void addTakenCourseOne(CompulsoryCourse course) {
+        this.takenCourses.add(course);
+    }
     public void removeCourse(ArrayList<CompulsoryCourse> courses) {
         this.notTakenCourses.remove(courses);
     }
     public  void  addCourseGrade(HashMap<String,String> courseGrades){
         this.courseGrades.putAll(courseGrades);
     }
+
 
     public HashMap<String, String> getCourseGrades() {
         return courseGrades;
