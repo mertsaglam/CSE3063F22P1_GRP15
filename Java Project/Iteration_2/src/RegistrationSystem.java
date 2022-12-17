@@ -23,8 +23,8 @@ public class RegistrationSystem {
             }
             
         
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
+            Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+            LoggingAgent.LoggerMethod();
         }
         enrollmentRequest.setCourses(takenCourses);
 
@@ -54,8 +54,8 @@ public class RegistrationSystem {
         }
         enrollmentRequest.setCourses(takenCourses);
         
-    Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-    LoggingAgent.LoggerMethod();
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void isOpenedThisTerm(EnrollmentRequest enrollmentRequest,String term) {
@@ -71,8 +71,8 @@ public class RegistrationSystem {
         }
         enrollmentRequest.setCourses(takenCourses);
     
-    Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-    LoggingAgent.LoggerMethod();
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
 
