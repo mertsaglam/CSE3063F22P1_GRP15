@@ -11,35 +11,51 @@ public class ElectiveCourse {
         this.quota = quota;
         this.schedule = schedule;
         this.electiveType = electiveType;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public ElectiveCourse(int quota, Schedule schedule, String electiveType) {
         this.quota = quota;
         this.schedule = schedule;
         this.electiveType = electiveType;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public int getQuota() {
         return quota;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setQuota(int quota) {
         this.quota = quota;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public Schedule getSchedule() {
         return schedule;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public String getElectiveType() {
         return electiveType;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setElectiveType(String electiveType) {
         this.electiveType = electiveType;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 }
