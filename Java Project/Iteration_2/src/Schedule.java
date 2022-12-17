@@ -3,6 +3,8 @@ package Iteration_2.src;//import java.util.ArrayList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class Schedule {
 
@@ -53,7 +55,7 @@ public class Schedule {
                 "courseDayHour=" + courseDayHour +
                 '}';
     }
-    
+
     public boolean isCollided(Schedule schedule, Schedule schedule1) {
         for (String key : schedule.getCourseDayHour().keySet()) {
             if (schedule1.getCourseDayHour().containsKey(key)) {
@@ -67,5 +69,15 @@ public class Schedule {
         }
         return false;
 
+    }
+
+
+
+//Arrayliste dönüştürülecek
+    public Schedule appendSchedule(Schedule schedule, Schedule schedule1) {
+        HashMap<String, ArrayList<String>> currentSchedule = this.courseDayHour;
+        schedule.courseDayHour.putAll(schedule1.courseDayHour);
+        this.courseDayHour = schedule.courseDayHour;
+        return schedule;
     }
 }

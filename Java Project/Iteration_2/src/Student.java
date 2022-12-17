@@ -115,6 +115,14 @@ public class Student {
         this.setStudentID(department + this.enrolledYear.substring(2) + String.valueOf((int)(Math.random() * 1000)));
 
     }
+    public void calculateTranscriptAfter(EnrollmentRequest enrollmentRequest) {
+        Student student = enrollmentRequest.getStudent();
+        Transcript transcriptBefore = student.getTranscriptBefore();
+        transcriptBefore.addCourseGrade(transcriptBefore.randomCourseGrade(enrollmentRequest.getCourses()));
+        transcriptBefore.addTakenCourse(enrollmentRequest.getCourses());
+        transcriptBefore.setGpa(transcriptBefore.calculateGpa());
+
+    }
 
     @Override
     public String toString() {

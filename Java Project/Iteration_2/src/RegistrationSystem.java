@@ -69,22 +69,7 @@ public class RegistrationSystem {
 
     }
 
-    public void getTotalCredit(EnrollmentRequest enrollmentRequest) {
-        Student student = enrollmentRequest.getStudent();
-        int totalCreditTaken = 0;
-        ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
 
-        for (CompulsoryCourse course : courses) {
-            totalCreditTaken += course.getCredit();
-        }
-
-        if (totalCreditTaken > enrollmentRequest.getCreditLimit()) {
-            HashMap<String, String> result = new HashMap<String, String>();
-            Random random = new Random();
-            result.put(courses.get(random.nextInt(courses.toArray().length)).getCourseCode(), "creditLimitExceed");
-            enrollmentRequest.appendResult(result);
-        }
-    }
 
 
 }

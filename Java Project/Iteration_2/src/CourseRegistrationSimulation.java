@@ -3,7 +3,6 @@ package Iteration_2.src;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class CourseRegistrationSimulation {
     private ArrayList<Student> students;
@@ -18,6 +17,7 @@ public class CourseRegistrationSimulation {
     private String[] names = {"Ahmet", "Ali", "Ayşe", "Fatma", "Kemal"};
     private String[] surnames = {"Kebapçı", "Çevik", "Öztürk", "Vural", "Ertekin"};
     private String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
+    private String term;
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, int creditLimit) {
         this.students = students;
@@ -33,9 +33,20 @@ public class CourseRegistrationSimulation {
     public void starSimulation() throws IOException {
         createStudents();
         createLecturer();
-        System.out.println(this.lecturers);
+        readParameters();
         createAdvisors();
-        System.out.println(this.advisors);
+        createCourses();
+        matchStudentAdvisor();
+        for (Student student : this.students) {
+            ArrayList<CompulsoryCourse> appliedCourses = applyCourse(student);
+            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(appliedCourses, student);
+            Advisor advisor = student.getAdvisor();
+            checkSystemRequirements(enrollmentRequest);
+            advisor.checkScheduleCollision(enrollmentRequest);
+            student.calculateTranscriptAfter(enrollmentRequest);
+
+        }
+
 
     }
 
@@ -77,47 +88,42 @@ public class CourseRegistrationSimulation {
     }*/
 
     public void matchStudentAdvisor() {
+        Random random = new Random();
+        int size = advisors.size();
         for (Student student : this.students) {
-            student.setAdvisor(this.advisors.get(ThreadLocalRandom.current().nextInt(0, this.advisors.size() + 1)));
+            Advisor advisor = this.advisors.get(random.nextInt(size));
+            student.setAdvisor(advisor);
+            advisor.appendStudent(student.getStudentID());
+
         }
     }
 
-    public void sequence() {
+    public ArrayList<CompulsoryCourse> applyCourse(Student student) {
         ArrayList<CompulsoryCourse> courses = this.courses;
         Random random = new Random();
-        for (Student student : students) {
-            int appliedCourseNumber = random.nextInt(1, 5);
-            ArrayList<CompulsoryCourse> appliedCourses = new ArrayList<CompulsoryCourse>();
-            for (int i = 0; i < appliedCourseNumber; i++) {
-                CompulsoryCourse randomCourse = courses.get(random.nextInt(courses.size()));
-                appliedCourses.add(randomCourse);
-                System.out.println(student.getStudentID() + " applied for " + randomCourse.getCourseCode());
-                // Log
+        int appliedCourseNumber = random.nextInt(1, 5);
+        ArrayList<CompulsoryCourse> appliedCourses = new ArrayList<CompulsoryCourse>();
+        for (int i = 0; i < appliedCourseNumber; i++) {
+            CompulsoryCourse randomCourse = courses.get(random.nextInt(courses.size()));
+            appliedCourses.add(randomCourse);
+            System.out.println(student.getStudentID() + " applied for " + randomCourse.getCourseCode());
+            // Log
 
-
-            }
-            EnrollmentRequest enrollmentRequest = new EnrollmentRequest(appliedCourses, student);
-            RegistrationSystem registrationSystem = new RegistrationSystem();
-            registrationSystem.checkCourseIsTakenBefore(enrollmentRequest);
-            registrationSystem.checkPrerequisites(enrollmentRequest);
-            enrollmentRequest.getStudent().getAdvisor().checkScheduleCollision(enrollmentRequest);
-            System.out.println(enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
 
         }
+
+        return appliedCourses;
+
 
     }
 
-    /*public void checkSystemRequirements() {
+    public void checkSystemRequirements(EnrollmentRequest enrollmentRequest) {
         RegistrationSystem registrationSystem = new RegistrationSystem();
-        for (EnrollmentRequest enrollmentRequest1 : this.enrollmentRequests) {
-            registrationSystem.getTotalCredit(enrollmentRequest1);
-            registrationSystem.checkCourseIsTakenBefore(enrollmentRequest1);
-            registrationSystem.checkPrerequisites(enrollmentRequest1);
-            checkCourseIsOpened();
+        registrationSystem.checkCourseIsTakenBefore(enrollmentRequest);
+        registrationSystem.checkPrerequisites(enrollmentRequest);
+        registrationSystem.isOpenedThisTerm(enrollmentRequest, this.term);
 
-        }
-
-    }*/
+    }
 
 
     public ArrayList<CompulsoryCourse> getRandomCourse(ArrayList<CompulsoryCourse> list) {
@@ -135,14 +141,6 @@ public class CourseRegistrationSimulation {
     public boolean passOrFail() {
         Random random = new Random();
         return random.nextDouble() < this.probToPassClass;
-    }
-
-    public void setTranscriptAfter(EnrollmentRequest enrollmentRequest) {
-        Student student = enrollmentRequest.getStudent();
-        String[] letterGrades = {"AA", "AB", "BB", "BC", "CC", "DC", "DD"};
-        int select = new Random().nextInt(letterGrades.length);
-        student.setTranscriptAfter(new Transcript());
-
     }
 
 

@@ -1,10 +1,9 @@
 package Iteration_2.src;
 
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class Transcript {
     // courseGrades is haspMap of course object and grades in integer
@@ -62,11 +61,16 @@ public class Transcript {
         this.notTakenCourses = notTakenCourses;
 
     }
-    public void addTakenCourse(CompulsoryCourse course){
-        this.takenCourses.add(course);
+
+    public void addTakenCourse(ArrayList<CompulsoryCourse> courses) {
+        this.takenCourses.addAll(courses);
     }
-    public void removeCourse(CompulsoryCourse course){
-        this.notTakenCourses.remove(course);
+
+    public void removeCourse(ArrayList<CompulsoryCourse> courses) {
+        this.notTakenCourses.remove(courses);
+    }
+    public  void  addCourseGrade(HashMap<String,String> courseGrades){
+        this.courseGrades.putAll(courseGrades);
     }
 
     public HashMap<String, String> getCourseGrades() {
@@ -116,39 +120,39 @@ public class Transcript {
     public void setNotTakenCourses(ArrayList<CompulsoryCourse> notTakenCourses) {
         this.notTakenCourses = notTakenCourses;
     }
-    
+
     public float calculateGpa() {
-    	float gpa = 0f;
+        float gpa = 0f;
         int totalCredit = 0;
         for (int j = 0; j < this.getTakenCourses().size(); j++) {
-        	String letterGrade = this.getCourseGrades().get(this.getTakenCourses().get(j).getCourseCode());
-        	if ( letterGrade == "AA")
-        		gpa += this.getTakenCourses().get(j).getCredit() * 4;
-        	else if ( letterGrade == "BA")
-        		gpa += this.getTakenCourses().get(j).getCredit() * 3.5;
-        	else if ( letterGrade == "BB")
-        		gpa += this.getTakenCourses().get(j).getCredit() * 3;
-        	else if ( letterGrade == "CB")
-        		gpa += this.getTakenCourses().get(j).getCredit() * 2.5;
-        	else if ( letterGrade == "CC")
-        		gpa += this.getTakenCourses().get(j).getCredit() * 2;
-        	else if ( letterGrade == "DC")
-        		gpa += this.getTakenCourses().get(j).getCredit() * 1.5;
-        	totalCredit += this.getTakenCourses().get(j).getCredit();
+            String letterGrade = this.getCourseGrades().get(this.getTakenCourses().get(j).getCourseCode());
+            if (letterGrade == "AA")
+                gpa += this.getTakenCourses().get(j).getCredit() * 4;
+            else if (letterGrade == "BA")
+                gpa += this.getTakenCourses().get(j).getCredit() * 3.5;
+            else if (letterGrade == "BB")
+                gpa += this.getTakenCourses().get(j).getCredit() * 3;
+            else if (letterGrade == "CB")
+                gpa += this.getTakenCourses().get(j).getCredit() * 2.5;
+            else if (letterGrade == "CC")
+                gpa += this.getTakenCourses().get(j).getCredit() * 2;
+            else if (letterGrade == "DC")
+                gpa += this.getTakenCourses().get(j).getCredit() * 1.5;
+            totalCredit += this.getTakenCourses().get(j).getCredit();
         }
-        
-        return Math.round((gpa/totalCredit) * 100.0) / 100.0f;
+
+        return Math.round((gpa / totalCredit) * 100.0) / 100.0f;
     }
-    
-    public HashMap<String, String> randomCourseGrade(ArrayList<CompulsoryCourse> courses){
-    	String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
-    	HashMap<String, String> hashmap = new HashMap<String, String>();
-    	
-    	for (int j = 0; j < courses.size(); j++)
-    		hashmap.put(courses.get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length-1)]);
-    	
-    	
-    	return hashmap;
+
+    public HashMap<String, String> randomCourseGrade(ArrayList<CompulsoryCourse> courses) {
+        String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
+        HashMap<String, String> hashmap = new HashMap<String, String>();
+
+        for (int j = 0; j < courses.size(); j++)
+            hashmap.put(courses.get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length - 1)]);
+
+
+        return hashmap;
     }
 
     @Override

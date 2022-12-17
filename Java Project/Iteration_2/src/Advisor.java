@@ -1,8 +1,8 @@
 package Iteration_2.src;
 
 
-
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Advisor extends Lecturer {
     //The students that are advised by the advisor
@@ -19,28 +19,38 @@ public class Advisor extends Lecturer {
 
     public Advisor() {
     }
+
+    public void appendStudent(String studentID) {
+        this.students.add(studentID);
+    }
+
     //Constructor for advisor with no parameters
-    public void checkScheduleCollision(EnrollmentRequest enrollmentRequest){
+    public void checkScheduleCollision(EnrollmentRequest enrollmentRequest) {
         ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
         ArrayList<CompulsoryCourse> canBeTaken = new ArrayList<>();
-        Schedule schedule = new Schedule();
-        for(CompulsoryCourse course: courses){
-            if (canBeTaken.isEmpty()){
-                canBeTaken.add(course);
-            }
-            else{
-                for (CompulsoryCourse compulsoryCourse: canBeTaken){
-                  if(!schedule.isCollided(course.getRandomSection(),compulsoryCourse.getRandomSection())){
-                      canBeTaken.add(course);
-                      System.out.println("Course "+ course.getCourseCode()+" is passed from 'schedule collision ' test. ");
-                  }
-                  else {
-                      System.out.println("Course "+ course.getCourseCode()+" can not taken because it collides with " +compulsoryCourse.getCourseCode());
-                  }
+        Schedule schedule = enrollmentRequest.getStudent().getSchedule();
+
+        if (courses.size() == 1) {
+            System.out.println("Course " + courses.get(0).getCourseCode() + " is passed from 'schedule collision ' test. ");
+            canBeTaken.add(courses.get(0));
+        } else {
+            for (CompulsoryCourse course : courses) {
+                for(CompulsoryCourse course1 : courses){
+                    if(!Objects.equals(course.getCourseCode(), course1.getCourseCode())){
+                        if (schedule.isCollided(course.getRandomSection(),course1.getRandomSection())){
+                            System.out.println("Advisor "+ this.getLecturerName()+ " did not allowed to take course "+ course.getCourseCode()+ " because time conflict");
+                            canBeTaken.remove(course);
+                        }
+                        else{
+                            System.out.println("Course " + courses.get(0).getCourseCode() + " is passed from 'schedule collision ' test. ");
+                            canBeTaken.add(course);
+                        }
+                    }
                 }
+
             }
         }
-
+        enrollmentRequest.setCourses(canBeTaken);
     }
 
     @Override
