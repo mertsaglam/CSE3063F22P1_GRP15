@@ -14,7 +14,7 @@ public class Advisor extends Lecturer {
 
     public Advisor(String lecturerName, String lecturerSurname, Schedule schedule, ArrayList<String> students) {
         super(lecturerName, lecturerSurname, schedule);
-        this.students = students;
+        this.students = ;
     }
 
     public Advisor() {
