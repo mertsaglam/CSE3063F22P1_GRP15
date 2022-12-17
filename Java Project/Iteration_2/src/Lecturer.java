@@ -19,9 +19,13 @@ public class Lecturer {
         this.lecturerName = lecturerName;
         this.lecturerSurname = lecturerSurname;
         this.schedule = schedule;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod()
     }
 
     public Lecturer() {
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod()
 
     }
 
@@ -30,16 +34,22 @@ public class Lecturer {
     //getter for lecturer name property
     public String getLecturerName() {
         return lecturerName;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod()
     
 
     }
     //getter for lecturer surname property
     public String getLecturerSurname() {
         return lecturerSurname;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod()
     }
     //getter for schedule property
     public Schedule getSchedule() {
         return schedule;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod()
     }
 
     @Override
@@ -49,6 +59,8 @@ public class Lecturer {
                 ", lecturerSurname='" + lecturerSurname + '\'' +
                 ", schedule=" + schedule +
                 '}';
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod()
     }
     public ArrayList<Advisor> lecturerToAdvisor(ArrayList<Lecturer> lecturers){
         ArrayList<Advisor> advisors = new ArrayList<>();
@@ -58,6 +70,8 @@ public class Lecturer {
             System.out.println(advisor);
         }
         return advisors;
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod()
 
     }
 }
