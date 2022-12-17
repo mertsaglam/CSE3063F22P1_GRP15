@@ -139,6 +139,17 @@ public class Transcript {
         
         return Math.round((gpa/totalCredit) * 100.0) / 100.0f;
     }
+    
+    public HashMap<String, String> randomCourseGrade(ArrayList<CompulsoryCourse> courses){
+    	String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
+    	HashMap<String, String> hashmap = new HashMap<String, String>();
+    	
+    	for (int j = 0; j < courses.size(); j++)
+    		hashmap.put(courses.get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length-1)]);
+    	
+    	
+    	return hashmap;
+    }
 
     @Override
     public String toString() {
