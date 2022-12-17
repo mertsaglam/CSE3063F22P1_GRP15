@@ -16,7 +16,7 @@ public class CourseRegistrationSimulation {
     private double probTo;
     private String[] names = {"Ahmet", "Ali", "Ayşe", "Fatma", "Kemal"};
     private String[] surnames = {"Kebapçı", "Çevik", "Öztürk", "Vural", "Ertekin"};
-    private String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
+    private String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC", "FF"};
     private String term;
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, int creditLimit) {
@@ -158,30 +158,11 @@ public class CourseRegistrationSimulation {
                 takenCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
                 transcriptBefore.setTakenCredit(takenCredit);
 
-                courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length - 1)]);
+                courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length)]);
             }
             transcriptBefore.setCourseGrades(courseGrades);
-
-            float gpa = 0f;
-            int totalCredit = 0;
-            for (int j = 0; j < transcriptBefore.getTakenCourses().size(); j++) {
-                String letterGrade = transcriptBefore.getCourseGrades().get(transcriptBefore.getTakenCourses().get(j).getCourseCode());
-                if (Objects.equals(letterGrade, "AA"))
-                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 4;
-                else if (Objects.equals(letterGrade, "BA"))
-                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3.5;
-                else if (Objects.equals(letterGrade, "BB"))
-                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 3;
-                else if (Objects.equals(letterGrade, "CB"))
-                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2.5;
-                else if (Objects.equals(letterGrade, "CC"))
-                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 2;
-                else if (Objects.equals(letterGrade, "DC"))
-                    gpa += transcriptBefore.getTakenCourses().get(j).getCredit() * 1.5;
-                totalCredit += transcriptBefore.getTakenCourses().get(j).getCredit();
-            }
-
-            transcriptBefore.setGpa(gpa / totalCredit/*Math.round(new Random().nextFloat() * 400.0) / 100.0f*/);
+            
+            transcriptBefore.setGpa(transcriptBefore.calculateGpa());
 
 
         }
