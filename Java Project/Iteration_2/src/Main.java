@@ -28,6 +28,9 @@ public class Main {
         fileWriter.close();*/
         CourseRegistrationSimulation courseRegistrationSimulation = new CourseRegistrationSimulation();
         courseRegistrationSimulation.starSimulation();
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
 
 
     }
