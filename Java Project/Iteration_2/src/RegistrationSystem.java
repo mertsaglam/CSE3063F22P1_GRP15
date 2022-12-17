@@ -21,8 +21,10 @@ public class RegistrationSystem {
                 //Log
 
             }
-
-
+            
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
         }
         enrollmentRequest.setCourses(takenCourses);
 
@@ -51,7 +53,9 @@ public class RegistrationSystem {
 
         }
         enrollmentRequest.setCourses(takenCourses);
-
+        
+    Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+    LoggingAgent.LoggerMethod();
     }
 
     public void isOpenedThisTerm(EnrollmentRequest enrollmentRequest,String term) {
@@ -66,7 +70,9 @@ public class RegistrationSystem {
                 System.out.println("Course "+ course.getCourseCode()+" can not been taken because it does not opened this term");
         }
         enrollmentRequest.setCourses(takenCourses);
-
+    
+    Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+    LoggingAgent.LoggerMethod();
     }
 
 
