@@ -35,11 +35,13 @@ public class CourseRegistrationSimulation {
     public void starSimulation() throws IOException {
         FileManager1 fileManager1 = new FileManager1();
         createParams();
-        createStudents();
+        createCourses();
+        students = createRandomStudent(studentSize);
+        fileManager1.writeToFileWithArray(students, "Java Project/Iteration_2/src/Jsons/students.json");
+        //createStudents();
         createLecturer();
         readParameters();
         createAdvisors();
-        createCourses();
         matchStudentAdvisor();
         for (Student student : this.students) {
             ArrayList<CompulsoryCourse> appliedCourses = applyCourse(student);
@@ -85,6 +87,8 @@ public class CourseRegistrationSimulation {
         HashMap params = fileManager1.readParams("Java Project/Iteration_2/src/input.json") ;
         this.probToPassClass = (double) params.get("prob_to_pass_class");
         this.term = (String) params.get("semester");
+        double number = (double) params.get("student_count");
+        this.studentSize = (int)(number);
 
     }
 
