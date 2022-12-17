@@ -30,14 +30,20 @@ public  class CompulsoryCourse {
 		this.courseSection = courseSection;
 		this.courseStudents = courseStudents;
 		this.openedTerm = givenSemester;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        	LoggingAgent.LoggerMethod();
 	}
 
 	public String getCourseCode() {
 		return courseCode;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        	LoggingAgent.LoggerMethod();
 	}
 
 	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        	LoggingAgent.LoggerMethod();
 	}
 
 	public String getCourseName() {
