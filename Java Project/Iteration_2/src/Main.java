@@ -21,7 +21,6 @@ public class Main {
         Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
         LoggingAgent.LoggerMethod();
 
-
     }
 
 }
