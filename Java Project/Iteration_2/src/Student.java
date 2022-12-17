@@ -27,6 +27,9 @@ public class Student {
         this.schedule = schedule;
         this.advisor = advisor;
         this.enrolledYear = enrolledYear;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
     public Student(String studentName, String studentSurname, Transcript transcriptBefore,
                     Schedule schedule, Advisor advisor, String enrolledYear) {
@@ -38,6 +41,9 @@ public class Student {
         this.schedule = schedule;
         this.advisor = advisor;
         this.enrolledYear = enrolledYear;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public Student(String studentID, String studentName, String studentSurname, String enrolledYear) {
@@ -45,80 +51,137 @@ public class Student {
         this.studentName = studentName;
         this.studentSurname = studentSurname;
         this.enrolledYear = enrolledYear;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public String getStudentID() {
         return this.studentID;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setStudentID(String studentID) {
         this.studentID = studentID;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public String getStudentSurname() {
         return this.studentSurname;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setStudentSurname(String studentSurname) {
         this.studentSurname = studentSurname;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public String getStudentName() {
         return this.studentName;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public Transcript getTranscriptBefore() {
         return transcriptBefore;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setTranscriptBefore(Transcript transcriptBefore) {
         this.transcriptBefore = transcriptBefore;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public Transcript getTranscriptAfter() {
         return transcriptAfter;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setTranscriptAfter(Transcript transcriptAfter) {
         this.transcriptAfter = transcriptAfter;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public Schedule getSchedule() {
         return this.schedule;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public Advisor getAdvisor() {
         return this.advisor;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setAdvisor(Advisor advisor) {
         this.advisor = advisor;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public String getEnrolledYear() {
         return this.enrolledYear;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setEnrolledYear(String enrolledYear) {
         this.enrolledYear = enrolledYear;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public Student() {
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void createStudentID() {
         String department = "1501";
         this.setStudentID(department + this.enrolledYear.substring(2) + String.valueOf((int)(Math.random() * 1000)));
-
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
+    
     public void calculateTranscriptAfter(EnrollmentRequest enrollmentRequest,double prob) {
         Student student = enrollmentRequest.getStudent();
         Transcript transcriptBefore = student.getTranscriptBefore();
@@ -137,7 +200,9 @@ public class Student {
         transcriptBefore.addTakenCourse(enrollmentRequest.getCourses());
         transcriptBefore.setGpa(transcriptBefore.calculateGpa());
         student.setTranscriptAfter(transcriptBefore);
-
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     @Override
@@ -152,6 +217,9 @@ public class Student {
                 ", advisor=" + advisor +
                 ", enrolledYear='" + enrolledYear + '\'' +
                 '}';
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
 }
