@@ -29,9 +29,6 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
-        
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
     }
 
     public ArrayList<CompulsoryCourse> readCourse(String path) {
@@ -46,9 +43,6 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
-        
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
     }
 
     public ArrayList<Lecturer> readLecturers(String path) {
@@ -63,9 +57,6 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
-        
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
     }
 
 
@@ -81,40 +72,22 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
-        
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
     }
 
     public void writeToFile(Student student, String filePath) throws IOException {
-    	try {
-    		File file = new File(filePath);
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            FileWriter fileWriter = new FileWriter(file, true);
-            fileWriter.write(gson.toJson(student));
-            fileWriter.close();
-    	} catch (IOException e) {
-    		e.printStackTrace();
-    	}
-        
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
+        File file = new File(filePath);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        FileWriter fileWriter = new FileWriter(file, true);
+        fileWriter.write(gson.toJson(student));
+        fileWriter.close();
     }
 
     public void writeToFileWithArray(ArrayList<Student> student, String filePath) throws IOException {
-    	try {
-    		File file = new File(filePath);
-            Gson gson = new GsonBuilder().setPrettyPrinting().serializeSpecialFloatingPointValues().create();
-            FileWriter fileWriter = new FileWriter(file, false);
-            fileWriter.write(gson.toJson(student));
-            fileWriter.close();
-    	} catch (IOException e) {
-    		e.printStackTrace();
-    	}
-        
-        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
-        LoggingAgent.LoggerMethod();
-        
+        File file = new File(filePath);
+        Gson gson = new GsonBuilder().setPrettyPrinting().serializeSpecialFloatingPointValues().create();
+        FileWriter fileWriter = new FileWriter(file, false);
+        fileWriter.write(gson.toJson(student));
+        fileWriter.close();
     }
 
 }
