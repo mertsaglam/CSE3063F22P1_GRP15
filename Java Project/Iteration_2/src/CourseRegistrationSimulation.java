@@ -16,7 +16,7 @@ public class CourseRegistrationSimulation {
     private double probTo;
     private String[] names = {"Ahmet", "Ali", "Ayşe", "Fatma", "Kemal"};
     private String[] surnames = {"Kebapçı", "Çevik", "Öztürk", "Vural", "Ertekin"};
-    private String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC", "FF"};
+    private String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
     private String term;
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, int creditLimit) {
