@@ -240,6 +240,8 @@ class CourseSection {
 
 	public void setQuota(int quota) {
 		this.quota = quota;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        	LoggingAgent.LoggerMethod();
 	}
 
 
@@ -251,6 +253,8 @@ class CourseSection {
 				", schedule=" + schedule +
 				", quota=" + quota +
 				'}';
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        	LoggingAgent.LoggerMethod();
 	}
 }
 
