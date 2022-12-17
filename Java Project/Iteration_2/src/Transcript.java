@@ -37,6 +37,9 @@ public class Transcript {
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;
         this.notTakenCourses = notTakenCourses;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     // constructor for Transcript takes nothing as a parameter
@@ -47,6 +50,9 @@ public class Transcript {
         this.takenCredit = 0;
         this.takenCourses = new ArrayList<>();
         this.notTakenCourses = new ArrayList<>();
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     // set method for Transcript takes courseGrade,Student object, gpa, takenCredit,
@@ -59,29 +65,50 @@ public class Transcript {
         this.takenCredit = takenCredit;
         this.takenCourses = takenCourses;
         this.notTakenCourses = notTakenCourses;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
 
     }
 
     public void addTakenCourse(ArrayList<CompulsoryCourse> courses) {
         this.takenCourses.addAll(courses);
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
     public void addTakenCourseOne(CompulsoryCourse course) {
         this.takenCourses.add(course);
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
     public void removeCourse(ArrayList<CompulsoryCourse> courses) {
         this.notTakenCourses.remove(courses);
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
     public  void  addCourseGrade(HashMap<String,String> courseGrades){
         this.courseGrades.putAll(courseGrades);
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
 
     public HashMap<String, String> getCourseGrades() {
         return courseGrades;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setCourseGrades(HashMap<String, String> courseGrades) {
         this.courseGrades = courseGrades;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     /*public Student getStudent() {
@@ -94,34 +121,58 @@ public class Transcript {
 
     public float getGpa() {
         return gpa;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setGpa(float gpa) {
         this.gpa = gpa;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public int getTakenCredit() {
         return takenCredit;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setTakenCredit(int takenCredit) {
         this.takenCredit = takenCredit;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public ArrayList<CompulsoryCourse> getTakenCourses() {
         return takenCourses;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setTakenCourses(ArrayList<CompulsoryCourse> takenCourses) {
         this.takenCourses = takenCourses;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public ArrayList<CompulsoryCourse> getNotTakenCourses() {
         return notTakenCourses;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void setNotTakenCourses(ArrayList<CompulsoryCourse> notTakenCourses) {
         this.notTakenCourses = notTakenCourses;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public float calculateGpa() {
@@ -145,6 +196,9 @@ public class Transcript {
         }
 
         return Math.round((gpa / totalCredit) * 100.0) / 100.0f;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public HashMap<String, String> randomCourseGrade(ArrayList<CompulsoryCourse> courses) {
@@ -156,6 +210,9 @@ public class Transcript {
 
 
         return hashmap;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     @Override
@@ -168,5 +225,8 @@ public class Transcript {
                 ", takenCourses=" + takenCourses +
                 ", notTakenCourses=" + notTakenCourses +
                 '}';
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 }
