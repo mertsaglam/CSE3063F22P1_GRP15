@@ -27,6 +27,8 @@ public class FileManager {
 
 	public FileManager() {
 		parser = new JSONParser();
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 
 	public ArrayList<Iteration_1.src.Student> readStudent(String path) {
@@ -286,6 +288,8 @@ public class FileManager {
 		}
 
 		return students;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 
 	public ArrayList<Iteration_1.src.Course> readCourse(String path) {
@@ -402,6 +406,8 @@ public class FileManager {
 		}
 
 		return courses;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 
 	public ArrayList<Iteration_1.src.Lecturer> readLecturer(String path) {
@@ -478,6 +484,8 @@ public class FileManager {
 		}
 
 		return lecturers;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 
 	public ArrayList<Iteration_1.src.Advisor> readAdvisor(String path) {
@@ -553,33 +561,51 @@ public class FileManager {
 			exception.printStackTrace();
 		}
 		return advisors;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 
 
 	public HashMap jsonToMap(String json) {
 		HashMap map = new Gson().fromJson(json, HashMap.class);
 		return map;
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 	public Iteration_1.src.Student jsonToClassStudent(String json) {
 		return new Gson().fromJson(json, Iteration_1.src.Student.class);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 	public Iteration_1.src.Course jsonToClassCourse(String json) {
 		return new Gson().fromJson(json, Iteration_1.src.Course.class);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 	public Iteration_1.src.Transcript jsonToClassTranscript(String json) {
 		return new Gson().fromJson(json, Iteration_1.src.Transcript.class);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 	public Iteration_1.src.Semester jsonToClassSemester(String json) {
 		return new Gson().fromJson(json, Iteration_1.src.Semester.class);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 	public Iteration_1.src.Schedule jsonToClassSchedule(String json) {
 		return new Gson().fromJson(json, Iteration_1.src.Schedule.class);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 	public Iteration_1.src.Lecturer jsonToClassLecturer(String json) {
 		return new Gson().fromJson(json, Iteration_1.src.Lecturer.class);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 	public Iteration_1.src.Advisor jsonToClassAdvisor(String json) {
 		return new Gson().fromJson(json, Iteration_1.src.Advisor.class);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 
 	public Iteration_1.src.Student initializeStudent(JSONObject jsonObject){
@@ -594,6 +620,8 @@ public class FileManager {
 		String enrolledYear = jsonObject.get("enrolledyear").toString();
 
 		return new Iteration_1.src.Student(studentName,studentSurname,transcript,semester,schedule,advisor, enrolledYear);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 
 
 	}
@@ -615,6 +643,8 @@ public class FileManager {
 		HashMap courseDayHour = jsonToMap(jsonObject.get("courseDayHour").toString());
 
 		return new Iteration_1.src.Schedule(courseDayHour);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 
 	}
 
@@ -628,6 +658,8 @@ public class FileManager {
 		ArrayList<Iteration_1.src.Course> givenCourses = gson.fromJson(jsonObject.get("givenCourses").toString(),courseListType);
 
 		return new Lecturer(lecturerName, lecturerSurname, schedule, givenCourses);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 
 	}
 
@@ -640,6 +672,8 @@ public class FileManager {
 		String advisorSurname = jsonObject.get("surname").toString();
 
 		return new Advisor(advisedStudents, advisorName, advisorSurname);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 
 	}
 
@@ -654,11 +688,14 @@ public class FileManager {
 		ArrayList<Course> notTakenCourses = gson.fromJson(jsonObject.get("notTakenCourses").toString(),courseListType);
 
 		return new Transcript(courseGrade,student,GPA,takenCredit,takenCourses,notTakenCourses);
+		Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 
 
 	}
 
 	public void writeToFile(String path, String message) {
-
+                Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+                LoggingAgent.LoggerMethod()
 	}
 }
