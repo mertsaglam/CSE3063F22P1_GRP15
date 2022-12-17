@@ -53,7 +53,7 @@ public class Schedule {
                 "courseDayHour=" + courseDayHour +
                 '}';
     }
-
+    
     public boolean isCollided(Schedule schedule, Schedule schedule1) {
         for (String key : schedule.getCourseDayHour().keySet()) {
             if (schedule1.getCourseDayHour().containsKey(key)) {
@@ -61,6 +61,7 @@ public class Schedule {
                 for (String value : schedule.getCourseDayHour().get(key)) {
                     if (schedule1.getCourseDayHour().get(key).contains(value))
                         return true;
+
                 }
             }
         }
