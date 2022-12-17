@@ -29,6 +29,9 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public ArrayList<CompulsoryCourse> readCourse(String path) {
@@ -43,6 +46,9 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public ArrayList<Lecturer> readLecturers(String path) {
@@ -57,6 +63,9 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
 
@@ -72,6 +81,9 @@ public class FileManager1 {
             e.printStackTrace();
         }
         return null;
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void writeToFile(Student student, String filePath) throws IOException {
@@ -85,6 +97,8 @@ public class FileManager1 {
     		e.printStackTrace();
     	}
         
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
     }
 
     public void writeToFileWithArray(ArrayList<Student> student, String filePath) throws IOException {
@@ -97,6 +111,9 @@ public class FileManager1 {
     	} catch (IOException e) {
     		e.printStackTrace();
     	}
+        
+        Iteration_2.src.LoggingAgent LoggingAgent = new Iteration_2.src.LoggingAgent();
+        LoggingAgent.LoggerMethod();
         
     }
 
