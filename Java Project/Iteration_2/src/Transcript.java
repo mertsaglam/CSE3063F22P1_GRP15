@@ -116,6 +116,29 @@ public class Transcript {
     public void setNotTakenCourses(ArrayList<CompulsoryCourse> notTakenCourses) {
         this.notTakenCourses = notTakenCourses;
     }
+    
+    public float calculateGpa() {
+    	float gpa = 0f;
+        int totalCredit = 0;
+        for (int j = 0; j < this.getTakenCourses().size(); j++) {
+        	String letterGrade = this.getCourseGrades().get(this.getTakenCourses().get(j).getCourseCode());
+        	if ( letterGrade == "AA")
+        		gpa += this.getTakenCourses().get(j).getCredit() * 4;
+        	else if ( letterGrade == "BA")
+        		gpa += this.getTakenCourses().get(j).getCredit() * 3.5;
+        	else if ( letterGrade == "BB")
+        		gpa += this.getTakenCourses().get(j).getCredit() * 3;
+        	else if ( letterGrade == "CB")
+        		gpa += this.getTakenCourses().get(j).getCredit() * 2.5;
+        	else if ( letterGrade == "CC")
+        		gpa += this.getTakenCourses().get(j).getCredit() * 2;
+        	else if ( letterGrade == "DC")
+        		gpa += this.getTakenCourses().get(j).getCredit() * 1.5;
+        	totalCredit += this.getTakenCourses().get(j).getCredit();
+        }
+        
+        return Math.round((gpa/totalCredit) * 100.0) / 100.0f;
+    }
 
     @Override
     public String toString() {
