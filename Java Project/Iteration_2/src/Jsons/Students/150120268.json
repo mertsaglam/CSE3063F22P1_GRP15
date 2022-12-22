@@ -1,0 +1,182 @@
+{
+  "studentID": "150120268",
+  "studentName": "Fatma",
+  "studentSurname": "Ertekin",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE2246": "CC",
+      "CSE3264": "CC",
+      "MATH2256": "BB"
+    },
+    "gpa": 2.31,
+    "takenCredit": 16,
+    "takenCourses": [
+      {
+        "courseCode": "CSE2246",
+        "courseName": "Analysis of Algorithms",
+        "credit": 6,
+        "prerequisites": [
+          "CSE225"
+        ],
+        "lecturer": {
+          "lecturerName": "Ömer",
+          "lecturerSurname": "Korçak",
+          "schedule": {
+            "courseDayHour": {}
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2023",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "15",
+                  "16"
+                ],
+                "Thursday": [
+                  "14",
+                  "15"
+                ],
+                "Friday": [
+                  "15"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "MATH2256",
+        "courseName": "Linear Algebra for Comp. Eng.",
+        "credit": 5,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "8",
+                "9"
+              ],
+              "Tuesday": [
+                "10"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "MATH2256",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "8",
+                  "9"
+                ],
+                "Tuesday": [
+                  "10"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3264",
+        "courseName": "Formal Lang. \u0026 Auto. Theory",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3264",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Çiðdem",
+    "lecturerSurname": "Eroðlu Erdem",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2020"
+}

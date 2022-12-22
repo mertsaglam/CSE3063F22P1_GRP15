@@ -1,0 +1,286 @@
+{
+  "studentID": "150120407",
+  "studentName": "Ali",
+  "studentSurname": "Vural",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE1241": "CC",
+      "CSE3063": "DC",
+      "ECON2004": "CB",
+      "CSE2138": "AA",
+      "CSE2225": "DC"
+    },
+    "gpa": 2.34,
+    "takenCredit": 29,
+    "takenCourses": [
+      {
+        "courseCode": "CSE1241",
+        "courseName": "Computer Programming I",
+        "credit": 6,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Sanem Arslan",
+          "lecturerSurname": "Yýlmaz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "10",
+                "11"
+              ],
+              "Wednesday": [
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE1241",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3063",
+        "courseName": "Object-Oriented Software Desg.",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Murat Can",
+          "lecturerSurname": "Ganiz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3063",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "9",
+                  "10"
+                ],
+                "Tuesday": [
+                  "9"
+                ]
+              }
+            },
+            "2": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            },
+            "3": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE2138",
+        "courseName": "Systems Programming",
+        "credit": 7,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Betül",
+          "lecturerSurname": "Boz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2138",
+          "sectionCount": 2,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "ECON2004",
+        "courseName": "Engineering Economy",
+        "credit": 4,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Ayþe Bengi Özlüarda",
+          "lecturerSurname": "Hamarat",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "ECON2004",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13",
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE2225",
+        "courseName": "Data Structures",
+        "credit": 7,
+        "prerequisites": [
+          "CSE1242"
+        ],
+        "lecturer": {
+          "lecturerName": "Mustafa Borahan",
+          "lecturerSurname": "Tümer",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2225",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "15",
+                  "16"
+                ],
+                "Wednesday": [
+                  "15"
+                ],
+                "Tuesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Ali Fuat",
+    "lecturerSurname": "Alkaya"
+  },
+  "enrolledYear": "2020"
+}

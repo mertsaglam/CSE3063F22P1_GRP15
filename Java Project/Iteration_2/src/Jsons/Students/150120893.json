@@ -1,0 +1,93 @@
+{
+  "studentID": "150120893",
+  "studentName": "Ali",
+  "studentSurname": "Kebapci",
+  "transcriptBefore": {
+    "courseGrades": {
+      "EE2031": "BA"
+    },
+    "gpa": 3.5,
+    "takenCredit": 5,
+    "takenCourses": [
+      {
+        "courseCode": "EE2031",
+        "courseName": "Electric Circuits",
+        "credit": 5,
+        "prerequisites": [
+          "PHYS1102"
+        ],
+        "lecturer": {
+          "lecturerName": "Fulya",
+          "lecturerSurname": "Çallýalp",
+          "schedule": {
+            "courseDayHour": {
+              "Wednesday": [
+                "14"
+              ],
+              "Tuesday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "EE2031",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Mustafa",
+    "lecturerSurname": "Aðaoðlu",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2020"
+}

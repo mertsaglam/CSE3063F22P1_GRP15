@@ -1,0 +1,379 @@
+{
+  "studentID": "150120414",
+  "studentName": "Fatma",
+  "studentSurname": "Kebapci",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE3063": "CB",
+      "CSE3264": "CC",
+      "CSE4288": "BB",
+      "ECON2004": "DC",
+      "MATH2059": "BB"
+    },
+    "gpa": 2.43,
+    "takenCredit": 28,
+    "takenCourses": [
+      {
+        "courseCode": "CSE3063",
+        "courseName": "Object-Oriented Software Desg.",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Murat Can",
+          "lecturerSurname": "Ganiz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3063",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "9",
+                  "10"
+                ],
+                "Tuesday": [
+                  "9"
+                ]
+              }
+            },
+            "2": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            },
+            "3": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE4288",
+        "courseName": "Int. to Machine Learning",
+        "credit": 5,
+        "prerequisites": [
+          "STAT2253",
+          "MATH2256"
+        ],
+        "lecturer": {
+          "lecturerName": "Ali Haydar",
+          "lecturerSurname": "Özer",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE4288",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "14"
+                ],
+                "Thursday": [
+                  "14",
+                  "15"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE3264",
+        "courseName": "Formal Lang. \u0026 Auto. Theory",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3264",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "MATH2059",
+        "courseName": "Numerical Methods",
+        "credit": 4,
+        "prerequisites": [
+          "MATH1001"
+        ],
+        "lecturer": {
+          "lecturerName": "Ciðdem Eroðlu ",
+          "lecturerSurname": "Erdem",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "8",
+                "9"
+              ],
+              "Tuesday": [
+                "10"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "MATH2059",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "1",
+                  "2",
+                  "4",
+                  "5"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3063",
+        "courseName": "Object-Oriented Software Desg.",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Murat Can",
+          "lecturerSurname": "Ganiz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3063",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "9",
+                  "10"
+                ],
+                "Tuesday": [
+                  "9"
+                ]
+              }
+            },
+            "2": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            },
+            "3": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "ECON2004",
+        "courseName": "Engineering Economy",
+        "credit": 4,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Ayþe Bengi Özlüarda",
+          "lecturerSurname": "Hamarat",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "ECON2004",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13",
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Borahan",
+    "lecturerSurname": "Tümer",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2020"
+}

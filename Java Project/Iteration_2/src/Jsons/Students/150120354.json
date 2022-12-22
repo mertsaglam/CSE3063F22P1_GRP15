@@ -1,0 +1,639 @@
+{
+  "studentID": "150120354",
+  "studentName": "Ayse",
+  "studentSurname": "Cevik",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE3038": "DC",
+      "CSE1241": "BA",
+      "CSE3033": "BB",
+      "CSE3044": "DC",
+      "CSE3264": "BB",
+      "CSE4288": "BB",
+      "STAT2253": "AA",
+      "MATH2256": "DC",
+      "EE2031": "CC",
+      "CSE2138": "CC"
+    },
+    "gpa": 2.32,
+    "takenCredit": 71,
+    "takenCourses": [
+      {
+        "courseCode": "CSE3038",
+        "courseName": "Computer Organization",
+        "credit": 7,
+        "prerequisites": [
+          "EE2031"
+        ],
+        "lecturer": {
+          "lecturerName": "Haluk Rahmi",
+          "lecturerSurname": "Topcuoglu",
+          "schedule": {
+            "courseDayHour": {}
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3038",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "9",
+                  "10"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "9"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "EE2031",
+        "courseName": "Electric Circuits",
+        "credit": 5,
+        "prerequisites": [
+          "PHYS1102"
+        ],
+        "lecturer": {
+          "lecturerName": "Fulya",
+          "lecturerSurname": "Çallýalp",
+          "schedule": {
+            "courseDayHour": {
+              "Wednesday": [
+                "14"
+              ],
+              "Tuesday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "EE2031",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "STAT2253",
+        "courseName": "Prob. and Stat. for Comp. Eng.",
+        "credit": 5,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Müjdat",
+          "lecturerSurname": "Soytürk",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "STAT2253",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Friday": [
+                  "16"
+                ],
+                "Tuesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE3038",
+        "courseName": "Computer Organization",
+        "credit": 7,
+        "prerequisites": [
+          "EE2031"
+        ],
+        "lecturer": {
+          "lecturerName": "Haluk Rahmi",
+          "lecturerSurname": "Topcuoglu",
+          "schedule": {
+            "courseDayHour": {}
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3038",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "9",
+                  "10"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "9"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3033",
+        "courseName": "Operating Systems",
+        "credit": 7,
+        "prerequisites": [
+          "CSE2225"
+        ],
+        "lecturer": {
+          "lecturerName": "Ali Haydar",
+          "lecturerSurname": "Özer",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3033",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "11"
+                ],
+                "Thursday": [
+                  "15",
+                  "16"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ]
+              }
+            },
+            "2": {
+              "courseDayHour": {
+                "Monday": [
+                  "11"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ],
+                "Tuesday": [
+                  "13",
+                  "14"
+                ]
+              }
+            },
+            "3": {
+              "courseDayHour": {
+                "Monday": [
+                  "11",
+                  "13",
+                  "14"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE1241",
+        "courseName": "Computer Programming I",
+        "credit": 6,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Sanem Arslan",
+          "lecturerSurname": "Yýlmaz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "10",
+                "11"
+              ],
+              "Wednesday": [
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE1241",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE4288",
+        "courseName": "Int. to Machine Learning",
+        "credit": 5,
+        "prerequisites": [
+          "STAT2253",
+          "MATH2256"
+        ],
+        "lecturer": {
+          "lecturerName": "Ali Haydar",
+          "lecturerSurname": "Özer",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE4288",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "14"
+                ],
+                "Thursday": [
+                  "14",
+                  "15"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "EE2031",
+        "courseName": "Electric Circuits",
+        "credit": 5,
+        "prerequisites": [
+          "PHYS1102"
+        ],
+        "lecturer": {
+          "lecturerName": "Fulya",
+          "lecturerSurname": "Çallýalp",
+          "schedule": {
+            "courseDayHour": {
+              "Wednesday": [
+                "14"
+              ],
+              "Tuesday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "EE2031",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3044",
+        "courseName": "Software Engineering",
+        "credit": 7,
+        "prerequisites": [
+          "CSE3055"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2023",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "11"
+                ],
+                "Wednesday": [
+                  "10",
+                  "11"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "MATH2256",
+        "courseName": "Linear Algebra for Comp. Eng.",
+        "credit": 5,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "8",
+                "9"
+              ],
+              "Tuesday": [
+                "10"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "MATH2256",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "8",
+                  "9"
+                ],
+                "Tuesday": [
+                  "10"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3264",
+        "courseName": "Formal Lang. \u0026 Auto. Theory",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3264",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE2138",
+        "courseName": "Systems Programming",
+        "credit": 7,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Betül",
+          "lecturerSurname": "Boz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2138",
+          "sectionCount": 2,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Borahan",
+    "lecturerSurname": "Tümer",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2020"
+}

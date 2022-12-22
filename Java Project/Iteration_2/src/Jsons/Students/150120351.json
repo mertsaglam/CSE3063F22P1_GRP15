@@ -1,0 +1,478 @@
+{
+  "studentID": "150120351",
+  "studentName": "Ali",
+  "studentSurname": "Ertekin",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE3038": "CB",
+      "CSE3215": "BB",
+      "CSE3048": "AA",
+      "CSE2260": "BA",
+      "STAT2253": "BB"
+    },
+    "gpa": 3.33,
+    "takenCredit": 44,
+    "takenCourses": [
+      {
+        "courseCode": "CSE3038",
+        "courseName": "Computer Organization",
+        "credit": 7,
+        "prerequisites": [
+          "EE2031"
+        ],
+        "lecturer": {
+          "lecturerName": "Haluk Rahmi",
+          "lecturerSurname": "Topcuoglu",
+          "schedule": {
+            "courseDayHour": {}
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3038",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "9",
+                  "10"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "9"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3215",
+        "courseName": "Digital Logic Design",
+        "credit": 6,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Betul",
+          "lecturerSurname": "Boz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3215",
+          "sectionCount": 3,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            },
+            "2": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9",
+                  "15",
+                  "16"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            },
+            "3": {
+              "courseDayHour": {
+                "Thursday": [
+                  "15",
+                  "16"
+                ],
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE2260",
+        "courseName": "Principles of Prog. Languages",
+        "credit": 6,
+        "prerequisites": [
+          "CSE1242"
+        ],
+        "lecturer": {
+          "lecturerName": "Fatma Corut",
+          "lecturerSurname": "Ergin",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2260",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "9",
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3048",
+        "courseName": "Int. to Signals and Systems",
+        "credit": 5,
+        "prerequisites": [
+          "MATH2055"
+        ],
+        "lecturer": {
+          "lecturerName": "Mehmet Kadir",
+          "lecturerSurname": "Baran",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3048",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13"
+                ],
+                "Wednesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE3048",
+        "courseName": "Int. to Signals and Systems",
+        "credit": 5,
+        "prerequisites": [
+          "MATH2055"
+        ],
+        "lecturer": {
+          "lecturerName": "Mehmet Kadir",
+          "lecturerSurname": "Baran",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3048",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13"
+                ],
+                "Wednesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "STAT2253",
+        "courseName": "Prob. and Stat. for Comp. Eng.",
+        "credit": 5,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Müjdat",
+          "lecturerSurname": "Soytürk",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "STAT2253",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Friday": [
+                  "16"
+                ],
+                "Tuesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE3048",
+        "courseName": "Int. to Signals and Systems",
+        "credit": 5,
+        "prerequisites": [
+          "MATH2055"
+        ],
+        "lecturer": {
+          "lecturerName": "Mehmet Kadir",
+          "lecturerSurname": "Baran",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3048",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13"
+                ],
+                "Wednesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "STAT2253",
+        "courseName": "Prob. and Stat. for Comp. Eng.",
+        "credit": 5,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Müjdat",
+          "lecturerSurname": "Soytürk",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "STAT2253",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Friday": [
+                  "16"
+                ],
+                "Tuesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Borahan",
+    "lecturerSurname": "Tümer",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2020"
+}

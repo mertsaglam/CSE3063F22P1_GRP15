@@ -1,0 +1,316 @@
+{
+  "studentID": "150120185",
+  "studentName": "Ali",
+  "studentSurname": "Vural",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE3048": "CB",
+      "CSE1241": "DC",
+      "CSE3063": "CB",
+      "MATH2256": "CC",
+      "MATH2059": "CB",
+      "EE2032": "BA"
+    },
+    "gpa": 2.38,
+    "takenCredit": 30,
+    "takenCourses": [
+      {
+        "courseCode": "MATH2256",
+        "courseName": "Linear Algebra for Comp. Eng.",
+        "credit": 5,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "8",
+                "9"
+              ],
+              "Tuesday": [
+                "10"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "MATH2256",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "8",
+                  "9"
+                ],
+                "Tuesday": [
+                  "10"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3048",
+        "courseName": "Int. to Signals and Systems",
+        "credit": 5,
+        "prerequisites": [
+          "MATH2055"
+        ],
+        "lecturer": {
+          "lecturerName": "Mehmet Kadir",
+          "lecturerSurname": "Baran",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3048",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13"
+                ],
+                "Wednesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE3063",
+        "courseName": "Object-Oriented Software Desg.",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Murat Can",
+          "lecturerSurname": "Ganiz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3063",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "9",
+                  "10"
+                ],
+                "Tuesday": [
+                  "9"
+                ]
+              }
+            },
+            "2": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            },
+            "3": {
+              "courseDayHour": {
+                "Wednesday": [
+                  "9"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE1241",
+        "courseName": "Computer Programming I",
+        "credit": 6,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Sanem Arslan",
+          "lecturerSurname": "Yýlmaz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "10",
+                "11"
+              ],
+              "Wednesday": [
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE1241",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "MATH2059",
+        "courseName": "Numerical Methods",
+        "credit": 4,
+        "prerequisites": [
+          "MATH1001"
+        ],
+        "lecturer": {
+          "lecturerName": "Ciðdem Eroðlu ",
+          "lecturerSurname": "Erdem",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "8",
+                "9"
+              ],
+              "Tuesday": [
+                "10"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "MATH2059",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "1",
+                  "2",
+                  "4",
+                  "5"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "EE2032",
+        "courseName": "Electronics",
+        "credit": 5,
+        "prerequisites": [
+          "EE2031"
+        ],
+        "lecturer": {
+          "lecturerName": "Oðuzhan",
+          "lecturerSurname": "Ceylan",
+          "schedule": {
+            "courseDayHour": {}
+          }
+        },
+        "courseSection": {
+          "courseCode": "EE2032",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Friday": [
+                  "9",
+                  "10"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Ali Fuat",
+    "lecturerSurname": "Alkaya"
+  },
+  "enrolledYear": "2020"
+}

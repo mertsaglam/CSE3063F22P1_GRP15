@@ -1,0 +1,291 @@
+{
+  "studentID": "150121808",
+  "studentName": "Ayse",
+  "studentSurname": "Vural",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE3038": "DC",
+      "CSE1241": "CB",
+      "CSE3044": "BA",
+      "CSE3264": "CC",
+      "CSE4288": "BB"
+    },
+    "gpa": 2.5,
+    "takenCredit": 30,
+    "takenCourses": [
+      {
+        "courseCode": "CSE4288",
+        "courseName": "Int. to Machine Learning",
+        "credit": 5,
+        "prerequisites": [
+          "STAT2253",
+          "MATH2256"
+        ],
+        "lecturer": {
+          "lecturerName": "Ali Haydar",
+          "lecturerSurname": "Özer",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE4288",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "14"
+                ],
+                "Thursday": [
+                  "14",
+                  "15"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE3038",
+        "courseName": "Computer Organization",
+        "credit": 7,
+        "prerequisites": [
+          "EE2031"
+        ],
+        "lecturer": {
+          "lecturerName": "Haluk Rahmi",
+          "lecturerSurname": "Topcuoglu",
+          "schedule": {
+            "courseDayHour": {}
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3038",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "9",
+                  "10"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "9"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3264",
+        "courseName": "Formal Lang. \u0026 Auto. Theory",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3264",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3044",
+        "courseName": "Software Engineering",
+        "credit": 7,
+        "prerequisites": [
+          "CSE3055"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2023",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "11"
+                ],
+                "Wednesday": [
+                  "10",
+                  "11"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      },
+      {
+        "courseCode": "CSE1241",
+        "courseName": "Computer Programming I",
+        "credit": 6,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Sanem Arslan",
+          "lecturerSurname": "Yýlmaz",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "10",
+                "11"
+              ],
+              "Wednesday": [
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE1241",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Murat Can",
+    "lecturerSurname": "Ganiz",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2021"
+}

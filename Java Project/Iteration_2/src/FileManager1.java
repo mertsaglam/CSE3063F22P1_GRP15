@@ -19,16 +19,24 @@ public class FileManager1 {
 
 
     public ArrayList<Student> readStudent(String path) {
-        try {
-            Gson gson = new Gson();
-            Reader reader = Files.newBufferedReader(Path.of(path));
-            Type studentsType = new TypeToken<ArrayList<Student>>() {
-            }.getType();
-            return gson.fromJson(reader, studentsType);
-        } catch (IOException e) {
-            e.printStackTrace();
+        ArrayList<Student> students = new ArrayList<>();
+        Gson gson = new GsonBuilder().setPrettyPrinting().setLenient().create();
+        File directoryPath = new File(path);
+        File[] fileList = directoryPath.listFiles();
+
+        for (File file :fileList) {
+            try {
+
+                Reader reader = Files.newBufferedReader(Path.of(file.getAbsolutePath()));
+                Type studentsType = new TypeToken<Student>() {
+                }.getType();
+                students.add(gson.fromJson(reader, studentsType));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
-        return null;
+        return students;
     }
 
     public ArrayList<CompulsoryCourse> readCourse(String path) {
@@ -44,7 +52,19 @@ public class FileManager1 {
         }
         return null;
     }
+    public ArrayList<Student> readStudent1(String path) {
+        try {
+            Gson gson = new Gson();
+            Reader reader = Files.newBufferedReader(Path.of(path));
+            Type studentType = new TypeToken<ArrayList<Student>>() {
+            }.getType();
+            return gson.fromJson(reader, studentType);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public ArrayList<Lecturer> readLecturers(String path) {
         try {
             Gson gson = new Gson();
@@ -60,12 +80,11 @@ public class FileManager1 {
     }
 
 
-
     public HashMap<String, String> readParams(String path) {
         try {
             Gson gson = new Gson();
             Reader reader = Files.newBufferedReader(Path.of(path));
-            Type classType = HashMap.class;
+            Type classType = new TypeToken<HashMap<String,String>>(){}.getType();
             return gson.fromJson(reader, classType);
 
         } catch (IOException e) {
@@ -76,9 +95,9 @@ public class FileManager1 {
 
     public void writeToFile(Student student, String filePath) throws IOException {
         File file = new File(filePath);
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        FileWriter fileWriter = new FileWriter(file, true);
-        fileWriter.write(gson.toJson(student));
+        Gson gson = new GsonBuilder().setPrettyPrinting().serializeSpecialFloatingPointValues().create();
+        FileWriter fileWriter = new FileWriter(file, false);
+        fileWriter.write(gson.toJson(student).toString());
         fileWriter.close();
     }
 
@@ -86,7 +105,7 @@ public class FileManager1 {
         File file = new File(filePath);
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeSpecialFloatingPointValues().create();
         FileWriter fileWriter = new FileWriter(file, false);
-        fileWriter.write(gson.toJson(student));
+        gson.toJson(student,fileWriter);
         fileWriter.close();
     }
 

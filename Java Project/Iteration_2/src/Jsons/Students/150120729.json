@@ -1,0 +1,106 @@
+{
+  "studentID": "150120729",
+  "studentName": "Ayse",
+  "studentSurname": "Ertekin",
+  "transcriptBefore": {
+    "courseGrades": {
+      "ECON2004": "BB",
+      "MATH2256": "CC"
+    },
+    "gpa": 2.44,
+    "takenCredit": 9,
+    "takenCourses": [
+      {
+        "courseCode": "ECON2004",
+        "courseName": "Engineering Economy",
+        "credit": 4,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Ayþe Bengi Özlüarda",
+          "lecturerSurname": "Hamarat",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "ECON2004",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13",
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "MATH2256",
+        "courseName": "Linear Algebra for Comp. Eng.",
+        "credit": 5,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "8",
+                "9"
+              ],
+              "Tuesday": [
+                "10"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "MATH2256",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "8",
+                  "9"
+                ],
+                "Tuesday": [
+                  "10"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Ali Fuat",
+    "lecturerSurname": "Alkaya"
+  },
+  "enrolledYear": "2020"
+}

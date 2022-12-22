@@ -55,7 +55,6 @@ public class Lecturer {
         for(Lecturer lecturer : lecturers){
             Advisor advisor =new Advisor(lecturer.getLecturerName(),lecturer.getLecturerSurname(),lecturer.getSchedule(),new ArrayList<String>());
             advisors.add(advisor);
-            System.out.println(advisor);
         }
         return advisors;
 

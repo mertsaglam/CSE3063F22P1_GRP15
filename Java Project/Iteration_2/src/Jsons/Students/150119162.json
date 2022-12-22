@@ -1,0 +1,357 @@
+{
+  "studentID": "150119162",
+  "studentName": "Kemal",
+  "studentSurname": "Kebapci",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE3038": "DC",
+      "CSE1242": "CB",
+      "CSE3264": "BB",
+      "IE3235": "CC",
+      "ECON2004": "CB",
+      "CSE2225": "BA"
+    },
+    "gpa": 2.51,
+    "takenCredit": 39,
+    "takenCourses": [
+      {
+        "courseCode": "CSE1242",
+        "courseName": "Computer Programming II",
+        "credit": 6,
+        "prerequisites": [
+          "CSE1241"
+        ],
+        "lecturer": {
+          "lecturerName": "Mustafa",
+          "lecturerSurname": "Aðaoðlu",
+          "schedule": {
+            "courseDayHour": {
+              "Tuesday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE1242",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Tuesday": [
+                  "13",
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE2225",
+        "courseName": "Data Structures",
+        "credit": 7,
+        "prerequisites": [
+          "CSE1242"
+        ],
+        "lecturer": {
+          "lecturerName": "Mustafa Borahan",
+          "lecturerSurname": "Tümer",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2225",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "15",
+                  "16"
+                ],
+                "Wednesday": [
+                  "15"
+                ],
+                "Tuesday": [
+                  "15",
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "IE3235",
+        "courseName": "Operations Research",
+        "credit": 4,
+        "prerequisites": [
+          "MATH2256"
+        ],
+        "lecturer": {
+          "lecturerName": "Canan Aðlan",
+          "lecturerSurname": "Gökler",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "IE3235",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "9",
+                  "10"
+                ],
+                "Tuesday": [
+                  "9"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE1242",
+        "courseName": "Computer Programming II",
+        "credit": 6,
+        "prerequisites": [
+          "CSE1241"
+        ],
+        "lecturer": {
+          "lecturerName": "Mustafa",
+          "lecturerSurname": "Aðaoðlu",
+          "schedule": {
+            "courseDayHour": {
+              "Tuesday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE1242",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Tuesday": [
+                  "13",
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "ECON2004",
+        "courseName": "Engineering Economy",
+        "credit": 4,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Ayþe Bengi Özlüarda",
+          "lecturerSurname": "Hamarat",
+          "schedule": {
+            "courseDayHour": {
+              "Thursday": [
+                "13",
+                "14"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "ECON2004",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "13",
+                  "14"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3264",
+        "courseName": "Formal Lang. \u0026 Auto. Theory",
+        "credit": 5,
+        "prerequisites": [
+          "CSE2023"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3264",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "13",
+                  "14"
+                ],
+                "Wednesday": [
+                  "16"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3038",
+        "courseName": "Computer Organization",
+        "credit": 7,
+        "prerequisites": [
+          "EE2031"
+        ],
+        "lecturer": {
+          "lecturerName": "Haluk Rahmi",
+          "lecturerSurname": "Topcuoglu",
+          "schedule": {
+            "courseDayHour": {}
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE3038",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "9",
+                  "10"
+                ],
+                "Friday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "9"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Müjdat",
+    "lecturerSurname": "Soytürk",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2019"
+}

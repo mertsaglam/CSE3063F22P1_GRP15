@@ -2,8 +2,6 @@ package Iteration_2.src;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
 
 public class Student {
 
@@ -122,21 +120,22 @@ public class Student {
     public void calculateTranscriptAfter(EnrollmentRequest enrollmentRequest,double prob) {
         Student student = enrollmentRequest.getStudent();
         Transcript transcriptBefore = student.getTranscriptBefore();
-        ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
-        ArrayList<CompulsoryCourse> failedCourses = new ArrayList<>();
-        for(CompulsoryCourse course :courses){
-            if(new Random().nextDouble() <prob){
-                HashMap<String,String> failed = new HashMap<>();
-                failed.put(course.getCourseCode(),"FF");
-                transcriptBefore.addCourseGrade(failed);
-                System.out.println("Student "+ this.studentID +" failed the course "+ course.getCourseCode());
-            }
-        }
-        transcriptBefore.addCourseGrade(transcriptBefore.randomCourseGrade(courses));
 
-        transcriptBefore.addTakenCourse(enrollmentRequest.getCourses());
-        transcriptBefore.setGpa(transcriptBefore.calculateGpa());
-        student.setTranscriptAfter(transcriptBefore);
+        Transcript temp = new Transcript();
+
+        ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
+        int takenCredit = 0;
+        for(int credit : courses.stream().map(CompulsoryCourse::getCredit).toList())
+            takenCredit += credit;
+        temp.setTakenCredit(transcriptBefore.getTakenCredit()+takenCredit);
+        temp.addCourseGrade(temp.randomCourseGrade(courses,prob));
+        temp.addCourseGrade(transcriptBefore.getCourseGrades());
+        temp.addTakenCourse(courses);
+        temp.addTakenCourse(transcriptBefore.getTakenCourses());
+        temp.setGpa(temp.calculateGpa());
+        student.setTranscriptAfter(temp);
+
+
 
     }
 

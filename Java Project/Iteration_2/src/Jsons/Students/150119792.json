@@ -1,0 +1,201 @@
+{
+  "studentID": "150119792",
+  "studentName": "Fatma",
+  "studentSurname": "Cevik",
+  "transcriptBefore": {
+    "courseGrades": {
+      "CSE1200": "CB",
+      "CSE3044": "DC",
+      "IE3235": "BA"
+    },
+    "gpa": 2.3,
+    "takenCredit": 15,
+    "takenCourses": [
+      {
+        "courseCode": "IE3235",
+        "courseName": "Operations Research",
+        "credit": 4,
+        "prerequisites": [
+          "MATH2256"
+        ],
+        "lecturer": {
+          "lecturerName": "Canan Aðlan",
+          "lecturerSurname": "Gökler",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "IE3235",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Monday": [
+                  "9",
+                  "10"
+                ],
+                "Tuesday": [
+                  "9"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE1200",
+        "courseName": "Introduction to Computer Engineering",
+        "credit": 4,
+        "prerequisites": [],
+        "lecturer": {
+          "lecturerName": "Fatma Corut",
+          "lecturerSurname": "Ergin",
+          "schedule": {
+            "courseDayHour": {
+              "Friday": [
+                "10",
+                "11"
+              ],
+              "Wednesday": [
+                "13",
+                "2"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE1200",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Friday": [
+                  "10",
+                  "11"
+                ],
+                "Wednesday": [
+                  "13",
+                  "2"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "fall"
+      },
+      {
+        "courseCode": "CSE3044",
+        "courseName": "Software Engineering",
+        "credit": 7,
+        "prerequisites": [
+          "CSE3055"
+        ],
+        "lecturer": {
+          "lecturerName": "Nureddin",
+          "lecturerSurname": "Turkan",
+          "schedule": {
+            "courseDayHour": {
+              "Monday": [
+                "1",
+                "2",
+                "4",
+                "5"
+              ],
+              "Friday": [
+                "18",
+                "3",
+                "2"
+              ],
+              "Tuesday": [
+                "1",
+                "2",
+                "4"
+              ]
+            }
+          }
+        },
+        "courseSection": {
+          "courseCode": "CSE2023",
+          "sectionCount": 1,
+          "schedule": {
+            "1": {
+              "courseDayHour": {
+                "Thursday": [
+                  "11"
+                ],
+                "Wednesday": [
+                  "10",
+                  "11"
+                ],
+                "Tuesday": [
+                  "10",
+                  "11"
+                ]
+              }
+            }
+          },
+          "quota": 45
+        },
+        "openedTerm": "spring"
+      }
+    ],
+    "notTakenCourses": []
+  },
+  "transcriptAfter": {
+    "courseGrades": {},
+    "gpa": 0.0,
+    "takenCredit": 0,
+    "takenCourses": [],
+    "notTakenCourses": []
+  },
+  "schedule": {
+    "courseDayHour": {}
+  },
+  "advisor": {
+    "students": [],
+    "lecturerName": "Mustafa",
+    "lecturerSurname": "Aðaoðlu",
+    "schedule": {
+      "courseDayHour": {
+        "Monday": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "Friday": [
+          "18",
+          "3",
+          "2"
+        ],
+        "Tuesday": [
+          "1",
+          "2",
+          "4"
+        ]
+      }
+    }
+  },
+  "enrolledYear": "2019"
+}

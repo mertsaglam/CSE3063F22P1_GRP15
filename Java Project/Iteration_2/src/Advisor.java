@@ -18,6 +18,7 @@ public class Advisor extends Lecturer {
     }
 
     public Advisor() {
+        this.students=new ArrayList<>();
     }
 
     public void appendStudent(String studentID) {

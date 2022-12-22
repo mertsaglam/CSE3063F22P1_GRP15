@@ -1,7 +1,6 @@
 package Iteration_2.src;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -37,7 +36,7 @@ public class CourseRegistrationSimulation {
         createParams();
         createStudents();
         createLecturer();
-        readParameters();
+
         createAdvisors();
         createCourses();
         matchStudentAdvisor();
@@ -47,10 +46,12 @@ public class CourseRegistrationSimulation {
             Advisor advisor = student.getAdvisor();
             checkSystemRequirements(enrollmentRequest);
             advisor.checkScheduleCollision(enrollmentRequest);
+            System.out.println(this.term);
+            System.out.println("Added Courses: "+ enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
             student.calculateTranscriptAfter(enrollmentRequest,this.probToPassClass);
             fileManager1.writeToFile(student,("Java Project/Iteration_2/src/Outputs/"+ student.getStudentID()+".json"));
             try {
-                TimeUnit.MILLISECONDS.sleep(300);
+                TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -60,10 +61,7 @@ public class CourseRegistrationSimulation {
 
     }
 
-    public void readParameters() {
-        FileManager fileManager = new FileManager();
 
-    }
 
     public void createCourses() {
         FileManager1 fileManager1 = new FileManager1();
@@ -71,20 +69,18 @@ public class CourseRegistrationSimulation {
 
     }
 
-    public void createStudents() {//done
+    public void createStudents() throws IOException {//done
         FileManager1 fileManager1 = new FileManager1();
-        ArrayList<Student> students = fileManager1.readStudent("Java Project/Iteration_2/src/Jsons/students.json");
-        for (Student student : students) {
-            student.createStudentID();
-        }
+        ArrayList<Student> students = fileManager1.readStudent("Java Project/Iteration_2/src/Jsons/Students");
+
         this.students = students;
 
     }
     public void createParams(){
         FileManager1 fileManager1 = new FileManager1();
-        HashMap params = fileManager1.readParams("Java Project/Iteration_2/src/input.json") ;
-        this.probToPassClass = (double) params.get("prob_to_pass_class");
-        this.term = (String) params.get("semester");
+        HashMap<String, String> params = fileManager1.readParams("Java Project/Iteration_2/src/input.json") ;
+        this.probToPassClass =  Double.parseDouble(params.get("prob_to_fail_class"));
+        this.term =  params.get("semester");
 
     }
 
@@ -118,7 +114,7 @@ public class CourseRegistrationSimulation {
     public ArrayList<CompulsoryCourse> applyCourse(Student student) {
         ArrayList<CompulsoryCourse> courses = this.courses;
         Random random = new Random();
-        int appliedCourseNumber = random.nextInt(1, 5);
+        int appliedCourseNumber = random.nextInt(1, 10);
         ArrayList<CompulsoryCourse> appliedCourses = new ArrayList<CompulsoryCourse>();
         for (int i = 0; i < appliedCourseNumber; i++) {
             CompulsoryCourse randomCourse = courses.get(random.nextInt(courses.size()));
@@ -161,7 +157,8 @@ public class CourseRegistrationSimulation {
     }
 
 
-    public ArrayList<Student> createRandomStudent(int size) {
+    public void createRandomStudent(int size) throws IOException {
+        FileManager1 fileManager1 = new FileManager1();
         ArrayList<Student> students1 = new ArrayList<Student>();
         for (int i = 0; i < size; i++) {
             students1.add(new Student(names[new Random().nextInt(names.length - 1)], surnames[new Random().nextInt(surnames.length - 1)], new Transcript(), new Transcript(), new Schedule(), new Advisor(), "2020"));
@@ -180,10 +177,10 @@ public class CourseRegistrationSimulation {
             transcriptBefore.setCourseGrades(courseGrades);
             
             transcriptBefore.setGpa(transcriptBefore.calculateGpa());
-
+            fileManager1.writeToFile(students1.get(i),"Java Project/Iteration_2/src/Jsons/Students/"+students.get(i).getStudentID()+".json");
 
         }
-        return students1;
+
     }
 
 //    public void writeToJson() {
