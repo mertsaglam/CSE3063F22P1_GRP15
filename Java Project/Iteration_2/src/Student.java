@@ -1,10 +1,12 @@
 package Iteration_2.src;
 
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 
 public class Student {
-
+    static Logger logger= Logger.getLogger(Student.class.getName());
     private String studentID;
     private String studentName;
     private String studentSurname;
@@ -15,7 +17,7 @@ public class Student {
     private String enrolledYear;
 
     public Student(String studentName, String studentSurname, Transcript transcriptBefore, Transcript transcriptAfter,
-                    Schedule schedule, Advisor advisor, String enrolledYear) {
+                   Schedule schedule, Advisor advisor, String enrolledYear) {
 
 
         this.studentName = studentName;
@@ -27,7 +29,7 @@ public class Student {
         this.enrolledYear = enrolledYear;
     }
     public Student(String studentName, String studentSurname, Transcript transcriptBefore,
-                    Schedule schedule, Advisor advisor, String enrolledYear) {
+                   Schedule schedule, Advisor advisor, String enrolledYear) {
 
 
         this.studentName = studentName;
@@ -114,7 +116,7 @@ public class Student {
 
     public void createStudentID() {
         String department = "1501";
-        this.setStudentID(department + this.enrolledYear.substring(2) + String.valueOf((int)(Math.random() * 1000)));
+        this.setStudentID(department + this.enrolledYear.substring(2) + String.valueOf((int)(Math.random() * 899)+100));
 
     }
     public void calculateTranscriptAfter(EnrollmentRequest enrollmentRequest,double prob) {
@@ -127,6 +129,7 @@ public class Student {
         int takenCredit = 0;
         for(int credit : courses.stream().map(CompulsoryCourse::getCredit).toList())
             takenCredit += credit;
+        logger.info("End of the term: Student "+ student.getStudentID()+" passed the courses: "+ courses.stream().map(CompulsoryCourse::getCourseCode).toList());
         temp.setTakenCredit(transcriptBefore.getTakenCredit()+takenCredit);
         temp.addCourseGrade(temp.randomCourseGrade(courses,prob));
         temp.addCourseGrade(transcriptBefore.getCourseGrades());
@@ -134,6 +137,7 @@ public class Student {
         temp.addTakenCourse(transcriptBefore.getTakenCourses());
         temp.setGpa(temp.calculateGpa());
         student.setTranscriptAfter(temp);
+        logger.info("New GPA is calculated and transcript is updated. ");
 
 
 

@@ -1,10 +1,13 @@
 package Iteration_2.src;
 
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Advisor extends Lecturer {
+    static Logger logger =Logger.getLogger(Advisor.class.getName());
     //The students that are advised by the advisor
     ArrayList<String> students;
     //The advisor's surname
@@ -40,10 +43,11 @@ public class Advisor extends Lecturer {
                     if(!Objects.equals(course.getCourseCode(), course1.getCourseCode())){
                         if (schedule.isCollided(course.getRandomSection(),course1.getRandomSection())){
                             System.out.println("Advisor "+ this.getLecturerName()+ " did not allowed to take course "+ course.getCourseCode()+ " because time conflict");
+                            logger.info("Course " + courses.get(0).getCourseCode() + " is failed from 'schedule collision ' test. ");
                             canBeTaken.remove(course);
                         }
                         else{
-                            System.out.println("Course " + courses.get(0).getCourseCode() + " is passed from 'schedule collision ' test. ");
+                            logger.info("Course " + courses.get(0).getCourseCode() + " is passed from 'schedule collision ' test. ");
                             canBeTaken.add(course);
                         }
                     }

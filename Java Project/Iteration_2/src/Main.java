@@ -28,7 +28,9 @@ public class Main {
         FileWriter fileWriter = new FileWriter(file,true);
         fileWriter.write(jsonArray.toString());
         fileWriter.close();*/
+        System.setProperty("log4j.configurationFile","/Users/omerfarukbulut/CSE3063F22P1_GRP15/Java Project/Iteration_2/src/Resources/log4j.tld");
         CourseRegistrationSimulation courseRegistrationSimulation = new CourseRegistrationSimulation();
+
         courseRegistrationSimulation.starSimulation();
 
 //       for(Student student:students){

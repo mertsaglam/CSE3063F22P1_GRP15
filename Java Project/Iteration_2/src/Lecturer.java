@@ -5,6 +5,7 @@ package Iteration_2.src;
 import com.sun.nio.sctp.PeerAddressChangeNotification;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class Lecturer {
     //Name property is a string

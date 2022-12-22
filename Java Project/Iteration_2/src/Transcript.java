@@ -1,12 +1,15 @@
 package Iteration_2.src;
 
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Random;
 
 public class Transcript {
+    static Logger logger= Logger.getLogger(Transcript.class.getName());
     // courseGrades is haspMap of course object and grades in integer
     private HashMap<String, String> courseGrades;
     // Student object
@@ -170,9 +173,9 @@ public class Transcript {
             if (new Random().nextDouble() < prob) {
                 hashmap.put(course.getCourseCode(), "FF");
 
+
             } else
                 hashmap.put(course.getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length - 1)]);
-        System.out.println("");
 
         return hashmap;
     }

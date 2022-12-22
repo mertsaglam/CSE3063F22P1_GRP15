@@ -1,6 +1,8 @@
 package Iteration_2.src;
 
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +20,11 @@ public class CourseRegistrationSimulation {
     private String[] names = {"Ahmet", "Ali", "Ayşe", "Fatma", "Kemal"};
     private String[] surnames = {"Kebapçı", "Çevik", "Öztürk", "Vural", "Ertekin"};
     private String[] letterGrades = {"AA", "BA", "BB", "CB", "CC", "DC"};
+    private String[] year = {"2019", "2020", "2021"};
     private String term;
+    private int studentSize;
+    static Logger logger = Logger.getLogger(CourseRegistrationSimulation.class.getName());
+
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, int creditLimit) {
         this.students = students;
@@ -32,40 +38,49 @@ public class CourseRegistrationSimulation {
     }
 
     public void starSimulation() throws IOException {
+
+        logger.info("Simulation Started. ");
         FileManager1 fileManager1 = new FileManager1();
         createParams();
-        createStudents();
+
         createLecturer();
 
         createAdvisors();
         createCourses();
+
+        students = createRandomStudent(studentSize);
+        for (Student value : students)
+            fileManager1.writeToFile(value, "Java Project/Iteration_2/src/Jsons/Students/" + value.getStudentID() + ".json");
+
+        createStudents();
         matchStudentAdvisor();
         for (Student student : this.students) {
             ArrayList<CompulsoryCourse> appliedCourses = applyCourse(student);
             EnrollmentRequest enrollmentRequest = new EnrollmentRequest(appliedCourses, student);
+            logger.info("Student "+ student.getStudentID()+" created new Enrollement Requests with courses "+appliedCourses.stream().map(CompulsoryCourse::getCourseCode).toList());
             Advisor advisor = student.getAdvisor();
             checkSystemRequirements(enrollmentRequest);
             advisor.checkScheduleCollision(enrollmentRequest);
-            System.out.println(this.term);
-            System.out.println("Added Courses: "+ enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
+            logger.info("Added Courses to Student "+student.getStudentID()+" : "+ enrollmentRequest.getCourses().stream().map(CompulsoryCourse::getCourseCode).toList());
             student.calculateTranscriptAfter(enrollmentRequest,this.probToPassClass);
             fileManager1.writeToFile(student,("Java Project/Iteration_2/src/Outputs/"+ student.getStudentID()+".json"));
             try {
-                TimeUnit.MILLISECONDS.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
+        logger.info("Simulation is over.");
 
 
     }
 
 
-
     public void createCourses() {
         FileManager1 fileManager1 = new FileManager1();
         this.courses = fileManager1.readCourse("Java Project/Iteration_2/src/Jsons/compulsoryCourses.json");
+        logger.info(this.courses.size()+" Course Created.");
 
     }
 
@@ -81,6 +96,9 @@ public class CourseRegistrationSimulation {
         HashMap<String, String> params = fileManager1.readParams("Java Project/Iteration_2/src/input.json") ;
         this.probToPassClass =  Double.parseDouble(params.get("prob_to_fail_class"));
         this.term =  params.get("semester");
+        double number = Double.parseDouble(params.get("student_count"));
+        this.studentSize = (int)(number);
+
 
     }
 
@@ -93,6 +111,7 @@ public class CourseRegistrationSimulation {
     public void createAdvisors() {
         Lecturer lecturer = new Lecturer();
         this.advisors = lecturer.lecturerToAdvisor(lecturers);
+        logger.info("Advisors created from Lecturers.");
     }
 
     /*public void createAdvisor() {  // no need for iteration 1
@@ -107,6 +126,7 @@ public class CourseRegistrationSimulation {
             Advisor advisor = this.advisors.get(random.nextInt(size));
             student.setAdvisor(advisor);
             advisor.appendStudent(student.getStudentID());
+            logger.info("Student "+student.getStudentID()+" match with "+advisor.getLecturerName()+" "+advisor.getLecturerSurname());
 
         }
     }
@@ -120,6 +140,7 @@ public class CourseRegistrationSimulation {
             CompulsoryCourse randomCourse = courses.get(random.nextInt(courses.size()));
             appliedCourses.add(randomCourse);
             System.out.println(student.getStudentID() + " applied for " + randomCourse.getCourseCode());
+            logger.info(student.getStudentID() + " applied for " + randomCourse.getCourseCode());
             // Log
 
 
@@ -131,6 +152,7 @@ public class CourseRegistrationSimulation {
     }
 
     public void checkSystemRequirements(EnrollmentRequest enrollmentRequest) {
+        logger.info("System Checking "+enrollmentRequest.getStudent().getStudentID()+"'s enrollment requests");
         RegistrationSystem registrationSystem = new RegistrationSystem();
         registrationSystem.checkCourseIsTakenBefore(enrollmentRequest);
         registrationSystem.checkPrerequisites(enrollmentRequest);
@@ -157,12 +179,19 @@ public class CourseRegistrationSimulation {
     }
 
 
-    public void createRandomStudent(int size) throws IOException {
-        FileManager1 fileManager1 = new FileManager1();
+    public ArrayList<Student> createRandomStudent(int size) {
         ArrayList<Student> students1 = new ArrayList<Student>();
         for (int i = 0; i < size; i++) {
-            students1.add(new Student(names[new Random().nextInt(names.length - 1)], surnames[new Random().nextInt(surnames.length - 1)], new Transcript(), new Transcript(), new Schedule(), new Advisor(), "2020"));
+            students1.add(new Student(names[new Random().nextInt(names.length)], surnames[new Random().nextInt(surnames.length)], new Transcript(), new Transcript(), new Schedule(), new Advisor(), year[new Random().nextInt(year.length)]));
             students1.get(i).createStudentID();
+
+            for(int k = 0; k < students1.size()-1; k++) {
+                if(students1.get(i).getStudentID().equals(students1.get(k).getStudentID())) {
+                    students1.get(i).createStudentID();
+                    k = 0;
+                }
+            }
+
             Transcript transcriptBefore = students1.get(i).getTranscriptBefore();
             transcriptBefore.setTakenCourses(getRandomCourse(courses));
 
@@ -175,12 +204,14 @@ public class CourseRegistrationSimulation {
                 courseGrades.put(transcriptBefore.getTakenCourses().get(j).getCourseCode(), letterGrades[new Random().nextInt(letterGrades.length)]);
             }
             transcriptBefore.setCourseGrades(courseGrades);
-            
+
             transcriptBefore.setGpa(transcriptBefore.calculateGpa());
-            fileManager1.writeToFile(students1.get(i),"Java Project/Iteration_2/src/Jsons/Students/"+students.get(i).getStudentID()+".json");
+
+            students1.get(i).setAdvisor(advisors.get(new Random().nextInt(advisors.size())));
+
 
         }
-
+        return students1;
     }
 
 //    public void writeToJson() {
