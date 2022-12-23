@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class RegistrationSystem {
-    static org.apache.log4j.Logger logger = Logger.getLogger(RegistrationSystem.class.getName());
+    private org.apache.log4j.Logger logger = Logger.getLogger(RegistrationSystem.class.getName());
 
     public void checkCourseIsTakenBefore(EnrollmentRequest enrollmentRequest) {
 

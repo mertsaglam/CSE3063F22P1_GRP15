@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import java.util.ArrayList;
 
 public class Student {
-    static Logger logger= Logger.getLogger(Student.class.getName());
+
     private String studentID;
     private String studentName;
     private String studentSurname;
@@ -122,6 +122,7 @@ public class Student {
     public void calculateTranscriptAfter(EnrollmentRequest enrollmentRequest,double prob) {
         Student student = enrollmentRequest.getStudent();
         Transcript transcriptBefore = student.getTranscriptBefore();
+        Logger logger= Logger.getLogger(Student.class.getName());
 
         Transcript temp = new Transcript();
 

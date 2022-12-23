@@ -23,7 +23,7 @@ public class CourseRegistrationSimulation {
     private String[] year = {"2019", "2020", "2021"};
     private String term;
     private int studentSize;
-    static Logger logger = Logger.getLogger(CourseRegistrationSimulation.class.getName());
+    private Logger logger = Logger.getLogger(CourseRegistrationSimulation.class.getName());
 
 
     public CourseRegistrationSimulation(ArrayList<Student> students, ArrayList<CompulsoryCourse> courses, ArrayList<Lecturer> lecturers, ArrayList<Advisor> advisors, int creditLimit) {

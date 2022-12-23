@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Advisor extends Lecturer {
-    static Logger logger =Logger.getLogger(Advisor.class.getName());
+
     //The students that are advised by the advisor
     ArrayList<String> students;
     //The advisor's surname
@@ -30,6 +30,7 @@ public class Advisor extends Lecturer {
 
     //Constructor for advisor with no parameters
     public void checkScheduleCollision(EnrollmentRequest enrollmentRequest) {
+        Logger logger =Logger.getLogger(Advisor.class.getName());
         ArrayList<CompulsoryCourse> courses = enrollmentRequest.getCourses();
         ArrayList<CompulsoryCourse> canBeTaken = new ArrayList<>();
         Schedule schedule = enrollmentRequest.getStudent().getSchedule();

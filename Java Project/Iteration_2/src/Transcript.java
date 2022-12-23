@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class Transcript {
-    static Logger logger= Logger.getLogger(Transcript.class.getName());
+
     // courseGrades is haspMap of course object and grades in integer
     private HashMap<String, String> courseGrades;
     // Student object
