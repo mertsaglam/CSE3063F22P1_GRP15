@@ -6,11 +6,8 @@ class Lecturer:
         self.__lecturerSurname = lecturerSurname
         self.__schedule = schedule
 
-#   ?-------------------?
-#J  public Lecturer() {
-
-#J  }
-#   ?-------------------?
+    def Lecturer(self):
+        pass
 
     def getLecturerName(self):
         return self.__lecturerName
@@ -21,6 +18,9 @@ class Lecturer:
     def getSchedule(self):
         return self.__schedule
 
+    def __str__(self):
+        return "Lecturer{Name='" + self.__lecturerName + "\'" + ", Surname='" + self.__lecturerSurname + "\'" + ", Schedule=" + self.__schedule + "}"
+
 #-------------------------------MOVED TO ADVISOR---------------------------------------
 #   def lecturerToAdvisor(self, lecturers):
 #       advisors = list()
@@ -29,6 +29,3 @@ class Lecturer:
 #           advisors.append(advisor)
 #       return advisors
 #--------------------------------------------------------------------------------------
-
-    def __str__(self):
-        return "Lecturer{Name='" + self.__lecturerName + "\'" + ", Surname='" + self.__lecturerSurname + "\'" + ", Schedule=" + self.__schedule + "}"
