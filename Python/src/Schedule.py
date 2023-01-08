@@ -6,7 +6,7 @@ class Schedule :
         self.__courseDayHour = courseDayHour
 
     # (not sure)
-    def __init__(self) :
+    def Schedule(self) :
         self.__courseDayHour =  dict()
 
     def  getCourseDayHour(self) :
