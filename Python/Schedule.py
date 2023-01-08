@@ -15,7 +15,8 @@ class Schedule :
 
     def setCourseDayHour(self, courseDayHour) :
         self.__courseDayHour = courseDayHour
-    def  toString(self) :
+   #toString to __str__     
+   def  __str__(self) :
         return "Schedule{" + "courseDayHour=" + str(self.__courseDayHour) + str('}')
     def  isCollided(self, schedule,  schedule1) :
         for key,value in schedule.getCourseDayHour().items() :
