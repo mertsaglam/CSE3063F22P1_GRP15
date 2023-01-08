@@ -1,59 +1,59 @@
-class EnrollmentRequest:
-    def _init_(self, courses, student):
-        self.courses = courses
-        self.student = student
-        self.schedule = {}
-        self.result = {}
-        self.credit_limit = 0
-        self.error = ""
+import logging
+from typing import List
 
-    def get_courses(self):
-        return self.courses
+class RegistrationSystem:
+    def __init__(self):
+        self.logger = logging.getLogger(__name__)
 
-    def set_courses(self, courses):
-        self.courses = courses
+    def check_course_is_taken_before(self, enrollment_request):
+        student = enrollment_request.student
+        courses = enrollment_request.courses
+        taken_courses = []
+        self.logger.info(f"System Checking {student.student_id}'s enrollment requests")
 
-    def get_result(self):
-        return self.result
 
-    def set_result(self, result):
-        self.result = result
+        for course in courses:
+            if course.course_code in [c.course_code for c in student.transcript_before.taken_courses]:
+                print(f"Course {course.course_code} can not be taken because it has already been taken.")
+                self.logger.warning(f"Course {course.course_code} failed 'taken before' test.")
+            else:
+                self.logger.info(f"Course {course.course_code} passed 'taken before' test.")
+                taken_courses.append(course)
 
-    def get_student(self):
-        return self.student
+        enrollment_request.courses = taken_courses
 
-    def set_student(self, student):
-        self.student = student
+    def check_prerequisites(self, enrollment_request):
+        courses = enrollment_request.courses
+        student = enrollment_request.student
+        taken_courses = []
 
-    def get_schedule(self):
-        return self.schedule
+        for course in courses:
+            if course.prerequisites is not None:
+                if not all(prereq in [c.course_code for c in student.transcript_before.taken_courses] for prereq in
+                           course.prerequisites):
+                    print(f"Course {course.course_code} can not be taken because prerequisites are not satisfied.")
+                    self.logger.info(f"Course {course.course_code} failed 'prerequisites' test.")
+                else:
+                    self.logger.info(f"Course {course.course_code} passed 'prerequisites' test.")
+                    taken_courses.append(course)
+            else:
+                print(f"Course {course.course_code} passed 'prerequisites' test.")
+                self.logger.info(f"Course {course.course_code} passed 'prerequisites' test.")
+                taken_courses.append(course)
 
-    def set_schedule(self, schedule):
-        self.schedule = schedule
+        enrollment_request.courses = taken_courses
 
-    def append_result(self, result1):
-        temp = self.result
-        temp.update(result1)
-        self.set_result(temp)
+    def is_opened_this_term(self, enrollment_request, term):
+        courses = enrollment_request.courses
+        student = enrollment_request.student
+        taken_courses = []
 
-    def get_credit_limit(self):
-        return self.credit_limit
+        for course in courses:
+            if course.opened_term == term:
+                taken_courses.append(course)
+                self.logger.info(f"Course {course.course_code} passed 'opened this term' test.")
+            else:
+                print(f"Course {course.course_code} can not been taken because it does not opened this term")
+                self.logger.info(f"Course {course.course_code} failed 'opened this term' test.")
 
-    def set_credit_limit(self, credit_limit):
-        self.credit_limit = credit_limit
-
-    def get_total_credit(self):
-        credit = 0
-        for course in self.courses:
-            credit += course.get_credit()
-        return credit
-
-    def get_error(self):
-        return self.error
-
-    def set_error(self, error):
-        self.error = error
-
-    def _str_(self):
-        return "EnrollmentRequest{{courses={}, student={}, schedule={}, result={}, credit_limit={}, error='{}'}}"(
-            self.courses, self.student, self.schedule, self.result, self.credit_limit, self.error)
+        enrollment_request.courses = taken_courses
