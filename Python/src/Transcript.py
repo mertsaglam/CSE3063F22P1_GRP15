@@ -72,25 +72,22 @@ class Transcript:
     def calculate_gpa(self):
         gpa = 0
         total_credit = 0
+        grade_values = {
+            "AA": 4,
+            "BA": 3.5,
+            "BB": 3,
+            "CB": 2.5,
+            "CC": 2,
+            "DC": 1.5,
+            "FF": 0
+        }
         for j in range(len(self.get_taken_courses())):
             letter_grade = self.get_course_grades().get(self.get_taken_courses()[j].get_course_code())
-            if letter_grade == "AA":
-                gpa += self.get_taken_courses()[j].get_credit() * 4
-            elif letter_grade == "BA":
-                gpa += self.get_taken_courses()[j].get_credit() * 3.5
-            elif letter_grade == "BB":
-                gpa += self.get_taken_courses()[j].get_credit() * 3
-            elif letter_grade == "CB":
-                gpa += self.get_taken_courses()[j].get_credit() * 2.5
-            elif letter_grade == "CC":
-                gpa += self.get_taken_courses()[j].get_credit() * 2
-            elif letter_grade == "DC":
-                gpa += self.get_taken_courses()[j].get_credit() * 1.5
-            elif letter_grade == "FF":
-                gpa += 0
+            gpa += self.get_taken_courses()[j].get_credit() * grade_values.get(letter_grade, 0)
             total_credit += self.get_taken_courses()[j].get_credit()
         
         return round((gpa / total_credit) * 100) / 100
+
 
     def random_course_grade(self, courses, prob):
         letter_grades = ["AA", "BA", "BB", "CB", "CC", "DC"]
