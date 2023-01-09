@@ -38,16 +38,16 @@ class CourseRegistrationSimulation:
         self.advisors = advisors
         self.credit_limit = credit_limit   
 
-    def start_simulation(self):
-        self.logger.info("Simulation Started.")
-        file_manager = FileManager1()
+    def star_simulation(self):
+        #self.logger.info("Simulation Started.")
+        file_manager = FileManager1.FileManager1()
         self.create_params()
         self.create_lecturers()
         self.create_advisors()
         self.create_courses()
         self.students = self.create_random_students(self.student_size)
         for student in self.students:
-            file_manager.write_to_file(student, f"Java Project/Iteration_2/src/Jsons/Students/{student.student_id}.json")
+            file_manager.write_to_file(student, f"Jsons/Students/{student.student_id}.json")
         self.create_students()
         self.match_student_advisor()
         for student in self.students:
@@ -59,35 +59,40 @@ class CourseRegistrationSimulation:
             advisor.check_schedule_collision(enrollment_request)
             self.logger.info(f"Added courses to Student {student.student_id}: {[c.course_code for c in enrollment_request.courses]}")
             student.calculate_transcript_after(enrollment_request, self.prob_to_pass_class)
-            file_manager.write_to_file(student, f"Java Project/Iteration_2/src/Outputs/{student.student_id}.json")
+            file_manager.write_to_file(student, f"Outputs/{student.student_id}.json")
             time.sleep(0.3)
         self.logger.info("Simulation is over.")
     
     def create_courses(self):
-        file_manager = FileManager1()
-        self.courses = file_manager.read_course("Java Project/Iteration_2/src/Jsons/compulsoryCourses.json")
+        file_manager = FileManager1.FileManager1()
+        self.courses = file_manager.read_course("Jsons/compulsoryCourses.json")
         self.logger.info(len(self.courses)+" Course Created.")
 
     def create_students(self):
-        file_manager = FileManager1()
-        students = file_manager.read_student("Java Project/Iteration_2/src/Jsons/Students")
+        file_manager = FileManager1.FileManager1()
+        students = file_manager.read_student("Jsons/Students")
         self.students = students
 
     def create_params(self):
-        file_manager = FileManager1()
-        params = file_manager.read_params("Java Project/Iteration_2/src/input.json")
-        self.prob_to_pass_class = float(params["prob_to_fail_class"])
-        self.term = params["semester"]
-        number = float(params["student_count"])
-        self.student_size = int(number)
+        try:
+            file_manager = FileManager1.FileManager1()
+            params = file_manager.read_params("input.json")
+            self.prob_to_pass_class = float(params["prob_to_fail_class"])
+            self.term = params["semester"]
+            number = float(params["student_count"])
+            self.student_size = int(number)
+        except Exception as e:
+            print(e)
+        
 
-    def create_lecturer(self):
-        file_manager = FileManager1()
-        self.lecturers = file_manager.read_lecturers("Java Project/Iteration_2/src/Jsons/lecturer.json")
+    def create_lecturers(self):
+        file_manager = FileManager1.FileManager1()
+        self.lecturers = file_manager.read_lecturers("Jsons/lecturer.json")
 
     def create_advisors(self):
-        lecturer = Lecturer()
-        self.advisors = lecturer.lecturer_to_advisor(self.lecturers)
+        print(self.lecturers)
+        advisor = Advisor.Advisor(None, None, None, None)
+        self.advisors = advisor.lecturer_to_advisor(self.lecturers)
         logger.info("Advisors created from Lecturers.")
 
     def match_student_advisor(self):
@@ -138,7 +143,7 @@ class CourseRegistrationSimulation:
                     k = 0
 
             transcript_before = students[i].get_transcript_before()
-            transcript_before.set_taken_courses(get_random_course(self.courses))
+            transcript_before.set_taken_courses(self.get_random_course(self.courses))
 
             course_grades = {}
             taken_credit = 0

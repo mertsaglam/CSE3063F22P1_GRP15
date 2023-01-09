@@ -16,7 +16,7 @@ class Schedule :
     def setCourseDayHour(self, courseDayHour) :
         self.__courseDayHour = courseDayHour
    #toString to __str__     
-   def  __str__(self) :
+    def  __str__(self) :
         return "Schedule{" + "courseDayHour=" + str(self.__courseDayHour) + str('}')
         
     # function to check whether there is a collision, a clash 

@@ -50,7 +50,7 @@ class Advisor(Lecturer.Lecturer):
         return "Advisor{Name='" + super().getLecturerName() + '\'' + ", Surname='" + super().getLecturerSurname() + '\'' + ", Students='" + self.__students + '\'' + ", Schedule=" + super().getSchedule() + '}'
 
 #-------------------------------MOVED HERE FROM LECTURER--------------------------------------
-    def lecturerToAdvisor(self, lecturers):
+    def lecturer_to_advisor(self, lecturers):
         advisors = list()
         for lecturer in lecturers:
             advisor = Advisor(lecturer.getLecturerName(), lecturer.getLecturerSurname(), lecturer.getSchedule(), list())
