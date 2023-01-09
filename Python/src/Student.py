@@ -9,79 +9,79 @@ from typing import List
 class Student:
     def __init__(self, student_name: str, student_surname: str, transcript_before: 'Transcript', transcript_after: 'Transcript',
                  schedule: 'Schedule', advisor: 'Advisor', enrolled_year: str) -> None:
-        self.student_name = student_name
-        self.student_surname = student_surname
-        self.transcript_before = transcript_before
-        self.transcript_after = transcript_after
-        self.schedule = schedule
-        self.advisor = advisor
-        self.enrolled_year = enrolled_year
+        self.__student_name = student_name
+        self.__student_surname = student_surname
+        self.__transcript_before = transcript_before
+        self.__transcript_after = transcript_after
+        self.__schedule = schedule
+        self.__advisor = advisor
+        self.__enrolled_year = enrolled_year
 
     def __init__(self, student_name: str, student_surname: str, transcript_before: 'Transcript',
                  schedule: 'Schedule', advisor: 'Advisor', enrolled_year: str) -> None:
-        self.student_name = student_name
-        self.student_surname = student_surname
-        self.transcript_before = transcript_before
-        self.schedule = schedule
-        self.advisor = advisor
-        self.enrolled_year = enrolled_year
+        self.__student_name = student_name
+        self.__student_surname = student_surname
+        self.__transcript_before = transcript_before
+        self.__schedule = schedule
+        self.__advisor = advisor
+        self.__enrolled_year = enrolled_year
 
     def __init__(self, student_id: str, student_name: str, student_surname: str, enrolled_year: str) -> None:
-        self.student_name = student_name
-        self.student_surname = student_surname
-        self.enrolled_year = enrolled_year
+        self.__student_name = student_name
+        self.__student_surname = student_surname
+        self.__enrolled_year = enrolled_year
 
     def get_studentID(self):
-        return self.studentID
+        return self.__studentID
 
     def set_studentID(self, studentID):
-        self.studentID = studentID
+        self.__studentID = studentID
 
     def get_studentSurname(self):
-        return self.studentSurname
+        return self.__studentSurname
 
     def set_studentSurname(self, studentSurname):
-        self.studentSurname = studentSurname
+        self.__studentSurname = studentSurname
 
     def get_studentName(self):
-        return self.studentName
+        return self.__studentName
 
     def set_studentName(self, studentName):
-        self.studentName = studentName
+        self.__studentName = studentName
 
     def get_transcriptBefore(self):
-        return self.transcriptBefore
+        return self.__transcriptBefore
 
     def set_transcriptBefore(self, transcriptBefore):
-        self.transcriptBefore = transcriptBefore
+        self.__transcriptBefore = transcriptBefore
 
     def get_transcriptAfter(self):
-        return self.transcriptAfter
+        return self.__transcriptAfter
 
     def set_transcriptAfter(self, transcriptAfter):
-        self.transcriptAfter = transcriptAfter
+        self.__transcriptAfter = transcriptAfter
 
     def get_schedule(self):
-        return self.schedule
+        return self.__schedule
 
     def set_schedule(self, schedule):
-        self.schedule = schedule
+        self.__schedule = schedule
 
     def get_advisor(self):
-        return self.advisor
+        return self.__advisor
 
     def set_advisor(self, advisor):
-        self.advisor = advisor
+        self.__advisor = advisor
 
     def get_enrolledYear(self):
-        return self.enrolledYear
+        return self.__enrolledYear
 
     def set_enrolledYear(self, enrolledYear):
-        self.enrolledYear = enrolledYear
+        self.__enrolledYear = enrolledYear
 
     def create_studentID(self):
         department = "1501"
-        self.set_studentID(department + self.enrolledYear[2:] + str(int(random.random() * 899) + 100))
+        self.set_studentID(department + self.__enrolledYear[2:] + str(int(random.random() * 899) + 100))
 
     def calculateTranscriptAfter(self, enrollmentRequest, prob):
         student = enrollmentRequest.getStudent()
@@ -104,5 +104,5 @@ class Student:
         student.setTranscriptAfter(temp)
         logger.info("New GPA is calculated and transcript is updated.")
 
-    def toString(self):
-        return "Student{studentID='{}', studentName='{}', studentSurname='{}', transcriptBefore={}, transcriptAfter={}, schedule={}, advisor={}, enrolledYear='{}'}".format(self.studentID, self.studentName, self.studentSurname, self.transcriptBefore, self.transcriptAfter, self.schedule, self.advisor, self.enrolledYear)
+    def __str__(self):
+        return "Student{studentID='{}', studentName='{}', studentSurname='{}', transcriptBefore={}, transcriptAfter={}, schedule={}, advisor={}, enrolledYear='{}'}".format(self.__studentID, self.__studentName, self.__studentSurname, self.__transcriptBefore, self.__transcriptAfter, self.__schedule, self.__advisor, self.__enrolledYear)

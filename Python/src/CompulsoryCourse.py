@@ -2,92 +2,82 @@ import random
 
 class CompulsoryCourse:
 
-	#courseCode = ""
-	#courseName = ""
-	#credit = 0
-	#prerequisites #includes courseCodes only
-	#lecturer
-	#courseSection
-	#courseStudents
-	#openedTerm = ""
-
-
 	#Constructor with parameters takes in a course code, course name, credit, prerequisites, schedule, semester and course students
 
 
 	def __init__(self, courseCode, courseName, credit, prerequisites, lecturer, courseSection, courseStudents, givenSemester):
-		self.courseCode = courseCode
-		self.courseName = courseName
-		self.credit = credit
-		self.prerequisites = prerequisites
-		self.lecturer = lecturer
-		self.courseSection = courseSection
-		self.courseStudents = courseStudents
-		self.openedTerm = givenSemester
+		self.__courseCode = courseCode
+		self.__courseName = courseName
+		self.__credit = credit
+		self.__prerequisites = prerequisites
+		self.__lecturer = lecturer
+		self.__courseSection = courseSection
+		self.__courseStudents = courseStudents
+		self.__openedTerm = givenSemester
 
 	def getCourseCode(self):
-		return self.courseCode
+		return self.__courseCode
 
 
 	def setCourseCode(self, courseCode):
-		self.courseCode = courseCode
+		self.__courseCode = courseCode
 
 
 	def getCourseName(self):
-		return self.courseName
+		return self.__courseName
 
 
 	def setCourseName(self, courseName):
-		self.courseName = courseName
+		self.__courseName = courseName
 
 
 	def getCredit(self):
-		return self.credit
+		return self.__credit
 
 
 	def setCredit(self, credit):
-		self.credit = credit
+		self.__credit = credit
 
 
 	def setPrerequisites(self, prerequisites):
-		self.prerequisites = prerequisites
+		self.__prerequisites = prerequisites
 
 
 	def setLecturer(self, lecturer):
-		self.lecturer = lecturer
+		self.__lecturer = lecturer
 
 
 	def getOpenedTerm(self):
-		return self.openedTerm
+		return self.__openedTerm
 
 
 	def setOpenedTerm(self, openedTerm):
-		self.openedTerm = openedTerm
+		self.__openedTerm = openedTerm
 
 
 	def getPrerequisites(self):
-		return self.prerequisites
+		return self.__prerequisites
 
 	#Getter for semester property
 	#Getter for schedule property
 	def getLecturer(self):
-		return self.lecturer
+		return self.__lecturer
 
 	#Getter for course students property
 	def getCourseStudents(self):
-		return self.courseStudents
+		return self.__courseStudents
 
 	#Setter for course students property
 	def setCourseStudents(self, courseStudents):
-		self.courseStudents = courseStudents
+		self.__courseStudents = courseStudents
 
 
 	def getCourseSection(self):
-		return self.courseSection
+		return self.__courseSection
 
 
 	def setCourseSection(self, courseSection):
-		self.courseSection = courseSection
+		self.__courseSection = courseSection
 
 	def getRandomSection(self):
 		size = self.getCourseSection().getSchedule().size()
@@ -97,7 +87,7 @@ class CompulsoryCourse:
 
 
 	def toString(self):
-		return "CompulsoryCourse{" + "courseCode='" + self.courseCode + '\'' + ", courseName='" + self.courseName + '\'' + ", credit=" + self.credit + ", prerequisites=" + self.prerequisites + ", lecturer=" + self.lecturer + ", courseSection=" + self.courseSection + ", courseStudents=" + self.courseStudents + ", givenSemester='" + self.openedTerm + '\'' + '}'
+		return "CompulsoryCourse{" + "courseCode='" + self.__courseCode + '\'' + ", courseName='" + self.__courseName + '\'' + ", credit=" + self.__credit + ", prerequisites=" + self.__prerequisites + ", lecturer=" + self.__lecturer + ", courseSection=" + self.__courseSection + ", courseStudents=" + self.__courseStudents + ", givenSemester='" + self.__openedTerm + '\'' + '}'
 
 
 class CourseSection:
@@ -108,54 +98,54 @@ class CourseSection:
 	#quota = 0
 
 	def __init__(self, courseCode, sectionCount, schedule, quota):
-		self.courseCode = courseCode
-		self.sectionCount = sectionCount
-		self.schedule = schedule
-		self.quota = quota
+		self.__courseCode = courseCode
+		self.__sectionCount = sectionCount
+		self.__schedule = schedule
+		self.__quota = quota
 
 	def getCourse(self):
-		return self.courseCode
+		return self.__courseCode
 
 
 	def setCourse(self, courseCode):
-		self.courseCode = courseCode
+		self.__courseCode = courseCode
 
 
 	def getSectionID(self):
-		return self.sectionCount
+		return self.__sectionCount
 
 
 	def setSectionCount(self, sectionCount):
-		self.sectionCount = sectionCount
+		self.__sectionCount = sectionCount
 
 
 	def getCourseCode(self):
-		return self.courseCode
+		return self.__courseCode
 
 
 	def setCourseCode(self, courseCode):
-		self.courseCode = courseCode
+		self.__courseCode = courseCode
 
 
 	def getSectionCount(self):
-		return self.sectionCount
+		return self.__sectionCount
 
 
 	def getSchedule(self):
-		return self.schedule
+		return self.__schedule
 
 
 	def setSchedule(self, schedule):
-		self.schedule = schedule
+		self.__schedule = schedule
 
 
 	def getQuota(self):
-		return self.quota
+		return self.__quota
 
 
 	def setQuota(self, quota):
-		self.quota = quota
+		self.__quota = quota
 
 
 	def toString(self):
-		return "CourseSection{" + "courseCode='" + self.courseCode + '\'' + ", sectionCount=" + self.sectionCount + ", schedule=" + self.schedule + ", quota=" + self.quota + '}'
+		return "CourseSection{" + "courseCode='" + self.__courseCode + '\'' + ", sectionCount=" + self.__sectionCount + ", schedule=" + self.__schedule + ", quota=" + self.__quota + '}'

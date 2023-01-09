@@ -9,7 +9,7 @@ class Schedule :
     def Schedule(self) :
         self.__courseDayHour =  dict()
 
-    def  getCourseDayHour(self) :
+    def getCourseDayHour(self) :
         return self.__courseDayHour
 
 
